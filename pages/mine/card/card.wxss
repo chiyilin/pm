@@ -1,0 +1,37 @@
+/* pages/mine/card/card.wxss */
+view{
+  position: relative;
+}
+image{
+  width: 685rpx;
+  margin-top: 40rpx;
+  margin-left: 33rpx;
+}
+.money{
+  font-size: 52rpx;
+  color: #fff;
+  position: absolute;
+  left: 120rpx;
+  top: 120rpx;
+}
+.price{
+  font-size: 96rpx;
+  color: #fff;
+  position: absolute;
+  left: 189rpx;
+  top: 80rpx;
+}
+.date{
+  position: absolute;
+  bottom:25rpx;
+  left: 150rpx;
+  font-size: 26rpx;
+  color: #fff;
+}
+.tiaojian{
+  position: absolute;
+  bottom:25rpx;
+  right:70rpx;
+  font-size: 26rpx;
+  color: #fff;
+}

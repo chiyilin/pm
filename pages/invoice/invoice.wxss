@@ -1,0 +1,55 @@
+/* pages/invoice/invoice.wxss */
+
+page {
+  background-color: #f7f7f7;
+}
+
+.clearfix {
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+text {
+  font-size: 30rpx;
+  color: #5f5f5f;
+  float: left;
+  margin-top: 5rpx;
+  vertical-align: middle;
+}
+
+input {
+  font-size: 28rpx;
+  float: left;
+  margin-left: 26rpx;
+}
+
+picker {
+  font-size: 28rpx;
+  margin-top: 5rpx;
+  margin-left: 22rpx;
+}
+button {
+  background-color: #F75555;
+  color: #fff;
+  width: 466rpx;
+  margin-top: 200rpx;
+}
+
+textarea {
+  width: 70%;
+  height: 200rpx;
+  margin-top: 8rpx;
+  font-size: 28rpx;
+}
+
+.box {
+  border-top: 1px solid #eee;
+}
+
+.box-bottom {
+  border-bottom: 1px solid #eee;
+  margin-top: 20rpx;
+}
+.name{
+  margin-top:20rpx;
+}

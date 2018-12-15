@@ -1,0 +1,10 @@
+<!--pages/mine/card/card.wxml-->
+<block wx:for="{{3}}">
+<view>
+  <image mode='widthFix' src='/imgs/bagk.jpg'></image>
+  <text class='money'>￥</text>
+  <text class='price'>20</text>
+  <text class='date'>2018.09.22-2018.12.12</text>
+  <text class='tiaojian'>满300元可使用</text>
+</view>
+</block>

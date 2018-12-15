@@ -1,0 +1,74 @@
+/* pages/index/BidRecord/BidRecord.wxss */
+.top {
+  font-size: 26rpx;
+  padding: 40rpx 55rpx;
+}
+
+.red {
+  color: red;
+  padding: 0 10rpx;
+}
+
+image {
+  width: 45rpx;
+  vertical-align: middle;
+  margin: 0 5rpx;
+}
+
+.lam {
+  margin: 0 55rpx;
+  position: relative;
+  height: 63rpx;
+  padding-bottom: 10rpx;
+  border-bottom: #EFEFEF solid 2px;
+}
+
+.lam text {
+  font-size: 32rpx;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.jpyh {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.money {
+  position: absolute;
+  top: 8rpx;
+  left: 250rpx;
+}
+
+.jptime {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 10rpx;
+}
+.list{
+  font-size: 24rpx;
+  margin: 0 55rpx;
+  position: relative;
+  padding: 0 25rpx;
+  height: 60rpx;
+  border-bottom: #EFEFEF solid 2px;
+}
+.name{
+  position: absolute;
+  left:30rpx;
+  top: 20rpx;
+  color: #4A4A4A;
+}
+.price{
+  position: absolute;
+  left: 260rpx;
+  top: 20rpx;
+}
+.date{
+  position: absolute;
+  top: 20rpx;
+  right:6rpx;
+  color: #C4C4C4;
+}

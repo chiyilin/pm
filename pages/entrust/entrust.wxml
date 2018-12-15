@@ -1,0 +1,70 @@
+<!--pages/entrust/entrust.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">委托出售</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">免费估价</view>
+</view>
+<!--切换-->
+<view class="weui-cells__title" hidden="{{!isShow}}">
+  <image class='banner' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
+  <form>
+    <view class='clearfix list'>
+      <text class='fl name'>姓名：</text>
+      <input placeholder='请输入真实姓名'></input>
+    </view>
+    <view class='clearfix list'>
+      <text class='fl name'>手机：</text>
+      <input type='digit' placeholder='请输入手机号码'></input>
+    </view>
+    <view class='clearfix list'>
+      <text class='fl name'>内容：</text>
+      <textarea class='fl'></textarea>
+    </view>
+    <view class='clearfix list'>
+      <text class='fl name' style='width:750rpx;margin-bottom:30rpx;'>图片：</text>
+      <view class='tupian'>
+        <label wx:for='{{tempFilePaths}}' wx:key="" class='add-item'>
+          <image mode='aspectFill' src='{{item}}' bindtap='previewImage' data-index='{{index}}'></image>
+          <image class='close' mode='widthFix' src='/imgs/closeimg.jpg' bindtap='closeimg' data-index='{{index}}'></image>
+        </label>
+        <label wx:if="{{tempFilePaths.length!=9}}">
+          <view>
+            <image bindtap='chooseImage' src='/imgs/imgup.jpg' class='addImg'></image>
+          </view>
+        </label>
+      </view>
+    </view>
+  </form>
+  <button>提交</button>
+</view>
+<view class="weui-cells__title" hidden="{{isShow}}">
+  <image class='banner' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
+  <form>
+    <view class='clearfix list'>
+      <text class='fl name'>姓名：</text>
+      <input placeholder='请输入真实姓名'></input>
+    </view>
+    <view class='clearfix list'>
+      <text class='fl name'>手机：</text>
+      <input type='digit' placeholder='请输入手机号码'></input>
+    </view>
+    <view class='clearfix list'>
+      <text class='fl name'>内容：</text>
+      <textarea class='fl'></textarea>
+    </view>
+    <view class='clearfix list'>
+      <text class='fl name' style='width:750rpx;margin-bottom:30rpx;'>图片：</text>
+      <view class='tupian'>
+        <label wx:for='{{tempFilePaths}}' wx:key="" class='add-item'>
+          <image mode='aspectFill' src='{{item}}' bindtap='previewImage' data-index='{{index}}'></image>
+          <image class='close' mode='widthFix' src='/imgs/closeimg.jpg' bindtap='closeimg' data-index='{{index}}'></image>
+        </label>
+        <label wx:if="{{tempFilePaths.length!=9}}">
+          <view>
+            <image bindtap='chooseImage' src='/imgs/imgup.jpg' class='addImg'></image>
+          </view>
+        </label>
+      </view>
+    </view>
+  </form>
+  <button>提交</button>
+</view>

@@ -1,0 +1,369 @@
+/* pages/index/CllectionDetails/CllectionDetails.wxss */
+
+.banner {
+  width: 100%;
+  height: 430rpx;
+  vertical-align: middle;
+}
+
+.top {
+  font-size: 24rpx;
+  position: relative;
+}
+
+.hui {
+  width: 100%;
+  height: 48rpx;
+  line-height: 48rpx;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-top: -52rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hui .left {
+  margin-left: 62rpx;
+}
+
+.hui .right {
+  margin-right: 62rpx;
+}
+
+.name {
+  font-size: 32rpx;
+  display: block;
+  margin-top: 46rpx;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #b3b3b3;
+  display: block;
+}
+
+.cjjl {
+  width: 35rpx;
+  vertical-align: middle;
+}
+
+.center {
+  position: relative;
+  margin: 0 18rpx;
+  padding: 0 45rpx;
+  padding-bottom: 36rpx;
+  border-bottom: 1px #e3e3e3 solid;
+}
+
+.cjtext {
+  font-size: 22rpx;
+  vertical-align: middle;
+}
+
+.shouxu {
+  display: block;
+  font-size: 24rpx;
+}
+
+.price {
+  position: absolute;
+  top: 0rpx;
+  right: 30rpx;
+}
+
+.jing {
+  font-size: 30rpx;
+  display: inline-block;
+  margin-top: 46rpx;
+}
+
+.color {
+  color: #f22;
+}
+
+.kefu {
+  width: 43rpx;
+}
+
+.guanzhu {
+  width: 46rpx;
+}
+
+.shu {
+  width: 3rpx;
+  padding: 0 41rpx;
+}
+
+.atten {
+  position: absolute;
+  right: 45rpx;
+  top: 110rpx;
+}
+
+.Details {
+  margin: 0 60rpx;
+}
+
+.pin {
+  font-size: 24rpx;
+  vertical-align: middle;
+  margin-left: 30rpx;
+}
+
+.safe {
+  width: 24rpx;
+  margin-left: 24rpx;
+  vertical-align: middle;
+  margin-right: 5rpx;
+}
+
+.baozhang {
+  font-size: 24rpx;
+  vertical-align: middle;
+}
+
+.mail {
+  font-size: 24rpx;
+  margin-top: 51rpx;
+}
+
+.content {
+  font-size: 24rpx;
+  display: inline-block;
+  width: 460rpx;
+  margin-top: 50rpx;
+  vertical-align: top;
+  margin-left: 30rpx;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 88rpx;
+  width: 100%;
+}
+
+.jmed {
+  background-color: #f1f1f1;
+  font-size: 30rpx;
+  display: inline-block;
+  width: 258rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #444;
+}
+
+.chujia {
+  background-color: #282828;
+  font-size: 30rpx;
+  display: inline-block;
+  width: 492rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.buy {
+  width: 750rpx;
+  background-color: #282828;
+  font-size: 30rpx;
+  display: inline-block;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.en {
+  text-align: center;
+  width: 155rpx;
+  height: 88rpx;
+  font-size: 26rpx;
+  line-height: 37rpx;
+  background-color: #f1f1f1;
+}
+
+.en .ed {
+  padding-top: 13rpx;
+  display: block;
+}
+
+.ds {
+  position: absolute;
+  left: 155rpx;
+  top: 0;
+  width: 155rpx;
+  font-size: 26rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.footer .shu {
+  width: 3rpx;
+  position: absolute;
+  left: 115rpx;
+  top: 20rpx;
+  z-index: 2;
+}
+
+.chujia1 {
+  background-color: #282828;
+  font-size: 30rpx;
+  display: inline-block;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+  width: 443rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.isRuleShow {
+  display: block;
+}
+
+.isRuleHide {
+  display: none;
+}
+
+.ruleZhezhao {
+  height: 300rpx;
+  width: 100%;
+  position: fixed;
+  color: #fff;
+  z-index: 2;
+  bottom: 0rpx;
+  left: 0;
+  background-color: #444;
+}
+
+.ruleHide {
+  height: 30rpx !important;
+  width: 30rpx !important;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+}
+
+.stepper {
+  width: 140px;
+  height: 36px;
+  /*给主容器设一个边框*/
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 20rpx 24rpx;
+  overflow: hidden;
+}
+
+.stepper input {
+  width: 98px;
+  height: 34px;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 14px;
+  /*给中间的input设置左右边框即可*/
+}
+
+/*禁用样式*/
+
+.stepper .disabled {
+  color: #ccc;
+}
+
+.stepper text {
+  width: 19px;
+  line-height: 34px;
+  text-align: center;
+  float: left;
+  border: 1px #ccc solid;
+}
+
+.stepper .kuang {
+  display: inline-block;
+  width: 124rpx;
+  font-size: 26rpx;
+  border-bottom: 1px #ccc solid
+}
+
+.fin {
+  display: block;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  margin-top: 140rpx;
+}
+
+.note {
+  display: block;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+}
+
+.dingshi {
+  height: 900rpx;
+  width: 650rpx;
+  background-color: #fff;
+  z-index: 3;
+  position: fixed;
+  bottom: 103rpx;
+  left: 20rpx;
+  border: 1px solid #b3b3b3;
+}
+
+.timep {
+  padding: 30rpx 40rpx;
+  font-size: 28rpx;
+}
+
+.inprice {
+  border: 1px solid #b3b3b3;
+  width: 400rpx;
+  height: 35rpx;
+  margin-left: 40rpx;
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  line-height: 35rpx;
+  padding-left: 10rpx;
+}
+
+.inchujia {
+  width: 250rpx;
+  height: 64rpx;
+  background-color: #fff;
+  line-height: 64rpx;
+  font-size: 30rpx;
+  float: left;
+  margin-top: 30rpx;
+  margin-left: 50rpx;
+}
+
+.innote {
+  margin-top: 150rpx;
+}
+
+.intip {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  display: block;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+
+.insent {
+  margin-top: 80rpx;
+  display: block;
+  margin-left: 40rpx;
+  font-size: 28rpx;
+}
+
+.bodnone {
+  border: none;
+}

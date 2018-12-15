@@ -1,0 +1,32 @@
+<!--pages/index/SpecialSale/SpecialSale.wxml-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+  <image class='shu pos1' mode='widthFix' src='/imgs/shu.jpg'></image>
+  <image class='shu pos2' mode='widthFix' src='/imgs/shu.jpg'></image>
+</view>
+<view class='clearfix list' wx:for="{{data}}" wx:key="" bindtap='collection' data-id='{{item.collection_id}}'>
+  <image class='tu fl' src='{{filepath}}{{item.collection_cover}}'></image>
+  <text class='name'>{{item.collection_name}}</text>
+  <text class='lei'>共</text>
+  <text class='red lei'>127</text>
+  <text class='lei'>项</text>
+  <text class='date tip'>{{item.collection_start_time}}-{{item.collection_end_time}}</text>
+  <view class='xiangqing'>
+    <text class='orange'>进入>></text>
+  </view>
+</view>
+<view class='none' wx:if="{{data.length==0}}">
+  暂无数据~
+</view>
+<!--精品-->
+<view class='clearfix list'>
+  <image class='tu fl' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
+  <text class='name'>畜牧业的咖啡机（部分带数字直角边）</text>
+  <text class='date'>2018.10.29-2018.12.01</text>
+  <text class='tip'>￥377</text>
+  <view class='xiangqing'>
+    <text class='orange'>藏品详情</text>
+    <image mode='widthFix' class='you' src='/imgs/you.jpg'></image>
+  </view>
+
+</view>

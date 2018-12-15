@@ -1,0 +1,75 @@
+/* pages/invoice/address/address.wxss */
+.list {
+  padding: 30rpx 23rpx;
+  border-bottom: 1px solid #f1f1f1;
+}
+.quan {
+  background-color: #bbbcbe;
+  color: #fff;
+  font-size: 36rpx;
+  display: block;
+  width: 65rpx;
+  height: 65rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 65rpx;
+  margin-right: 10rpx;
+}
+.name, .mail {
+  display: block;
+  font-size: 26rpx;
+  margin-top: 15rpx;
+  color: #202020;
+  margin-right: 20rpx;
+  width: 80%;
+}
+.check {
+  font-size: 26rpx;
+  margin-top: -80rpx;
+  color: #919191;
+  margin-right: 90rpx;
+}
+
+.shu {
+  width: 4rpx;
+  height: 30rpx;
+  background-color: #bbbcbe;
+  float: right;
+  margin-top: -110rpx;
+  margin-right: 200rpx;
+}
+
+.new {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.new button {
+  color: #575757;
+}
+.bianji{
+  width: 40rpx;
+  float: right;
+  margin-top: -80rpx;
+  margin-right: 20rpx;
+
+}
+.moren{
+  font-size: 22rpx;
+  color: #FF4642;
+  background-color: #FFE2B6;
+  width: 60rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  border-radius: 3px;
+  position: absolute;
+  top: 45rpx;
+  left: 140rpx;
+}

@@ -1,0 +1,111 @@
+<!--pages/index/screen/screen.wxml-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+  <image class='shu pos1' mode='widthFix' src='/imgs/shu.jpg'></image>
+  <image class='shu pos2' mode='widthFix' src='/imgs/shu.jpg'></image>
+  <image class='shu pos3' mode='widthFix' src='/imgs/shu.jpg'></image>
+  <text class='num num0'>12</text>
+  <text class='num num1'>12</text>
+  <text class='num num2'>12</text>
+  <text class='num num3'>12</text>
+  <text bindtap='showRule' class='shuaixuan'>筛选</text>
+</view>
+<!--全部-->
+<view hidden="{{currentTab!==0}}">
+  <view class='clearfix list'>
+    <image class='tu fl' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
+    <text class='name'>明朝弘治通宝一枚</text>
+    <text class='date'>2018.10.29-2018.12.01</text>
+    <text class='tip'>￥377</text>
+    <view class='xiangqing'>
+      <text class='orange'>藏品详情</text>
+      <image mode='widthFix' class='you' src='/imgs/you.jpg'></image>
+    </view>
+  </view>
+</view>
+<!--精品-->
+<view hidden="{{currentTab!==1}}">
+  <view class='clearfix list'>
+    <image class='tu fl' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
+    <text class='name'>畜牧业的咖啡机（部分带数字直角边）</text>
+    <text class='date'>2018.10.29-2018.12.01</text>
+    <text class='tip'>￥377</text>
+    <view class='xiangqing'>
+      <text class='orange'>藏品详情</text>
+      <image mode='widthFix' class='you' src='/imgs/you.jpg'></image>
+    </view>
+  </view>
+</view>
+<!--介绍-->
+<view hidden="{{currentTab!==2}}">
+  2
+</view>
+<view hidden="{{currentTab!==3}}">
+  3
+</view>
+<view class="ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
+  <image src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
+  <view class='content clearfix'>
+    <text class='sousuo fl'>搜索</text>
+    <input></input>
+    <button class='queding'>确定</button>
+    <view class='bd'>
+      <text class='choose'>筛选</text>
+      <text class='title'>排序</text>
+      <view class='pos'>
+        <text class='kuang'>基特邮票</text>
+        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+      </view>
+      <view class='pos'>
+        <text class='kuang'>基特邮票</text>
+        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+      </view>
+      <view class='pos'>
+        <text class='kuang'>基特邮票</text>
+        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+      </view>
+
+      <text class='title'>排序</text>
+      <view class='pos'>
+        <text class='kuang'>基特邮票</text>
+        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+      </view>
+      <view class='pos'>
+        <text class='kuang'>基特邮票</text>
+        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+      </view>
+      <view class='pos'>
+        <text class='kuang'>基特邮票</text>
+        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+      </view>
+
+      <text class='title'>排序</text>
+      <view class='pos'>
+        <text class='kuang'>基特邮票</text>
+        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+      </view>
+      <view class='pos'>
+        <text class='kuang'>基特邮票</text>
+        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+      </view>
+      <view class='pos'>
+        <text class='kuang'>基特邮票</text>
+        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+      </view>
+      <view class='pos'>
+        <text class='kuang'>基特邮票</text>
+        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+      </view>
+      <view class='pos'>
+        <text class='kuang'>基特邮票</text>
+        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+      </view>
+      <view class='pos'>
+        <text class='kuang'>基特邮票</text>
+        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+      </view>
+    </view>
+    <button class='sent'>重置</button>
+    <button class='sure'>确定</button>
+  </view>
+</view>

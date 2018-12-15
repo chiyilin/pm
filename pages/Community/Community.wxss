@@ -1,0 +1,139 @@
+/* pages/Community/Community.wxss */
+.top {
+  background-color: #282828;
+  height: 83rpx;
+  padding-top: 17rpx;
+  position: relative;
+}
+.input {
+  margin-left:90rpx;
+  background-color: #fff;
+  width: 510rpx;
+  height: 50rpx;
+  font-size: 26rpx;
+  padding-left: 60rpx;
+}
+.sousuo {
+  width: 34rpx;
+  position: absolute;
+  left: 106rpx;
+  top: 25rpx;
+}
+.buy{
+  color: #fff;
+  font-size: 26rpx;
+  vertical-align: middle;
+  margin-right: 5rpx;
+}
+.jignmai{
+  position: absolute;
+  left: 8rpx;
+  top: 10rpx;
+}
+.sanjiao{
+  width: 20rpx;
+  vertical-align: middle;
+}
+.menu{
+  width: 50rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+/* pages/mhzindex/PressReleases/PressReleases.wxss */
+.item{
+  width: 15%;
+  height: 39rpx;
+  display: inline-block;
+  color: #BEBEBE;
+  font-size: 26rpx;
+  text-align: center;
+  padding: 5rpx 0; 
+  margin-top: 30rpx;
+  border-bottom: 3rpx solod #fff;
+}
+.navbar{
+  white-space: nowrap;
+}
+scroll-view{
+    border-bottom: 1px solid #E6E6E6;
+}
+.navbar .item.active{ 
+ color: #727171; 
+ border-bottom: 3rpx solid #727171;
+}
+.list{
+  padding:38rpx 47rpx;
+  border-bottom: #E6E6E6 solid 1px;
+}
+image{
+  width: 7rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+.title{
+  font-size: 30rpx;
+  display: inline-block;
+  margin-bottom: 30rpx;
+}
+.date{
+  margin-top: 15rpx;
+  text-align: right;
+  font-size: 24rpx;
+  color: #8D8D8D;
+}
+.content{
+  display: block;
+  font-size: 24rpx;
+  color: #8D8D8D;
+  height: 30rpx;
+  overflow: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.list{
+  padding: 32rpx 42rpx;
+  position: relative;
+  color: #4B4B4B;
+  border-bottom: #efefef 1px solid;
+}
+.tu{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 30rpx;
+}
+.name{
+  font-size: 24rpx;
+  display: block;
+}
+.time{
+  font-size: 26rpx;
+  border-radius: 5px;
+  padding:0rpx 5rpx; 
+}
+.tip{
+  display: block;
+  position: absolute;
+  bottom: 34rpx;
+  left: 270rpx;
+  font-size: 30rpx;
+  color: red;
+}
+.date{
+  color: #C6C6C6;
+  font-size: 24rpx;
+}
+.atten{
+  width: 40rpx;
+  position: absolute;
+  bottom: 77rpx;
+  right: 40rpx;
+}
+.xiangqing{
+  position: absolute;
+  bottom: 34rpx;
+  right: 47rpx;
+}

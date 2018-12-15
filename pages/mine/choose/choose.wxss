@@ -1,0 +1,118 @@
+/* pages/mine/choose/choose.wxss */
+.top{
+  font-size: 28rpx;
+  padding:50rpx;
+  border-bottom: 20rpx solid #EEEEEE;
+  line-height: 52rpx;
+}
+.top text{
+  display: block;
+}
+.you{
+  width: 16rpx;
+  margin-top: -95rpx;
+}
+.moren{
+  font-size: 22rpx;
+  color: #FF4642;
+  background-color: #FFE2B6;
+  width: 60rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  border-radius: 3px;
+  position: absolute;
+  top: 60rpx;
+  left: 150rpx;
+}
+.title{
+  font-size: 28rpx;
+  position: absolute;
+  left: 112rpx;
+  top: 50rpx;
+}
+.center{
+  position: relative;
+  padding-top: 50rpx;
+}
+.center text{
+  font-size: 26rpx;
+}
+.name{
+font-size: 26rpx;
+}
+.pos{
+  margin-left: 184rpx;
+  margin-bottom: 15rpx;
+}
+.red{
+  color: red;
+}
+.price{
+  margin-left: 150rpx;
+}
+.choose{
+  border-top: 1px solid #E4E4E4;
+  margin: 70rpx 30rpx;
+  padding-top: 20rpx;
+}
+.btn{
+  font-size: 30rpx;
+  border: 1px solid #BBBBBB;
+  border-radius: 3px;
+  width: 324rpx;
+  height: 70rpx;
+  color: #1E1E1E;
+  margin-top: 16rpx;
+  display: inline-block;
+  text-align: center;
+  line-height: 70rpx;
+}
+ .active {
+  border-color:  #F0810C;
+  color:  #F0810C;
+}
+.juli0{
+  margin-right: 32rpx;
+}
+.juli1{
+  width: 680rpx;
+}
+.qian{
+  margin-left: 500rpx;
+}
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 90rpx;
+  width: 100%;
+}
+.sub{
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #282828;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0rpx;
+  width: 100%;
+}
+.tip{
+  display: block;
+  padding: 46rpx 70rpx;
+  background-color: #FFE2B6;
+  color: #944D01;
+  font-size: 26rpx;
+}
+.isRuleHide{
+    display: none;
+}
+.isRuleShow{
+    display: block;
+}
+.ruleHide{
+  width: 26rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}

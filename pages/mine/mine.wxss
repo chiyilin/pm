@@ -1,0 +1,90 @@
+/* pages/mine/mine.wxss */
+page{
+  background-color:  #F7F7F7;
+}
+.top{
+  padding-left: 590rpx;
+  padding-top: 22rpx;
+  background-color: #fff;
+}
+.top image{
+  width: 41rpx;
+  margin-right: 35rpx;
+}
+.tou{
+  border-radius: 50%;
+  width: 180rpx;
+  margin-left: 54rpx;
+  margin-right: 40rpx;
+}
+.name{
+  font-size: 30rpx;
+  display: block;
+  margin-left: 270rpx;
+  margin-top: -110rpx;
+}
+.ziliao{
+  padding-bottom: 68rpx;
+  background-color: #fff;
+}
+.edu{
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  margin-left: 260rpx;
+}
+.color{
+  font-size: 28rpx;
+  color: #ED7000;
+}
+.navBox{
+  background-color: #fff;
+  display: flex;
+  font-size: 26rpx;
+  padding-bottom: 30rpx;
+  border-bottom: #F7F7F7 9rpx solid;
+}
+.navView{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+  position: relative;
+  
+}
+.navView image{
+  width: 79rpx;
+  height: 67rpx;
+  margin-bottom: 20rpx;
+} 
+.shu{
+  width: 4rpx;
+  margin-top: 5rpx;
+}
+.num{
+  font-size: 20rpx;
+  background-color: red;
+  color:#fff;
+  padding: 3rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 140rpx;
+  bottom: 40rpx;
+}
+.lanmu{
+  padding-bottom: 30rpx;
+  background-color: #fff;
+}
+.list{
+  display: flex;
+  font-size: 26rpx;
+  padding-top: 60rpx;
+}
+.list image{
+  width: 62rpx;
+}
+.LL{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}

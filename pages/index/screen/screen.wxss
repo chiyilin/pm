@@ -1,0 +1,213 @@
+/* pages/index/screen/screen.wxss */
+.navbar{
+  border-bottom: 1px solid #efefef;
+  position: relative;
+}
+.shu{
+  width: 3rpx;
+  position: absolute;
+  top: 17rpx;
+}
+.num{
+  font-size: 22rpx;
+  position: absolute;
+  top: 15rpx;
+}
+.num0{
+  right: 170rpx;
+}
+.num1{
+  left: 105rpx;
+}
+.num2{
+  left: 255rpx;
+}
+.num3{
+  left: 415rpx;
+}
+.pos1{
+  left: 20%;
+}
+.pos2{right:40%;}
+.pos3{left:40%;}
+.item{
+  width:20%;
+  height: 80rpx;
+  display: inline-block;
+  color: #727171;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  text-align: center;
+  border-bottom: #fff solid 6rpx;
+}
+.navbar .item.active{ 
+ color: #797979; 
+ border-bottom: #818181 solid 6rpx;
+}
+.isRuleShow{
+    display: block;
+}
+.isRuleHide{
+    display: none;
+}
+.ruleZhezhao{
+    height:100%;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top:0rpx;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.ruleHide{
+    height: 30rpx!important;
+    width: 30rpx!important;
+    position: absolute;
+    top: 50rpx;
+    right: 70rpx;
+}
+.list{
+  padding: 32rpx 42rpx;
+  position: relative;
+  color: #4B4B4B;
+  border-bottom: #efefef 1px solid;
+}
+.tu{
+  width: 184rpx;
+  height: 184rpx;
+  margin-right: 30rpx;
+}
+.name{
+  font-size: 24rpx;
+  display: block;
+}
+.time{
+  font-size: 26rpx;
+  border-radius: 5px;
+  padding:0rpx 5rpx; 
+}
+.tip{
+  display: block;
+  position: absolute;
+  bottom: 34rpx;
+  left: 270rpx;
+  font-size: 30rpx;
+  color: red;
+}
+.date{
+  color: #C6C6C6;
+  font-size: 24rpx;
+}
+.atten{
+  width: 40rpx;
+  position: absolute;
+  bottom: 77rpx;
+  right: 40rpx;
+}
+.xiangqing{
+  position: absolute;
+  bottom: 34rpx;
+  right: 47rpx;
+}
+.orange{
+  color: #F29532;
+  font-size: 26rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+.you{
+  width: 16rpx;
+  vertical-align: middle;
+}
+.shuaixuan{
+  font-size: 26rpx;
+  color: #101010;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+}
+.content{
+  background-color: #fff;
+  height: 1000rpx;
+  width: 610rpx;
+  margin: 20rpx auto;
+  padding: 0 32rpx;
+}
+.queding{
+  width: 134rpx;
+  height: 53rpx;
+  line-height: 53rpx;
+  font-size: 30rpx;
+  position: absolute;
+  right: 100rpx;
+  top: 204rpx;
+}
+.sousuo{
+  font-size: 30rpx;
+  margin-top: 113rpx;
+}
+input{
+  border: 1px solid #C6C6C6;
+  margin-top: 106rpx;
+  display: inline-block;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  height: 56rpx;
+  width: 490rpx;
+  border-radius: 18px;
+  margin-left: 10rpx;
+}
+.title{
+  display: block;
+  font-size: 26rpx;
+  text-align: center;
+  margin-bottom: 30rpx;
+  padding-top: 30rpx;
+}
+.kuang{
+  font-size: 26rpx;
+  display: inline-block;
+  width: 180rpx;
+  height: 71rpx;
+  text-align: center;
+  line-height: 71rpx;
+  border: 1px solid #efefef;
+  margin-right: 18rpx;
+}
+.choose{
+  font-size: 28rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 20rpx;
+}
+.bd{
+  border-top: 1px solid #C6C6C6;
+  margin-top: 80rpx;
+  position: relative;
+}
+.pos{
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10rpx;
+}
+.gou{
+  width: 30rpx;
+  position: absolute;
+  top: 2rpx;
+  left:160rpx;
+}
+.sent{
+  background-color:  #C6C6C6;
+  color: #fff;
+}
+.sent,.sure{
+  width: 134rpx;
+  height: 53rpx;
+  line-height: 53rpx;
+  font-size: 30rpx;
+  position: absolute;
+  right: 100rpx;
+}
+.sure{
+  bottom: 220rpx;
+  color:  #818181;
+}

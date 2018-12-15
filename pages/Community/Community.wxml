@@ -1,0 +1,25 @@
+<!--pages/Community/Community.wxml-->
+<view class='top'>
+  <input class='input' placeholder='输入您要搜索的藏品'></input>
+  <image class='sousuo' mode='widthFix' src='/imgs/sousuo.jpg'></image>
+  <view class='jignmai'>
+    <text class='buy'>竞买</text>
+    <image class='sanjiao' mode='widthFix' src='/imgs/sanjiao.jpg'></image>
+  </view>
+  <image class='menu' mode='widthFix' src='/imgs/menu.jpg'></image>
+</view>
+<scroll-view scroll-x>
+  <view class="navbar">
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+  </view>
+</scroll-view>
+<view hidden="{{currentTab!==0}}">
+  <block wx:for="{{3}}">
+    <view class='list clearfix'>
+    <image class='tu fl' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
+    <text class='name'>明朝弘治通宝一枚</text>
+    <text class='date'>2018.10.29-2018.12.01</text>
+    <text class='tip'>￥377</text>
+    </view>
+  </block>
+</view>

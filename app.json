@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/collection/collection",
+    "pages/index/HotSale/HotSale",
+    "pages/index/index",
+    "pages/index/category/category",
+    "pages/login/login",
+    "pages/invoice/address/address",
+    "pages/invoice/invoice",
+    "pages/invoice/ChooseAddress/ChooseAddress",
+    "pages/index/CllectionDetails/CllectionDetails",
+    "pages/index/SpecialSale/SpecialSale",
+    "pages/transaction/transaction",
+    "pages/entrust/entrust",
+    "pages/Community/Community",
+    "pages/mine/paid/paid",
+    "pages/mine/attention/attention",
+    "pages/mine/TransactionRecords/TransactionRecords",
+    "pages/index/message/message",
+    "pages/index/BidRecord/BidRecord",
+    "pages/mine/choose/choose",
+    "pages/index/screen/screen",
+    "pages/mine/mine",
+    "pages/mine/card/card",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#282828",
+    "navigationBarTitleText": "泉拍在线",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "pagePath": "pagePath",
+    "text": "text",
+    "color": "#929292",
+    "selectedColor": "#fff",
+    "iconPath": "iconPath",
+    "selectedIconPath": "selectedIconPath",
+    "backgroundColor": "#282828",
+    "list": [
+      {
+        "selectedIconPath": "imgs/xunbao1.png",
+        "iconPath": "imgs/xunbao.png",
+        "pagePath": "pages/index/index",
+        "text": "寻宝"
+      },
+      {
+        "selectedIconPath": "imgs/jiaoyi1.png",
+        "iconPath": "imgs/jiaoyi.png",
+        "pagePath": "pages/transaction/transaction",
+        "text": "交易"
+      },
+      {
+        "selectedIconPath": "imgs/jipaiqun1.png",
+        "iconPath": "imgs/jipaiqun.png",
+        "pagePath": "pages/index/category/category",
+        "text": "即拍群"
+      },
+      {
+        "selectedIconPath": "imgs/weituo1.png",
+        "iconPath": "imgs/weituo.png",
+        "pagePath": "pages/entrust/entrust",
+        "text": "委托"
+      },
+      {
+        "selectedIconPath": "imgs/wode1.png",
+        "iconPath": "imgs/wode.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+/* pages/mine/TransactionRecords/TransactionRecords.wxss */
+.swiper-tab {
+  line-height:75rpx;
+  margin:0 28rpx;
+  border-bottom:  #DCDCDC solid 1px;
+}
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  color: #777;
+  border-bottom: 0rpx;
+  text-align: center;
+  width:20%;
+  margin-left: 20%;
+}
+.on {
+  color: #666666;
+  border-bottom: 2px solid #F63D3D;
+}
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.swiper-box view {
+  text-align: center;
+}
+.view{
+  padding-left: 61rpx;
+  padding-top: 41rpx;
+  border-bottom: 1px solid #ECEBEB;
+  font-size: 28rpx;
+  padding-bottom: 51rpx;
+  background-color: #FFF;
+}
+.weui-cells__title{
+  margin: 0 28rpx;
+}
+.view view{
+  margin-top: 10rpx;
+}
+image{
+  width: 35rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+text{
+  vertical-align: middle;
+}
+.red{
+  color: #FE0000;
+}
+.tupian{
+  width: 697rpx;
+  height: 338rpx;
+}
+.sign{
+  border: 1px solid #ECEBEB;
+  position: relative;
+  padding-bottom: 80rpx;
+  margin-bottom: 35rpx;
+}
+.name{
+  font-size: 28rpx;
+  margin-left: 40rpx;
+  vertical-align: middle;
+}
+.yds{
+  width: 98rpx;
+  vertical-align: middle;
+  margin-top: 10rpx;
+}
+.time{
+  font-size: 24rpx;
+  position: absolute;
+  bottom: 10rpx;
+  right: 34rpx;
+}

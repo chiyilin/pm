@@ -1,0 +1,41 @@
+<!--pages/mine/choose/choose.wxml-->
+<view class='top clearfix'>
+  <text>曲美瑶</text>
+  <text class='moren'>默认</text>
+  <text class='num'>15911523356</text>
+  <text class='address'>山东威海市什么什么什么</text>
+  <image class='fr you' mode='widthFix' src='/imgs/right.jpg'></image>
+</view>
+<view class='center'>
+  <text class='title'>藏品 :</text>
+  <view class='pos clearfix'>
+    <text class='name fl'>红油瓷瓶*2</text>
+    <text class='price fl'>价格:</text>
+    <text class='red fl'>22.00</text>
+  </view>
+  <view class='pos clearfix'>
+    <text class='name fl'>红油瓷瓶*2</text>
+    <text class='price fl'>价格:</text>
+    <text class='red fl'>22.00</text>
+  </view>
+</view>
+<view class='center'>
+  <text class='title'>配送方式 ：</text>
+  <view class='choose'>
+    <text class="btn juli0 {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">EMS</text>
+    <text class="btn juli {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">顺丰到付</text>
+    <text class="btn juli0 {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">上门自提</text>
+    <text class="btn juli {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">其他快递</text>
+    <text class="btn juli1 {{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">购买后暂存（60天）</text>
+  </view>
+  <view class='qian'>
+    <text class='money'>邮费 : </text>
+    <text class='red'>￥22.00</text>
+  </view>
+</view>
+<view class="footer {{isRuleTrue?'isRuleHide':'isRuleShow'}}">
+  <image mode='widthFix' src='/imgs/333.jpg' class='ruleHide' bindtap='hideRule'></image>
+  <text class='tip'>温馨提示:暂存藏品默认有60天免费储存期，过会产生额外的费用,  请注意发货时间。</text>
+  <button class='sub'>确认提交</button>
+</view>
+<button class='sub'>确认提交</button>

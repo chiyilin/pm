@@ -1,0 +1,9 @@
+<!--pages/index/message/message.wxml-->
+<block wx:for="{{2}}">
+  <view>
+    <image mode='widthFix' class='gimg' mode='widthFix' src='/imgs/gonggao.jpg'></image>
+    <text class='title'>你关注的《十月流通纪念币专场》开始竞价了！</text>
+    <text class='content'>为满足各位商家的需求本场为大家准备了近两千件藏品。本场为大家准备了近两千件藏品。</text>
+    <text class='time'>2018-10-31  21:00</text>
+  </view>
+</block>

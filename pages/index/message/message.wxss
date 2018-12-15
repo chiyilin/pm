@@ -1,0 +1,34 @@
+/* pages/index/message/message.wxss */
+view{
+  margin: 0 48rpx;
+  border-bottom: 1px solid #F1F1F1;
+  padding: 60rpx 0 23rpx 0;
+}
+image{
+  width: 26rpx;
+  margin-right: 10rpx;
+}
+.title{
+  font-size: 28rpx;
+}
+.content{
+  font-size: 24rpx;
+  color: #BDBDBD;
+  display: block;
+  margin-top: 18rpx;
+  line-height: 40rpx;  
+  text-indent: 2em;
+  text-align: left;
+  margin-bottom: 37rpx;
+}
+text{
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+.time{
+  font-size: 24rpx;
+  color: #BDBDBD;
+  display: block;
+  text-align: right;
+  margin-right: 30rpx;
+}

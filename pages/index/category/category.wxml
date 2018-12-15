@@ -1,0 +1,13 @@
+<!--pages/index/SpecialSale/SpecialSale.wxml-->
+<view class="navbar fl">
+  <text wx:for="{{cate}}" wx:key="" data-idx="{{index}}" class="item {{currentTab==index ? ' active ' : ' '}}" bindtap="navbarTap">{{item.category_name}}</text>
+</view>
+<!--全部-->
+<scroll-view scroll-y="{{true}}" style='height:{{windowHeight}}px' class='fr you'>
+  <blcok wx:for="{{cate[currentTab]._child}}" wx:key="">
+    <text bindtap='special' class='title' data-id='{{item.category_id}}'>{{item.category_name}}></text>
+    <label wx:for="{{item._child}}" wx:key="" wx:for-item="items" wx:for-index="indexs">
+      <text bindtap='special' class='kuai' data-id='{{items.category_id}}'>{{items.category_name}}</text>
+    </label>
+  </blcok>
+</scroll-view>

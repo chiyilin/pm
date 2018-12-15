@@ -1,0 +1,28 @@
+<!--pages/index/BidRecord/BidRecord.wxml-->
+<view class='top clearfix'>
+  <text>出价</text>
+  <text class='red'>58</text>
+  <text>次</text>
+  <view class='fr'>
+    <text>目前最高</text>
+    <text class='red '>750</text>
+  </view>
+</view>
+<view class='lam'>
+  <view class='jpyh'>
+    <image mode='widthFix' src='/imgs/jpcp.jpg'></image>
+    <text class='jp'>竞拍用户</text>
+  </view>
+  <text class='money'>出价（￥）</text>
+  <view class='jptime'>
+    <text class='time'>出价时间</text>
+    <image mode='widthFix' src='/imgs/time.jpg'></image>
+  </view>
+</view>
+<block wx:for="{{6}}">
+  <view class='list'>
+    <text class='name'>王三三</text>
+    <text class='price red'>750</text>
+    <text class='date'>2018.12.01 12：55</text>
+  </view>
+</block>

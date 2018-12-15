@@ -1,0 +1,46 @@
+/* pages/index/SpecialSale/SpecialSale.wxss */
+page{
+  background-color: #F4F4F4;
+}
+.navbar{
+  width: 185rpx;
+  background-color:#fff;
+}
+.item{
+  display:block;
+  color: #727171;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  text-align: center;
+  width: 185rpx;
+  height: 80rpx;
+  border-bottom: #fff 2px solid;
+}
+.navbar .item.active{ 
+ color: #797979; 
+ border-bottom: #F4F4F4 2px solid;
+}
+.you{
+  width: 562rpx;
+  margin-left: 3rpx;
+  background-color: #fff;
+}
+.title{
+  font-size: 30rpx;
+  padding-top: 60rpx;
+  display: block;
+  margin-left: 20rpx;
+  margin-bottom: 14rpx;
+}
+.kuai{
+  width: 246rpx;
+  height: 114rpx;
+  display: inline-block;
+  border: 1px solid #D6D6D6;
+  line-height: 114rpx;
+  font-size: 26rpx;
+  color: #676767;
+  text-align: center;
+  margin-left: 20rpx;
+  margin-bottom: 18rpx;
+}

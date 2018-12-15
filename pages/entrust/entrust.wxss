@@ -1,0 +1,103 @@
+/* pages/entrust/entrust.wxss */
+
+.swiper-tab {
+  line-height: 75rpx;
+  border-bottom: #dcdcdc solid 1px;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  color: #777;
+  border-bottom: 0rpx;
+  text-align: center;
+  width: 20%;
+  margin-left: 20%;
+}
+
+.on {
+  color: #666;
+  border-bottom: 2px solid #f63d3d;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner {
+  width: 750rpx;
+  height: 320rpx;
+  margin-bottom: 53rpx;
+}
+
+input {
+  font-size: 28rpx;
+  border: 1px solid #dcdcdc;
+  width: 400rpx;
+  vertical-align: middle;
+  padding-left: 15rpx;
+  border-radius: 3px;
+  color: #686868;
+}
+
+.name {
+  font-size: 28rpx;
+  vertical-align: middle;
+  margin-left: 87rpx;
+  margin-right: 30rpx;
+  color: #686868;
+}
+
+.list {
+  margin-bottom: 13rpx;
+}
+
+textarea {
+  font-size: 28rpx;
+  border: 1px solid #dcdcdc;
+  width: 470rpx;
+  height: 200rpx;
+  padding: 15rpx;
+  color: #686868;
+}
+.tupian image{
+  width:190rpx;
+  height:190rpx;
+  margin:0rpx 8rpx;
+  /* margin-right: 19rpx; */
+}
+.tupian{
+  padding:0rpx 60rpx;
+}
+.tupian view{
+  width:190rpx;
+  height:200rpx;
+  display: inline-block;
+}
+
+.tupian .close{
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  position: absolute;
+  top:-172rpx;
+  right:-18rpx;
+  border-radius: 50% 50%;
+  z-index: 999;
+}
+label{
+  position: relative;
+}
+button{
+  width: 468rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 30rpx;
+  background-color: #F63D3D;
+  color: #fff;
+  margin-bottom: 120rpx;
+  margin-top: 80rpx;
+}

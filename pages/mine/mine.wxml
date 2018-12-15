@@ -1,0 +1,71 @@
+<!--pages/mine/mine.wxml-->
+<view class='top'>
+  <image mode='widthFix' src='/imgs/mineimg1.jpg'></image>
+  <image mode='widthFix' src='/imgs/mineimg2.jpg'></image>
+</view>
+<!--头像-->
+<view class='ziliao'>
+  <image class='tou' mode='widthFix' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
+  <text class='name'>小程序开发</text>
+  <view class='edu'>
+    <text>【自营额度</text>
+    <text class='color'>2000</text>
+    <text>】</text>
+  </view>
+</view>
+<!--nav-->
+<view class='navBox'>
+  <view class='navView'>
+    <image bindtap='pay' src='/imgs/mineimg4.jpg'></image>
+    <text bindtap='pay'>待支付</text>
+    <text class='num'>13</text>
+  </view>
+  <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
+  <view class='navView'>
+    <image bindtap='pay' src='/imgs/mineimg5.jpg'></image>
+    <text bindtap='pay'>待发货</text>
+  </view>
+  <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
+  <view class='navView'>
+    <image bindtap='pay' src='/imgs/mineimg3.jpg'></image>
+    <text bindtap='pay'>待收货</text>
+  </view>
+</view>
+<view class='lanmu'>
+  <view class='list'>
+    <view class='LL'>
+      <image bindtap='attention' mode='widthFix' src='/imgs/wdgz.jpg'></image>
+      <text bindtap='attention'>我的关注</text>
+    </view>
+     <view class='LL'>
+      <image bindtap='card' mode='widthFix' src='/imgs/yhkq.jpg'></image>
+      <text bindtap='card'>优惠卡券</text>
+    </view>
+     <view class='LL'>
+      <image bindtap='note' mode='widthFix' src='/imgs/jyjl.jpg'></image>
+      <text bindtap='note'>交易记录</text>
+    </view>
+     <view class='LL'>
+      <image mode='widthFix' src='/imgs/rzmx.jpg'></image>
+      <text>入住即拍</text>
+    </view>
+  </view>
+   <view class='list'>
+    <view class='LL'>
+      <image mode='widthFix' src='/imgs/syjc.jpg'></image>
+      <text>使用教程</text>
+    </view>
+     <view class='LL'>
+      <image mode='widthFix' src='/imgs/cpbz.jpg'></image>
+      <text>藏品保障</text>
+    </view>
+     <view class='LL'>
+      <image mode='widthFix' src='/imgs/bzzx.jpg'></image>
+      <text>帮助中心</text>
+    </view>
+     <view class='LL'>
+      <image mode='widthFix' src='/imgs/gywm.jpg'></image>
+      <text>关于我们</text>
+    </view>
+  </view>
+</view>
