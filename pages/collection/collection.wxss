@@ -1,4 +1,4 @@
-/* pages/index/SpecialSale/SpecialSale.wxss */
+/* pages/collection/coll-details/coll-details.wxss */
 
 .navbar {
   border-bottom: 1px solid #efefef;
@@ -94,6 +94,7 @@
 
 .choose {
   border-bottom: 6rpx solid #f7f7f7;
+  white-space: nowrap;
 }
 
 .choose .active {

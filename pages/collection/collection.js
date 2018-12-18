@@ -1,9 +1,8 @@
-// pages/transaction/transaction.js
+// pages/collection/coll-details/coll-details.js
 var app = getApp();
 var common = require('../../utils/common.js');
 var search = (that) => {
   var data = that.data;
-  console.log(data.cate);
   common.Post('collection/getData', {
     current_tab: data.currentTab,
     category_id: data.cate[data.cateTab].category_id
@@ -30,6 +29,13 @@ Page({
    */
   onLoad: function(options) {
     var that = common.that = this;
+    wx.getSystemInfo({
+      success: function(e) {
+        that.setData({
+          sysInfo: e
+        })
+      }
+    });
     // common.style();
     common.globalData = app.globalData;
     if (!common.checkAuthLogin(true)) {
@@ -57,7 +63,11 @@ Page({
       search(that)
     });
     wx.hideNavigationBarLoading();
-
+  },
+  colldetails: function(e) {
+    wx.navigateTo({
+      url: "/pages/collection/coll-details/coll-details?id=" + e.currentTarget.dataset.id,
+    })
   },
   /**
    * 选项卡切换

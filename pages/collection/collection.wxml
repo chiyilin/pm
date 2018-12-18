@@ -1,10 +1,16 @@
-<!--pages/index/SpecialSale/SpecialSale.wxml-->
+<!--pages/collection/coll-details/coll-details.wxml-->
 <view class="navbar">
   <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
   <image class='shu pos1' mode='widthFix' src='/imgs/shu.jpg'></image>
   <image class='shu pos2' mode='widthFix' src='/imgs/shu.jpg'></image>
 </view>
-<view class='clearfix list' wx:for="{{data}}" wx:key="" bindtap='collection' data-id='{{item.collection_id}}'>
+<!--全部-->
+<scroll-view class='choose' scroll-x>
+  <label bindtap="clickTab" wx:for="{{cate}}" wx:key="" data-id='{{item.category_id}}' data-current='{{index}}'>
+    <text class="btn juli0 {{cateTab==index?'active':''}}">{{item.category_name}}</text>
+  </label>
+</scroll-view>
+<view class='clearfix list' wx:for="{{data}}" wx:key="" bindtap='colldetails' data-id='{{item.collection_id}}'>
   <image class='tu fl' src='{{filepath}}{{item.collection_cover}}'></image>
   <text class='name'>{{item.collection_name}}</text>
   <text class='lei'>共</text>
@@ -19,7 +25,7 @@
   暂无数据~
 </view>
 <!--精品-->
-<view class='clearfix list'>
+<view class='clearfix list' hidden='{{true}}'>
   <image class='tu fl' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
   <text class='name'>畜牧业的咖啡机（部分带数字直角边）</text>
   <text class='date'>2018.10.29-2018.12.01</text>

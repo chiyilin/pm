@@ -1,18 +1,30 @@
 <!--pages/index/CllectionDetails/CllectionDetails.wxml-->
-<view class='top'>
+<import src="../../../wxParse/wxParse.wxml" />
+<view class='top-box'>
+  <swiper class='top'>
+    <swiper-item wx:for="{{data.product_banner}}" wx:key="" bindtap="bannerImage" data-index="{{index}}">
+      <image class='banner' src='{{filepath}}{{item.url}}' mode='aspectFit'></image>
+    </swiper-item>
+  </swiper>
+  <view class='clearfix hui'>
+    <text class='fl left'>{{data.product_zysx}}</text>
+    <text class='fr right'>距截止：{{data.product_end_time}}</text>
+  </view>
+</view>
+<!-- <view class='top'>
   <image class='banner' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
   <view class='clearfix hui'>
     <text class='fl left'>拍卖竟得售后概不退换！</text>
     <text class='fr right'>距截止：</text>
   </view>
-</view>
+</view> -->
 <view class='center'>
-  <text class='name'>明朝弘治通宝一枚</text>
-  <text class='time'>活动时间：2018.10.22-2018.12.22</text>
+  <text class='name'>{{data.product_name}}</text>
+  <text class='time'>活动时间：{{data.product_start_time}}-{{data.product_end_time}}</text>
   <text class='jing'>竟得价：</text>
-  <text class='color'>￥29.00</text>
+  <text class='color'>￥{{data.product_name}}</text>
   <view class='price'>
-    <image  bindtap='record' class='cjjl' mode='widthFix' src='/imgs/cjjl.jpg'></image>
+    <image bindtap='record' class='cjjl' mode='widthFix' src='/imgs/cjjl.jpg'></image>
     <text bindtap='record' class='cjtext'>出价记录</text>
     <text class='shouxu'>手续费：5.00%</text>
   </view>
@@ -26,23 +38,26 @@
 
 <view class='Details clearfix'>
   <text class='jing'>藏品品相 :</text>
-  <text class='pin'>中上品</text>
+  <text class='pin'>{{data.product_face}}</text>
   <image class='safe' mode='widthFix' src='/imgs/safe.jpg'></image>
   <text class='baozhang'>藏品保障</text>
   <text class='mail fr'>邮递费：￥50</text>
   <text class='jing fl'>藏品描述 :</text>
-  <text class='content'>明朝弘治通宝一枚明朝弘治通宝一枚明朝弘治通宝一枚明朝弘治通宝一枚明朝弘治通宝一枚明朝弘治通宝一枚明朝弘治通宝一枚明朝弘治通宝一枚明朝弘治通宝一枚明朝弘治通宝一枚</text>
+  <text class='content'></text>
+  <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+  </view>
 </view>
-<!-- 
-<view class='footer'>
+
+<!-- <view class='footer'>
   <text class='jmed'>竞买额度</text>
   <text class='chujia'>出价</text>
 </view> -->
 
-<!-- <view class='footer'>
-<text class='buy'>购买</text>
-</view> -->
-<view class='footer'>
+<view class='footer' bindtap='newBuy' wx:if="{{data.product_type==1}}">
+  <text class='buy'>购买</text>
+</view>
+<view class='footer' wx:if="{{data.product_type==2}}">
   <view class='en'>
     <text class='ed'>竞买额度</text>
     <text class='num'>1000</text>
@@ -50,7 +65,7 @@
   <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
   <text bindtap='showtime' class='ds'>定时购买</text>
   <text bindtap='showRule' class='chujia1'>出价</text>
-</view> 
+</view>
 
 <view class="clearfix ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
   <image mode='widthFix' src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>

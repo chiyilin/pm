@@ -1,14 +1,14 @@
 {
   "pages": [
-    "pages/collection/collection",
-    "pages/index/HotSale/HotSale",
+    "pages/index/CllectionDetails/CllectionDetails",
     "pages/index/index",
+    "pages/collection/collection",
+    "pages/collection/coll-details/coll-details",
     "pages/index/category/category",
     "pages/login/login",
     "pages/invoice/address/address",
     "pages/invoice/invoice",
     "pages/invoice/ChooseAddress/ChooseAddress",
-    "pages/index/CllectionDetails/CllectionDetails",
     "pages/index/SpecialSale/SpecialSale",
     "pages/transaction/transaction",
     "pages/entrust/entrust",

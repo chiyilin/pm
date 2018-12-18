@@ -1,5 +1,5 @@
 /* pages/index/SpecialSale/SpecialSale.wxss */
-
+@import "/wxParse/wxParse.wxss";
 .navbar {
   border-bottom: 1px solid #efefef;
   position: relative;

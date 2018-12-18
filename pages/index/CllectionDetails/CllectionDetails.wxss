@@ -1,14 +1,18 @@
 /* pages/index/CllectionDetails/CllectionDetails.wxss */
+@import "/wxParse/wxParse.wxss";
 
 .banner {
   width: 100%;
-  height: 430rpx;
   vertical-align: middle;
 }
 
-.top {
+.top-box {
   font-size: 24rpx;
   position: relative;
+}
+
+.top {
+  height: 478rpx;
 }
 
 .hui {
@@ -290,7 +294,7 @@
   display: inline-block;
   width: 124rpx;
   font-size: 26rpx;
-  border-bottom: 1px #ccc solid
+  border-bottom: 1px #ccc solid;
 }
 
 .fin {

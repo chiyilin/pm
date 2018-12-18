@@ -28,13 +28,13 @@
 </view>
 <!--nav-->
 <view class='nav'>
-  <view class='navView'>
-    <image bindtap='cate' mode='widthFix' src='/imgs/qianbi.jpg'></image>
-    <text bindtap='cate'>钱币</text>
+  <view class='navView' bindtap='cate'>
+    <image mode='widthFix' src='/imgs/qianbi.jpg'></image>
+    <text>钱币</text>
   </view>
-  <view class='navView'>
-    <image bindtap='cate' mode='widthFix' src='/imgs/youpin.jpg'></image>
-    <text bindtap='cate'>邮品</text>
+  <view class='navView' bindtap='cate'>
+    <image mode='widthFix' src='/imgs/youpin.jpg'></image>
+    <text>邮品</text>
   </view>
   <view class='navView'>
     <image mode='widthFix' src='/imgs/yikoujia.jpg'></image>
@@ -50,17 +50,16 @@
   </view>
 </view>
 <!--热卖专场-->
-
 <view class='hot'>
-  <text bindtap='hot' class='title'>热卖专场>></text>
+  <text bindtap='collection' class='title'>热卖专场>></text>
   <scroll-view scroll-x class="scroll-header">
     <block wx:for="{{collection}}" wx:key="">
-      <view bindtap='hot' class="scroll-view-item">
+      <view bindtap='colldetails' data-id="{{item.collection_id}}" class="scroll-view-item">
         <view class='team-list'>
           <image class="cp" src='{{filepath}}{{item.collection_cover}}' mode='aspectFill'></image>
           <view class='team-text'>
             <text class='name'>{{item.collection_name}}</text>
-            <!-- <text class='pai'>特别场次哦</text> -->
+            <text class='pai'>特别场次哦</text>
             <text class='zc'>进入</text>
           </view>
         </view>
@@ -68,8 +67,6 @@
     </block>
   </scroll-view>
 </view>
-
-
 <view class='hot'>
   <image class='zuan' mode='widthFix' src='/imgs/zuan.jpg'></image>
   <text class='titlezuan'>猜你喜欢</text>

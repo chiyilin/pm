@@ -100,14 +100,19 @@ Page({
       url: "message/message",
     })
   },
-  hot: function() {
+  collection: function() {
     wx.navigateTo({
-      url: "HotSale/HotSale",
+      url: "/pages/collection/collection",
+    })
+  },
+  colldetails: function(e) {
+    wx.navigateTo({
+      url: "/pages/collection/coll-details/coll-details?id=" + e.currentTarget.dataset.id,
     })
   },
   cate: function() {
-    wx.navigateTo({
-      url: "category/category",
+    wx.switchTab({
+      url: "/pages/index/category/category",
     })
   },
   CllectionDetails: function() {

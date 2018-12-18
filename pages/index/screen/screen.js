@@ -21,7 +21,6 @@ Page({
     if (!common.checkAuthLogin(true)) {
       common.login();
     }
-    console.log(options.id, common)
   },
   showRule: function() {
     this.setData({
