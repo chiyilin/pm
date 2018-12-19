@@ -1,0 +1,29 @@
+<!--pages/address/add/add.wxml-->
+<view class='wxaddr' bindtap='chooseAddr'>选择已有地址</view>
+<form bindsubmit='submit'>
+  <view class='clearfix box name'>
+    <text>姓名：</text>
+    <input placeholder='请填写姓名' name="address_name" value="{{data.address_name}}"></input>
+  </view>
+  <block>
+    <view class='clearfix box'>
+      <text>电话：</text>
+      <input placeholder='请填写电话号码' name="address_phone" value="{{data.address_phone}}"></input>
+    </view>
+    <view class='clearfix box'>
+      <text>地址：</text>
+      <picker onchange="changeAddr" class='fl' name="addr" mode="region" value='{{currentCity}}'>{{currentCity}}</picker>
+      <!-- <input placeholder='请填写地址'></input> -->
+    </view>
+    <view class='clearfix box'>
+      <text class='fl'>详细地址：</text>
+      <textarea class='fl' name="more_addr" value='{{data.more_addr}}' placeholder='请填写详细信息'></textarea>
+    </view>
+    <view class='clearfix list box'>
+      <text style='margin-top:4rpx;' class='name fl'>设为默认地址：</text>
+      <switch class='fr' checked bindchange="switch1Change" name="address_default" />
+    </view>
+  </block>
+
+  <button form-type="submit">提交</button>
+</form>

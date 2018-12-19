@@ -28,8 +28,9 @@ picker {
   margin-top: 5rpx;
   margin-left: 22rpx;
 }
+
 button {
-  background-color: #F75555;
+  background-color: #f75555;
   color: #fff;
   width: 466rpx;
   margin-top: 200rpx;
@@ -46,10 +47,21 @@ textarea {
   border-top: 1px solid #eee;
 }
 
+.name {
+  margin-top: 20rpx;
+}
+
 .box-bottom {
   border-bottom: 1px solid #eee;
   margin-top: 20rpx;
 }
-.name{
-  margin-top:20rpx;
+
+.wxaddr {
+  text-align: right;
+  color: #ccc;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  clear: both;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
 }

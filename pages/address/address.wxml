@@ -1,0 +1,17 @@
+<!--pages/invoice/address/address.wxml-->
+<block wx:for="{{data}}" wx:key="">
+  <view class='clearfix list'>
+    <text class='name'>{{item.address_name}}</text>
+    <text class='moren' wx:if="{{item.address_default==2}}">默认</text>
+    <text class='mail'>{{item.address_phone}}</text>
+    <text class='address name'>{{item.sheng}}{{item.shi}}{{item.qu}}{{item.more_addr}}</text>
+    <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
+    <label bindtap='edit' data-id='{{item.address_id}}'>
+      <text class='fr check' bindtap='edit' data-id='{{item.address_id}}'>编辑</text>
+      <image class='bianji' mode='widthFix' src='/imgs/bianji.jpg'></image>
+    </label>
+  </view>
+</block>
+<view class='new'>
+  <button bindtap='creatMail'>+ 添加新地址</button>
+</view>

@@ -1,8 +1,10 @@
 /* pages/invoice/address/address.wxss */
+
 .list {
   padding: 30rpx 23rpx;
   border-bottom: 1px solid #f1f1f1;
 }
+
 .quan {
   background-color: #bbbcbe;
   color: #fff;
@@ -15,6 +17,7 @@
   line-height: 65rpx;
   margin-right: 10rpx;
 }
+
 .name, .mail {
   display: block;
   font-size: 26rpx;
@@ -23,6 +26,7 @@
   margin-right: 20rpx;
   width: 80%;
 }
+
 .check {
   font-size: 26rpx;
   margin-top: -80rpx;
@@ -53,17 +57,18 @@
 .new button {
   color: #575757;
 }
-.bianji{
+
+.bianji {
   width: 40rpx;
   float: right;
   margin-top: -80rpx;
   margin-right: 20rpx;
-
 }
-.moren{
+
+.moren {
   font-size: 22rpx;
-  color: #FF4642;
-  background-color: #FFE2B6;
+  color: #ff4642;
+  background-color: #ffe2b6;
   width: 60rpx;
   height: 30rpx;
   line-height: 30rpx;

@@ -1,0 +1,13 @@
+<!--pages/invoice/ChooseAddress/ChooseAddress.wxml-->
+<block wx:for="{{data}}" wx:key="">
+  <view class='clearfix list' bindtap='chossThis' data-index='{{index}}'>
+    <text class='name'>{{item.address_name}}</text>
+    <text class='moren' wx:if="{{item.address_default==2}}">默认</text>
+    <text class='mail'>{{item.address_phone}}</text>
+    <text class='address name'>{{item.sheng}}{{item.shi}}{{item.qu}}{{item.more_addr}}</text>
+    <image class='shu' mode='widthFix' src='/imgs/choose.jpg' wx:if="{{current==index}}"></image>
+  </view>
+</block>
+<view class='new'>
+  <button bindtap='creatMail'>+添加新地址</button>
+</view>

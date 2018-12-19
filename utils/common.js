@@ -77,6 +77,13 @@ function getOpenId() {
   return userinfo.openid;
 }
 
+function getUserInfo() {
+  var info = wx.getStorageSync('userinfo');
+  var userinfo = info ? JSON.parse(info) : {};
+  if (!userinfo.openid) return 0;
+  return userinfo;
+}
+
 //定位当前的城市 会把当前的城市返回给callback
 function dingWei(cityList, callback) {
   var city = wx.getStorageSync('city');
@@ -319,7 +326,6 @@ function getStyle(data) {
 
 //设置网站风格
 function style() {
-
   var skin = wx.getStorageSync('wxb_skin');
   var data = skin ? JSON.parse(skin) : [];
   var _time = data.last_time ? data.last_time : Date.parse(new Date()) / 1000;
@@ -333,6 +339,13 @@ function style() {
     module.exports.getStyle(skin);
   }
 
+}
+//tips
+function tips(e) {
+  wx.showToast({
+    title: e,
+    icon: 'none'
+  })
 }
 
 
@@ -356,4 +369,6 @@ module.exports = {
   globalData: [],
   that: null,
   lock: 0, //用于其他的锁定
+  tips: tips,
+  getUserInfo: getUserInfo
 }
