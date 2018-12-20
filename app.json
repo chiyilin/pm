@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/entrust/entrust",
+    "pages/mine/choose/choose",
     "pages/address/ChooseAddress/ChooseAddress",
     "pages/address/address",
     "pages/address/edit/edit",
@@ -13,13 +15,11 @@
     "pages/login/login",
     "pages/index/SpecialSale/SpecialSale",
     "pages/transaction/transaction",
-    "pages/entrust/entrust",
     "pages/mine/paid/paid",
     "pages/mine/attention/attention",
     "pages/mine/TransactionRecords/TransactionRecords",
     "pages/index/message/message",
     "pages/index/BidRecord/BidRecord",
-    "pages/mine/choose/choose",
     "pages/index/screen/screen",
     "pages/mine/mine",
     "pages/mine/card/card",

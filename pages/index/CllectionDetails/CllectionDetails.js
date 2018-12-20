@@ -51,27 +51,10 @@ Page({
   },
   newBuy: function() {
     var that = this;
-    common.Post('product/nowBuy', {
-      id: that.data.product_id
-    }, function(res) {
-      var res = JSON.parse(res)
-      console.log(res);
-      wx.requestPayment({
-        timeStamp: res.timeStamp,
-        nonceStr: res.nonceStr,
-        package: res.package,
-        signType: res.signType,
-        paySign: res.paySign,
-        success: function(e) {
-          wx.showToast({
-            title: '购买成功！',
-          })
-        },
-        complete: function(e) {
-          console.log(e)
-        }
-      })
-    })
+    console.log(that.data.data.product_id);
+    wx.navigateTo({
+      url: '/pages/mine/choose/choose?id=' + that.data.data.product_id,
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
