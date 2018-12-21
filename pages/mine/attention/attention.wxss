@@ -1,36 +1,49 @@
 /* pages/mine/attention/attention.wxss */
-view{
-  padding: 32rpx 42rpx;
-  border-bottom: 1px solid #EFEFEF;
+
+.clearfix {
+  border-bottom: 1px solid #efefef;
   position: relative;
-  color: #4B4B4B;
+  color: #4b4b4b;
 }
-.tu{
+
+.tu {
+  border-radius: 10rpx;
   width: 200rpx;
   height: 200rpx;
   margin-right: 30rpx;
 }
-.name{
+
+.name {
   font-size: 26rpx;
   display: block;
 }
-.lei{
+
+.lei {
   font-size: 26rpx;
-  color: #F28B21;
-  border:#F28B21 solid 1px;
+  color: #f28b21;
+  border: #f28b21 solid 1px;
   border-radius: 5px;
-  padding:0rpx 5rpx; 
+  padding: 0rpx 5rpx;
 }
-.tip{
+
+.tip {
   display: block;
   position: absolute;
   bottom: 26rpx;
   left: 270rpx;
   font-size: 24rpx;
 }
-.atten{
+
+.atten {
   width: 40rpx;
   position: absolute;
   bottom: 77rpx;
   right: 40rpx;
+}
+
+.none {
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  color: #4b4b4b;
 }

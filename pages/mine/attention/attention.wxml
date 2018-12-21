@@ -1,11 +1,16 @@
 <!--pages/mine/attention/attention.wxml-->
-<block wx:for="{{3}}">
-  <view class='clearfix'>
-    <image class='tu fl' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
-    <text class='name'>畜牧业的咖啡机（部分带数字直角边）</text>
-    <text class='lei'>钱币</text>
-    <text class='tip'>拍卖竟得售后概不退换！</text>
-    <image class="atten" mode='widthFix' src='/imgs/atten.jpg'></image>
-    <!-- <image class="atten" mode='widthFix' src='/imgs/noatten.jpg'></image> -->
-  </view>
-</block>
+<scroll-view scroll-y class='clearfix' style='height:{{system.windowHeight}}px' bindscrolltolower="tolower" bindscrolltoupper="toupper">
+  <block wx:for="{{data}}" wx:key="">
+    <view class='clearfix'>
+      <image class='tu fl' src='{{filepath}}{{item.product.product_cover}}'></image>
+      <text class='name'>{{item.product.product_name}}</text>
+      <text class='lei'>钱币{{index}}</text>
+      <text class='tip'>{{item.product.cover_introduce}}</text>
+      <image class="atten" mode='widthFix' src='/imgs/atten.jpg'></image>
+      <!-- <image class="atten" mode='widthFix' src='/imgs/noatten.jpg'></image> -->
+    </view>
+  </block>
+</scroll-view>
+<view wx:if="{{data.length==0}}" class='none'>
+  暂无收藏
+</view>

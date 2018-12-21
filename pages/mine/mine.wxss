@@ -1,88 +1,104 @@
 /* pages/mine/mine.wxss */
-page{
-  background-color:  #F7F7F7;
+
+page {
+  background-color: #f7f7f7;
 }
-.top{
+
+.top {
   padding-left: 590rpx;
-  padding-top: 22rpx;
+  padding-top: 10rpx;
   background-color: #fff;
 }
-.top image{
+
+.top image {
   width: 41rpx;
   margin-right: 35rpx;
 }
-.tou{
+
+.tou {
   border-radius: 50%;
   width: 180rpx;
   margin-left: 54rpx;
   margin-right: 40rpx;
 }
-.name{
+
+.name {
   font-size: 30rpx;
   display: block;
   margin-left: 270rpx;
   margin-top: -110rpx;
 }
-.ziliao{
+
+.ziliao {
   padding-bottom: 68rpx;
   background-color: #fff;
 }
-.edu{
+
+.edu {
   font-size: 26rpx;
   margin-top: 10rpx;
   margin-left: 260rpx;
 }
-.color{
+
+.color {
   font-size: 28rpx;
-  color: #ED7000;
+  color: #ed7000;
 }
-.navBox{
+
+.navBox {
   background-color: #fff;
   display: flex;
   font-size: 26rpx;
   padding-bottom: 30rpx;
-  border-bottom: #F7F7F7 9rpx solid;
+  border-bottom: #f7f7f7 9rpx solid;
 }
-.navView{
+
+.navView {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 33%;
   position: relative;
-  
 }
-.navView image{
+
+.navView image {
   width: 79rpx;
   height: 67rpx;
   margin-bottom: 20rpx;
-} 
-.shu{
+}
+
+.shu {
   width: 4rpx;
   margin-top: 5rpx;
 }
-.num{
+
+.num {
   font-size: 20rpx;
   background-color: red;
-  color:#fff;
+  color: #fff;
   padding: 3rpx;
   border-radius: 50%;
   position: absolute;
   left: 140rpx;
   bottom: 40rpx;
 }
-.lanmu{
+
+.lanmu {
   padding-bottom: 30rpx;
   background-color: #fff;
 }
-.list{
+
+.list {
   display: flex;
   font-size: 26rpx;
   padding-top: 60rpx;
 }
-.list image{
+
+.list image {
   width: 62rpx;
 }
-.LL{
+
+.LL {
   display: flex;
   flex-direction: column;
   align-items: center;

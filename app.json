@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/mine/mine",
+    "pages/mine/attention/attention",
     "pages/index/index",
     "pages/entrust/entrust",
     "pages/mine/choose/choose",
@@ -16,17 +18,15 @@
     "pages/index/SpecialSale/SpecialSale",
     "pages/transaction/transaction",
     "pages/mine/paid/paid",
-    "pages/mine/attention/attention",
     "pages/mine/TransactionRecords/TransactionRecords",
     "pages/index/message/message",
     "pages/index/BidRecord/BidRecord",
     "pages/index/screen/screen",
-    "pages/mine/mine",
     "pages/mine/card/card",
     "pages/logs/logs"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#282828",
     "navigationBarTitleText": "泉拍在线",
     "navigationBarTextStyle": "#fff"
