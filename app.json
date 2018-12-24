@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/mine/mine",
-    "pages/mine/attention/attention",
+    "pages/index/CllectionDetails/CllectionDetails",
     "pages/index/index",
+    "pages/collection/coll-details/coll-details",
+    "pages/mine/attention/attention",
+    "pages/mine/mine",
     "pages/entrust/entrust",
     "pages/mine/choose/choose",
     "pages/address/ChooseAddress/ChooseAddress",
@@ -10,9 +12,7 @@
     "pages/address/edit/edit",
     "pages/address/add/add",
     "pages/Community/Community",
-    "pages/index/CllectionDetails/CllectionDetails",
     "pages/collection/collection",
-    "pages/collection/coll-details/coll-details",
     "pages/index/category/category",
     "pages/login/login",
     "pages/index/SpecialSale/SpecialSale",

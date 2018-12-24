@@ -2,18 +2,27 @@
 var app = getApp();
 var common = require('../../../utils/common.js');
 var WxParse = require('../../../wxParse/wxParse.js');
+var number = require('../../../utils/number.js');
+var request = function(that) {
+  common.Post('product/details', {
+    id: that.data.id ? that.data.id : 116
+  }, function(res) {
+    WxParse.wxParse('details', 'html', res.data.product_introduce, that, 5);
+    var rate = number.accDiv(res.server_rate, 100)
+    var money = number.accMul(res.data.product_money, rate).toFixed(2);
+    that.setData({
+      data: res.data,
+      rate: rate,
+      rateMoney: money,
+      nowMoney: number.accAdd(money, res.data.product_money)
+    })
+  });
+}
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    filepath: app.globalData.filepath
+    filepath: app.globalData.filepath,
+    userinfo: common.getUserInfo()
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function(options) {
     var that = common.that = this;
     // common.style();
@@ -24,10 +33,12 @@ Page({
     that.data.id = options.id
   },
   showRule: function() {
+    var that = this;
     this.setData({
-      isRuleTrue: true
+      isRuleTrue: true,
     })
   },
+
   /**
    * 查看banner大图
    */
@@ -43,112 +54,139 @@ Page({
       current: that.data.filepath + previewImage[e.currentTarget.dataset.index]
     })
   },
+  settime: function() {
+    var that = this;
+    common.Post('Offerprice/createtime', {
+      product_id: that.data.data.product_id,
+      user_id: that.data.userinfo.user_id,
+    }, function(e) {
+      console.log(e)
+    })
+  },
+  //定时出价
+  showtime: function() {
+    this.setData({
+      isTimeTrue: true,
+    })
+  },
   //关闭规则提示
   hideRule: function() {
     this.setData({
+      isTimeTrue: false,
       isRuleTrue: false
     })
   },
-  newBuy: function() {
+  //点击出价
+  bidding: function() {
+    var that = this;
+    common.Post('offerprice/create', {
+      user_id: that.data.userinfo.user_id,
+      product_id: that.data.data.product_id,
+      offer_money: that.data.data.product_money,
+    }, function(res) {
+      wx.showToast({
+        title: '出价成功！',
+        success: function() {
+
+        }
+      })
+    })
+  },
+  //代理出价
+  agent: function() {
+    var that = this;
+    common.Post('offerprice/createagent', {
+      user_id: that.data.userinfo.user_id,
+      product_id: that.data.data.product_id,
+      offer_money: that.data.data.product_money,
+    }, function(res) {
+      wx.showToast({
+        title: '代理出价成功！',
+        success: function() {
+
+        }
+      })
+    })
+  },
+  /**
+   * 一口价购买
+   */
+  nowBuy: function() {
     var that = this;
     console.log(that.data.data.product_id);
     wx.navigateTo({
       url: '/pages/mine/choose/choose?id=' + that.data.data.product_id,
     });
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function() {
     var that = this;
-    common.Post('product/details', {
-      id: 116
-    }, function(res) {
-      WxParse.wxParse('details', 'html', res.data.product_introduce, that, 5);
-      that.setData({
-        data: res.data
-      })
-    });
+    request(that);
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    console.log(1)
   },
-
   /**
-   * 页面上拉触底事件的处理函数
+   * 出价记录
    */
-  onReachBottom: function() {
-
-  },
   record: function() {
     wx.navigateTo({
       url: "../BidRecord/BidRecord",
     })
   },
-  /**0
+  /* 点击减号 */
+  bindMinus: function() {
+    var that = this;
+    if (that.data.data.product_money > 1) {
+      //价格-1
+      var product_money = number.accSub(that.data.data.product_money, 1);
+    } else {
+      return null;
+    }
+    var minusStatus = product_money <= 1 ? 'disabled' : 'normal';
+    that.data.data.product_money = product_money;
+    //服务费
+    var rateMoney = number.accMul(that.data.rate, product_money).toFixed(2);
+    //总价
+    var nowMoney = number.accAdd(product_money, rateMoney)
+    that.setData({
+      data: that.data.data,
+      minusStatus: minusStatus,
+      nowMoney: nowMoney,
+      rateMoney: rateMoney
+    });
+  },
+  /* 点击加号 */
+  bindPlus: function() {
+    var that = this;
+    //价格+1
+    var product_money = number.accAdd(that.data.data.product_money, 1);
+    that.data.data.product_money = product_money;
+    //服务费
+    var rateMoney = number.accMul(that.data.rate, product_money).toFixed(2);
+    //总价
+    var nowMoney = number.accAdd(product_money, rateMoney)
+    that.setData({
+      data: that.data.data,
+      nowMoney: nowMoney,
+      rateMoney: rateMoney
+    });
+  },
+  /* 输入框事件 */
+  bindManual: function(e) {
+    var that = this;
+    that.data.data.product_money = e.detail.value;
+    // 将数值与状态写回 
+    this.setData({
+      data: that.data.data
+    });
+  },
+  /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
 
   },
-  bindMinus: function() {
-    var num = this.data.num;
-    // 如果大于1时，才可以减 
-    if (num > 1) {
-      num--;
-    }
-    // 只有大于一件的时候，才能normal状态，否则disable状态 
-    var minusStatus = num <= 1 ? 'disabled' : 'normal';
-    // 将数值与状态写回 
-    this.setData({
-      num: num,
-      minusStatus: minusStatus
-    });
-  },
-  /* 点击加号 */
-  bindPlus: function() {
-    var num = this.data.num;
-    // 不作过多考虑自增1 
-    num++;
-    // 只有大于一件的时候，才能normal状态，否则disable状态 
-    var minusStatus = num < 1 ? 'disabled' : 'normal';
-    // 将数值与状态写回 
-    this.setData({
-      num: num,
-      minusStatus: minusStatus
-    });
-  },
-  /* 输入框事件 */
-  bindManual: function(e) {
-    var num = e.detail.value;
-    // 将数值与状态写回 
-    this.setData({
-      num: num
-    });
-  }
 })
