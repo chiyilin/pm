@@ -57,6 +57,7 @@ Page({
       that.setData({
         banner: res.banner,
         collection: res.collection,
+        shareProd: res.shareProd
       })
     });
   },
@@ -115,10 +116,9 @@ Page({
       url: "/pages/index/category/category",
     })
   },
-  CllectionDetails: function() {
+  CllectionDetails: function(e) {
     wx.navigateTo({
-      url: "CllectionDetails/CllectionDetails",
+      url: "CllectionDetails/CllectionDetails?id=" + e.currentTarget.dataset.id,
     })
   },
-
 })

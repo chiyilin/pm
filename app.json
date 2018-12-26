@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/CllectionDetails/CllectionDetails",
     "pages/index/index",
+    "pages/collection/collection",
     "pages/collection/coll-details/coll-details",
     "pages/mine/attention/attention",
     "pages/mine/mine",
@@ -12,7 +13,6 @@
     "pages/address/edit/edit",
     "pages/address/add/add",
     "pages/Community/Community",
-    "pages/collection/collection",
     "pages/index/category/category",
     "pages/login/login",
     "pages/index/SpecialSale/SpecialSale",

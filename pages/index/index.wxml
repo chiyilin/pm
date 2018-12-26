@@ -72,15 +72,15 @@
   <text class='titlezuan'>猜你喜欢</text>
 </view>
 <view class='clearfix' style='padding-bottom:40rpx;'>
-  <block wx:for="{{6}}" wx:key="">
-    <view bindtap='CllectionDetails' class='fl kuai'>
-      <image class='kuaitu' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
+  <block wx:for="{{shareProd}}" wx:key="">
+    <view bindtap='CllectionDetails' data-id='{{item.product_id}}' class='fl kuai'>
+      <image class='kuaitu' src='{{filepath}}{{item.product_cover}}'></image>
       <view class='hui clearfix'>
-        <text class='price fl'>￥8000.0</text>
-        <text class='fr chu'>645次出价</text>
+        <text class='price fl'>￥{{item.product_money}}<text wx:if="{{item.product_type==1}}">  起</text></text>
+        <text class='fr chu'>{{item.user_offer_price_count}}次出价</text>
       </view>
       <view class='jieshao'>
-        <text>sdflaslkdflkasdjflkasdfasdfasdfasdfasdfasdf</text>
+        <text>{{item.cover_introduce}}</text>
       </view>
     </view>
   </block>

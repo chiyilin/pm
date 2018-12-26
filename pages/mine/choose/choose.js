@@ -68,7 +68,7 @@ Page({
     }, function(address) {
       if (address.length != 0) {
         that.setData({
-          address: address[0]
+          address: wx.getStorageSync('address') ? wx.getStorageSync('address') : address[0]
         })
       }
 

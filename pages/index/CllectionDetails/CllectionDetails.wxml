@@ -8,24 +8,26 @@
   </swiper>
   <view class='clearfix hui'>
     <text class='fl left'>{{data.product_zysx}}</text>
-    <text class='fr right'>距截止：{{data.product_end_time}}</text>
+    <text class='fr right' wx:if="{{data.product_type==1}}">距截止：{{data.product_end_time}}</text>
   </view>
 </view>
 <view class='center'>
   <text class='name'>{{data.product_name}}</text>
-  <text class='time'>活动时间：{{data.product_start_time}}-{{data.product_end_time}}</text>
+  <text class='time' wx:if="{{data.product_type==1}}">活动时间：{{data.product_start_time}}-{{data.product_end_time}}</text>
   <text class='jing'>竟得价：</text>
-  <text class='color'>￥{{data.product_name}}</text>
+  <text class='color'>￥{{data.product_money}}</text>
   <view class='price'>
-    <image bindtap='record' class='cjjl' mode='widthFix' src='/imgs/cjjl.jpg'></image>
-    <text bindtap='record' class='cjtext'>出价记录</text>
-    <text class='shouxu'>手续费：5.00%</text>
+    <label wx:if="{{data.product_type==1}}">
+      <image bindtap='record' class='cjjl' mode='widthFix' src='/imgs/cjjl.jpg'></image>
+      <text bindtap='record' class='cjtext'>出价记录</text>
+    </label>
+    <text class='shouxu'>手续费：{{rate}}%</text>
   </view>
   <view class='atten'>
     <image class='kefu' mode='widthFix' src='/imgs/mineimg1.jpg'></image>
     <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
-    <image class='guanzhu' mode='widthFix' src='/imgs/atten.jpg'></image>
-    <!-- <image class='guanzhu' mode='widthFix' src='/imgs/noatten.jpg'></image> -->
+    <image class='guanzhu' bindtap='prodCollection' data-isdel='1' mode='widthFix' src='/imgs/atten.jpg' wx:if="{{data.user_collection_count>0}}"></image>
+    <image class='guanzhu' bindtap='prodCollection' mode='widthFix' src='/imgs/noatten.jpg' wx:if="{{data.user_collection_count==0}}"></image>
   </view>
 </view>
 
@@ -34,7 +36,7 @@
   <text class='pin'>{{data.product_face}}</text>
   <image class='safe' mode='widthFix' src='/imgs/safe.jpg'></image>
   <text class='baozhang'>藏品保障</text>
-  <text class='mail fr'>邮递费：￥50</text>
+  <!-- <text class='mail fr'>邮费：￥50</text> -->
   <text class='jing fl'>藏品描述 :</text>
   <text class='content'></text>
   <view class="wxParse">

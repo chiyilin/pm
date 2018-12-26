@@ -3,19 +3,26 @@ var app = getApp();
 var common = require('../../../utils/common.js');
 var WxParse = require('../../../wxParse/wxParse.js');
 var number = require('../../../utils/number.js');
-var request = function(that) {
+var request = function(that, isPullDown = false) {
+  wx.showNavigationBarLoading();
   common.Post('product/details', {
-    id: that.data.id ? that.data.id : 116
+    id: that.data.id ? that.data.id : 116,
+    user_id: that.data.userinfo.user_id
   }, function(res) {
     WxParse.wxParse('details', 'html', res.data.product_introduce, that, 5);
-    var rate = number.accDiv(res.server_rate, 100)
+    var rate = number.accDiv(res.setting.server_rate, 100)
     var money = number.accMul(res.data.product_money, rate).toFixed(2);
     that.setData({
       data: res.data,
+      setting: res.setting,
       rate: rate,
       rateMoney: money,
       nowMoney: number.accAdd(money, res.data.product_money)
     })
+    wx.hideNavigationBarLoading();
+    if (isPullDown) {
+      wx.stopPullDownRefresh();
+    }
   });
 }
 Page({
@@ -92,7 +99,9 @@ Page({
       })
     })
   },
-  //代理出价
+  /**
+   * 代理出价
+   */
   agent: function() {
     var that = this;
     common.Post('offerprice/createagent', {
@@ -101,12 +110,38 @@ Page({
       offer_money: that.data.data.product_money,
     }, function(res) {
       wx.showToast({
-        title: '代理出价成功！',
-        success: function() {
-
-        }
+        title: '代理出价成功！'
       })
     })
+  },
+  /**
+   * 收藏/取消收藏
+   */
+  prodCollection: function(e) {
+    wx.showLoading()
+    var that = this;
+    var param = {
+      user_id: that.data.userinfo.user_id,
+      product_id: that.data.data.product_id,
+      isdel: e.currentTarget.dataset.isdel
+    };
+    common.Post('user/prodCollection', param, function(res) {
+      if (res.msg == 'del') {
+        var msg = '已取消！';
+        var status = 0;
+      } else {
+        var msg = '关注成功！';
+        var status = 1;
+      }
+      that.data.data.user_collection_count = status;
+      that.setData({
+        data: that.data.data
+      });
+      wx.showToast({
+        title: msg
+      });
+      wx.hideLoading();
+    });
   },
   /**
    * 一口价购买
@@ -122,18 +157,13 @@ Page({
     var that = this;
     request(that);
   },
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-    console.log(1)
-  },
+
   /**
    * 出价记录
    */
   record: function() {
     wx.navigateTo({
-      url: "../BidRecord/BidRecord",
+      url: "/pages/index/BidRecord/BidRecord?id=" + this.data.data.product_id,
     })
   },
   /* 点击减号 */
@@ -182,6 +212,13 @@ Page({
     this.setData({
       data: that.data.data
     });
+  },
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+    var that = this;
+    request(that, true);
   },
   /**
    * 用户点击右上角分享
