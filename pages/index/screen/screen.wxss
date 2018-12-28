@@ -1,37 +1,59 @@
 /* pages/index/screen/screen.wxss */
-.navbar{
+
+.navbar {
   border-bottom: 1px solid #efefef;
   position: relative;
 }
-.shu{
+
+.shu {
   width: 3rpx;
   position: absolute;
   top: 17rpx;
 }
-.num{
+
+.num {
   font-size: 22rpx;
   position: absolute;
   top: 15rpx;
 }
-.num0{
+
+.none {
+  text-align: center;
+  padding-top: 50rpx;
+  color: #ccc;
+  font-size: 30rpx;
+}
+
+.num0 {
   right: 170rpx;
 }
-.num1{
+
+.num1 {
   left: 105rpx;
 }
-.num2{
+
+.num2 {
   left: 255rpx;
 }
-.num3{
+
+.num3 {
   left: 415rpx;
 }
-.pos1{
+
+.pos1 {
   left: 20%;
 }
-.pos2{right:40%;}
-.pos3{left:40%;}
-.item{
-  width:20%;
+
+.pos2 {
+  right: 40%;
+}
+
+.pos3 {
+  left: 40%;
+}
+
+.item {
+  width: 20%;
   height: 80rpx;
   display: inline-block;
   color: #727171;
@@ -40,53 +62,63 @@
   text-align: center;
   border-bottom: #fff solid 6rpx;
 }
-.navbar .item.active{ 
- color: #797979; 
- border-bottom: #818181 solid 6rpx;
+
+.navbar .item.active {
+  color: #797979;
+  border-bottom: #818181 solid 6rpx;
 }
-.isRuleShow{
-    display: block;
+
+.isRuleShow {
+  display: block;
 }
-.isRuleHide{
-    display: none;
+
+.isRuleHide {
+  display: none;
 }
-.ruleZhezhao{
-    height:100%;
-    width: 100%;
-    position: fixed;
-    z-index: 2;
-    top:0rpx;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.2);
+
+.ruleZhezhao {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0rpx;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
 }
-.ruleHide{
-    height: 30rpx!important;
-    width: 30rpx!important;
-    position: absolute;
-    top: 50rpx;
-    right: 70rpx;
+
+.ruleHide {
+  height: 30rpx !important;
+  width: 30rpx !important;
+  position: absolute;
+  top: 50rpx;
+  right: 70rpx;
 }
-.list{
+
+.list {
   padding: 32rpx 42rpx;
   position: relative;
-  color: #4B4B4B;
+  color: #4b4b4b;
   border-bottom: #efefef 1px solid;
 }
-.tu{
+
+.tu {
   width: 184rpx;
   height: 184rpx;
   margin-right: 30rpx;
 }
-.name{
+
+.name {
   font-size: 24rpx;
   display: block;
 }
-.time{
+
+.time {
   font-size: 26rpx;
   border-radius: 5px;
-  padding:0rpx 5rpx; 
+  padding: 0rpx 5rpx;
 }
-.tip{
+
+.tip {
   display: block;
   position: absolute;
   bottom: 34rpx;
@@ -94,45 +126,53 @@
   font-size: 30rpx;
   color: red;
 }
-.date{
-  color: #C6C6C6;
+
+.date {
+  color: #c6c6c6;
   font-size: 24rpx;
 }
-.atten{
+
+.atten {
   width: 40rpx;
   position: absolute;
   bottom: 77rpx;
   right: 40rpx;
 }
-.xiangqing{
+
+.xiangqing {
   position: absolute;
   bottom: 34rpx;
   right: 47rpx;
 }
-.orange{
-  color: #F29532;
+
+.orange {
+  color: #f29532;
   font-size: 26rpx;
   margin-right: 10rpx;
   vertical-align: middle;
 }
-.you{
+
+.you {
   width: 16rpx;
   vertical-align: middle;
 }
-.shuaixuan{
+
+.shuaixuan {
   font-size: 26rpx;
   color: #101010;
   margin-left: 20rpx;
   margin-top: 30rpx;
 }
-.content{
+
+.content {
   background-color: #fff;
   height: 1000rpx;
   width: 610rpx;
   margin: 20rpx auto;
   padding: 0 32rpx;
 }
-.queding{
+
+.queding {
   width: 134rpx;
   height: 53rpx;
   line-height: 53rpx;
@@ -141,12 +181,14 @@
   right: 100rpx;
   top: 204rpx;
 }
-.sousuo{
+
+.sousuo {
   font-size: 30rpx;
   margin-top: 113rpx;
 }
-input{
-  border: 1px solid #C6C6C6;
+
+input {
+  border: 1px solid #c6c6c6;
   margin-top: 106rpx;
   display: inline-block;
   padding: 0 20rpx;
@@ -156,14 +198,16 @@ input{
   border-radius: 18px;
   margin-left: 10rpx;
 }
-.title{
+
+.title {
   display: block;
   font-size: 26rpx;
   text-align: center;
   margin-bottom: 30rpx;
   padding-top: 30rpx;
 }
-.kuang{
+
+.kuang {
   font-size: 26rpx;
   display: inline-block;
   width: 180rpx;
@@ -173,33 +217,39 @@ input{
   border: 1px solid #efefef;
   margin-right: 18rpx;
 }
-.choose{
+
+.choose {
   font-size: 28rpx;
   position: absolute;
   top: 30rpx;
   left: 20rpx;
 }
-.bd{
-  border-top: 1px solid #C6C6C6;
+
+.bd {
+  border-top: 1px solid #c6c6c6;
   margin-top: 80rpx;
   position: relative;
 }
-.pos{
+
+.pos {
   position: relative;
   display: inline-block;
   margin-bottom: 10rpx;
 }
-.gou{
-  width: 30rpx;
+
+.gou {
+  width: 42rpx;
   position: absolute;
-  top: 2rpx;
-  left:160rpx;
+  top: -12rpx;
+  left: 156rpx;
 }
-.sent{
-  background-color:  #C6C6C6;
+
+.sent {
+  background-color: #c6c6c6;
   color: #fff;
 }
-.sent,.sure{
+
+.sent, .sure {
   width: 134rpx;
   height: 53rpx;
   line-height: 53rpx;
@@ -207,7 +257,8 @@ input{
   position: absolute;
   right: 100rpx;
 }
-.sure{
+
+.sure {
   bottom: 220rpx;
-  color:  #818181;
+  color: #818181;
 }

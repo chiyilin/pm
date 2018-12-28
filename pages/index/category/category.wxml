@@ -4,6 +4,7 @@
 </view>
 <!--全部-->
 <scroll-view scroll-y="{{true}}" style='height:{{windowHeight}}px' class='fr you'>
+  <text bindtap='special' class='title' data-id='{{cate[currentTab].category_id}}'>{{cate[currentTab].category_name}}></text>
   <blcok wx:for="{{cate[currentTab]._child}}" wx:key="">
     <text bindtap='special' class='title' data-id='{{item.category_id}}'>{{item.category_name}}></text>
     <label wx:for="{{item._child}}" wx:key="" wx:for-item="items" wx:for-index="indexs">

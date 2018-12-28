@@ -116,9 +116,9 @@ Page({
       url: "/pages/index/category/category",
     })
   },
-  CllectionDetails: function(e) {
+  CollectionDetails: function(e) {
     wx.navigateTo({
-      url: "CllectionDetails/CllectionDetails?id=" + e.currentTarget.dataset.id,
+      url: "/pages/index/CollectionDetails/CollectionDetails?id=" + e.currentTarget.dataset.id,
     })
   },
 })

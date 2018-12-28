@@ -73,7 +73,7 @@
 </view>
 <view class='clearfix' style='padding-bottom:40rpx;'>
   <block wx:for="{{shareProd}}" wx:key="">
-    <view bindtap='CllectionDetails' data-id='{{item.product_id}}' class='fl kuai'>
+    <view bindtap='CollectionDetails' data-id='{{item.product_id}}' class='fl kuai'>
       <image class='kuaitu' src='{{filepath}}{{item.product_cover}}'></image>
       <view class='hui clearfix'>
         <text class='price fl'>￥{{item.product_money}}<text wx:if="{{item.product_type==1}}">  起</text></text>

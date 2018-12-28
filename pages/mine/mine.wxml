@@ -9,7 +9,7 @@
   <text class='name'>{{userinfo.nick_name}}</text>
   <view class='edu'>
     <text>【自营额度</text>
-    <text class='color'>{{userinfo.money}}</text>
+    <text class='color'>{{userinfo.lines}}</text>
     <text>】</text>
   </view>
 </view>

@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/index/CllectionDetails/CllectionDetails",
+    "pages/index/category/category",
     "pages/index/index",
+    "pages/chat/chat/chat",
     "pages/collection/collection",
+    "pages/index/CollectionDetails/CollectionDetails",
     "pages/collection/coll-details/coll-details",
     "pages/mine/attention/attention",
     "pages/mine/mine",
@@ -13,7 +15,6 @@
     "pages/address/edit/edit",
     "pages/address/add/add",
     "pages/Community/Community",
-    "pages/index/category/category",
     "pages/login/login",
     "pages/index/SpecialSale/SpecialSale",
     "pages/transaction/transaction",

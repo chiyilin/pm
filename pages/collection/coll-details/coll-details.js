@@ -3,14 +3,12 @@ var app = getApp();
 var common = require('../../../utils/common.js');
 var WxParse = require('../../../wxParse/wxParse.js');
 var search = (that) => {
-  var data = that.data;
-  common.Post('collection/getData', {
-    current_tab: data.currentTab,
-    category_id: data.cate[data.cateTab].category_id
+  common.Post('collection/detailsProd', {
+    id: that.data.id,
+    currentTab: that.data.currentTab,
   }, function(res) {
-    WxParse();
     that.setData({
-      data: res.data
+      data: res
     });
   });
 }
@@ -23,7 +21,6 @@ Page({
     filepath: app.globalData.filepath,
     navbar: ['全部', '精品', '介绍'],
     currentTab: 0,
-    cateTab: 0,
   },
 
   /**
@@ -85,10 +82,12 @@ Page({
       that.setData({
         collInfo: res.collInfo
       });
+      wx.setNavigationBarTitle({
+        title: res.collInfo.collection_name
+      })
       search(that)
     });
     wx.hideNavigationBarLoading();
-
   },
   /**
    * 选项卡切换
@@ -98,16 +97,6 @@ Page({
     that.setData({
       currentTab: e.currentTarget.dataset.idx
     });
-  },
-  /**
-   * 分类切换
-   */
-  clickTab: function(e) {
-    // e.currentTarget.dataset.id
-    var that = this;
-    that.setData({
-      cateTab: e.currentTarget.dataset.current
-    })
     search(that)
   },
 
@@ -130,6 +119,11 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  CollectionDetails: function(e) {
+    wx.navigateTo({
+      url: "/pages/index/CollectionDetails/CollectionDetails?id=" + e.currentTarget.dataset.id,
+    })
   },
 
 })

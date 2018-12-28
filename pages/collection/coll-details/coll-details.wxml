@@ -9,12 +9,11 @@
   <template is="wxParse" data="{{wxParseData:details.nodes}}" />
 </view>
 <view wx:else>
-  <!--精品-->
-  <view class='clearfix list'>
-    <image class='tu fl' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
-    <text class='name'>畜牧业的咖啡机（部分带数字直角边）</text>
-    <text class='date'>2018.10.29-2018.12.01</text>
-    <text class='tip'>￥377</text>
+  <view class='clearfix list' wx:for="{{data}}" wx:key="" bindtap='CollectionDetails' data-id='{{item.product_id}}'>
+    <image class='tu fl' src='{{filepath}}{{item.product_cover}}'></image>
+    <text class='name'>{{item.product_name}}</text>
+    <text class='date'>{{item.product_start_time}}-{{item.product_end_time}}</text>
+    <text class='tip'>￥{{item.product_money}}</text>
     <view class='xiangqing'>
       <text class='orange'>藏品详情</text>
       <image mode='widthFix' class='you' src='/imgs/you.jpg'></image>

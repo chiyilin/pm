@@ -11,101 +11,46 @@
   <text bindtap='showRule' class='shuaixuan'>筛选</text>
 </view>
 <!--全部-->
-<view hidden="{{currentTab!==0}}">
-  <view class='clearfix list'>
-    <image class='tu fl' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
-    <text class='name'>明朝弘治通宝一枚</text>
-    <text class='date'>2018.10.29-2018.12.01</text>
-    <text class='tip'>￥377</text>
-    <view class='xiangqing'>
-      <text class='orange'>藏品详情</text>
-      <image mode='widthFix' class='you' src='/imgs/you.jpg'></image>
-    </view>
+<view class='clearfix list' wx:for="{{data}}" bindtap='CollectionDetails' data-id='{{item.product_id}}'>
+  <image class='tu fl' src='{{filepath}}{{item.product_cover}}'></image>
+  <text class='name'>{{item.product_name}}</text>
+  <text class='date' wx:if="{{item.product_type==1}}">{{item.product_start_time}}-{{item.product_end_time}}</text>
+  <text class='tip'>￥{{item.product_money}}</text>
+  <view class='xiangqing'>
+    <text class='orange'>藏品详情</text>
+    <image mode='widthFix' class='you' src='/imgs/you.jpg'></image>
   </view>
 </view>
-<!--精品-->
-<view hidden="{{currentTab!==1}}">
-  <view class='clearfix list'>
-    <image class='tu fl' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
-    <text class='name'>畜牧业的咖啡机（部分带数字直角边）</text>
-    <text class='date'>2018.10.29-2018.12.01</text>
-    <text class='tip'>￥377</text>
-    <view class='xiangqing'>
-      <text class='orange'>藏品详情</text>
-      <image mode='widthFix' class='you' src='/imgs/you.jpg'></image>
-    </view>
-  </view>
-</view>
-<!--介绍-->
-<view hidden="{{currentTab!==2}}">
-  2
-</view>
-<view hidden="{{currentTab!==3}}">
-  3
-</view>
+<view wx:if="{{data.length==0}}" class="none">暂无藏品~</view>
 <view class="ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
-  <image src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
-  <view class='content clearfix'>
-    <text class='sousuo fl'>搜索</text>
-    <input></input>
-    <button class='queding'>确定</button>
-    <view class='bd'>
-      <text class='choose'>筛选</text>
-      <text class='title'>排序</text>
-      <view class='pos'>
-        <text class='kuang'>基特邮票</text>
-        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+  <form bindsubmit='search'>
+    <image src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
+    <view class='content clearfix'>
+      <text class='sousuo fl'>搜索</text>
+      <input confirm-type="done" name="search"></input>
+      <button class='queding' form-type='submit'>确定</button>
+      <view class='bd'>
+        <text class='choose'>筛选：</text>
+        <text class='title'>排序</text>
+        <view class='pos' wx:for="{{serachBasicData.orderData}}" data-id='{{index}}' bindtap='switchOrder'>
+          <text class='kuang'>{{item}}</text>
+          <image class='gou' mode='widthFix' src='/imgs/gou.png' wx:if="{{currentSort==index}}"></image>
+        </view>
+        <text class='title'>分类</text>
+        <view class='pos' wx:for="{{serachBasicData.cateInfo}}" data-id='{{item.category_id}}'>
+          <text class='kuang'>{{item.category_name}}</text>
+          <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+        </view>
+        <text class='title'>品相</text>
+        <view class='pos' wx:for="{{serachBasicData.prodFace}}" data-id='{{index}}' bindtap='switchFace'>
+          <text class='kuang'>{{item}}</text>
+          <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+        </view>
       </view>
-      <view class='pos'>
-        <text class='kuang'>基特邮票</text>
-        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
-      </view>
-      <view class='pos'>
-        <text class='kuang'>基特邮票</text>
-        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
-      </view>
-
-      <text class='title'>排序</text>
-      <view class='pos'>
-        <text class='kuang'>基特邮票</text>
-        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
-      </view>
-      <view class='pos'>
-        <text class='kuang'>基特邮票</text>
-        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
-      </view>
-      <view class='pos'>
-        <text class='kuang'>基特邮票</text>
-        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
-      </view>
-
-      <text class='title'>排序</text>
-      <view class='pos'>
-        <text class='kuang'>基特邮票</text>
-        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
-      </view>
-      <view class='pos'>
-        <text class='kuang'>基特邮票</text>
-        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
-      </view>
-      <view class='pos'>
-        <text class='kuang'>基特邮票</text>
-        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
-      </view>
-      <view class='pos'>
-        <text class='kuang'>基特邮票</text>
-        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
-      </view>
-      <view class='pos'>
-        <text class='kuang'>基特邮票</text>
-        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
-      </view>
-      <view class='pos'>
-        <text class='kuang'>基特邮票</text>
-        <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
-      </view>
+      <label class='button'>
+        <button class='sent'>重置</button>
+        <button class='sure' form-type='submit'>确定</button>
+      </label>
     </view>
-    <button class='sent'>重置</button>
-    <button class='sure'>确定</button>
-  </view>
+  </form>
 </view>
