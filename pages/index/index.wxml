@@ -77,7 +77,7 @@
       <image class='kuaitu' src='{{filepath}}{{item.product_cover}}'></image>
       <view class='hui clearfix'>
         <text class='price fl'>￥{{item.product_money}}<text wx:if="{{item.product_type==1}}">  起</text></text>
-        <text class='fr chu'>{{item.user_offer_price_count}}次出价</text>
+        <text class='fr chu' wx:if="{{item.product_type==1}}">{{item.user_offer_price_count}}次出价</text>
       </view>
       <view class='jieshao'>
         <text>{{item.cover_introduce}}</text>

@@ -8,13 +8,13 @@
 .shu {
   width: 3rpx;
   position: absolute;
-  top: 17rpx;
+  margin-top: 17rpx;
+  margin-left: 17rpx;
 }
 
 .num {
   font-size: 22rpx;
-  position: absolute;
-  top: 15rpx;
+  margin-left: 10rpx;
 }
 
 .none {
@@ -87,11 +87,12 @@
 }
 
 .ruleHide {
-  height: 30rpx !important;
-  width: 30rpx !important;
+  height: 30rpx;
+  width: 30rpx;
   position: absolute;
-  top: 50rpx;
+  top: 30rpx;
   right: 70rpx;
+  z-index: 999;
 }
 
 .list {
@@ -160,16 +161,19 @@
 .shuaixuan {
   font-size: 26rpx;
   color: #101010;
-  margin-left: 20rpx;
-  margin-top: 30rpx;
+  margin-right: 20rpx;
+  height: 80rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  float: right;
 }
 
 .content {
   background-color: #fff;
-  height: 1000rpx;
   width: 610rpx;
   margin: 20rpx auto;
-  padding: 0 32rpx;
+  padding: 0rpx 20rpx;
+  border-radius: 14rpx;
 }
 
 .queding {
@@ -189,14 +193,12 @@
 
 input {
   border: 1px solid #c6c6c6;
-  margin-top: 106rpx;
+  margin-top: 66rpx;
   display: inline-block;
-  padding: 0 20rpx;
   font-size: 28rpx;
   height: 56rpx;
-  width: 490rpx;
-  border-radius: 18px;
-  margin-left: 10rpx;
+  width: 99%;
+  border-radius: 14rpx;
 }
 
 .title {
@@ -226,8 +228,6 @@ input {
 }
 
 .bd {
-  border-top: 1px solid #c6c6c6;
-  margin-top: 80rpx;
   position: relative;
 }
 
@@ -239,6 +239,7 @@ input {
 
 .gou {
   width: 42rpx;
+  height: 42rpx;
   position: absolute;
   top: -12rpx;
   left: 156rpx;
@@ -261,4 +262,11 @@ input {
 .sure {
   bottom: 220rpx;
   color: #818181;
+}
+
+.submit-button {
+  color: #818181;
+  font-size: 26rpx;
+  float: right;
+  margin-bottom: 14rpx;
 }

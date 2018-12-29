@@ -1,17 +1,13 @@
 <!--pages/index/screen/screen.wxml-->
 <view class="navbar">
-  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
-  <image class='shu pos1' mode='widthFix' src='/imgs/shu.jpg'></image>
-  <image class='shu pos2' mode='widthFix' src='/imgs/shu.jpg'></image>
-  <image class='shu pos3' mode='widthFix' src='/imgs/shu.jpg'></image>
-  <text class='num num0'>12</text>
-  <text class='num num1'>12</text>
-  <text class='num num2'>12</text>
-  <text class='num num3'>12</text>
+  <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}
+    <text class='num'>{{tabCount[index+1]}}</text>
+    <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
+  </view>
   <text bindtap='showRule' class='shuaixuan'>筛选</text>
 </view>
 <!--全部-->
-<view class='clearfix list' wx:for="{{data}}" bindtap='CollectionDetails' data-id='{{item.product_id}}'>
+<view class='clearfix list' wx:for="{{data}}" wx:key="" bindtap='CollectionDetails' data-id='{{item.product_id}}'>
   <image class='tu fl' src='{{filepath}}{{item.product_cover}}'></image>
   <text class='name'>{{item.product_name}}</text>
   <text class='date' wx:if="{{item.product_type==1}}">{{item.product_start_time}}-{{item.product_end_time}}</text>
@@ -25,32 +21,36 @@
 <view class="ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
   <form bindsubmit='search'>
     <image src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
-    <view class='content clearfix'>
-      <text class='sousuo fl'>搜索</text>
-      <input confirm-type="done" name="search"></input>
-      <button class='queding' form-type='submit'>确定</button>
+    <scroll-view scroll-y class='content clearfix' style='height:1000rpx;'>
+      <!-- <text class='sousuo fl'>搜索</text> -->
+      <input confirm-type="done" name="search" placeholder=' 在此输入您要搜索的内容'></input>
+      <!-- <button class='queding' form-type='submit'>确定</button> -->
       <view class='bd'>
-        <text class='choose'>筛选：</text>
-        <text class='title'>排序</text>
-        <view class='pos' wx:for="{{serachBasicData.orderData}}" data-id='{{index}}' bindtap='switchOrder'>
+        <!-- <text class='choose'>筛选：</text> -->
+        <text class='title'>排序：</text>
+        <view class='pos' wx:for="{{serachBasicData.orderData}}" wx:key="" data-id='{{index}}' bindtap='switchOrder'>
           <text class='kuang'>{{item}}</text>
-          <image class='gou' mode='widthFix' src='/imgs/gou.png' wx:if="{{currentSort==index}}"></image>
+          <image class='gou' src='/imgs/gou.png' wx:if="{{currentSort==index}}"></image>
         </view>
-        <text class='title'>分类</text>
-        <view class='pos' wx:for="{{serachBasicData.cateInfo}}" data-id='{{item.category_id}}'>
-          <text class='kuang'>{{item.category_name}}</text>
-          <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
-        </view>
-        <text class='title'>品相</text>
-        <view class='pos' wx:for="{{serachBasicData.prodFace}}" data-id='{{index}}' bindtap='switchFace'>
+        <block wx:if="{{serachBasicData.cateInfo.length}}">
+          <text class='title'>分类：</text>
+          <view class='pos' wx:for="{{serachBasicData.cateInfo}}" wx:key="" data-id='{{item.category_id}}' bindtap='switchCate'>
+            <text class='kuang'>{{item.category_name}}</text>
+            <image class='gou' src='/imgs/gou.png' wx:for="{{currentCate}}" wx:key="" wx:for-index="indexs" wx:for-item="items" wx:if="{{items==item.category_id}}"></image>
+          </view>
+        </block>
+        <block wx:else>
+
+        </block>
+        <text class='title'>品相：</text>
+        <view class='pos' wx:for="{{serachBasicData.prodFace}}" wx:key="" data-id='{{index}}' bindtap='switchFace'>
           <text class='kuang'>{{item}}</text>
-          <image class='gou' mode='widthFix' src='/imgs/gou.png'></image>
+          <image class='gou' src='/imgs/gou.png' wx:for="{{currentFace}}" wx:key="" wx:for-index="indexs" wx:for-item="items" wx:if="{{items==index}}"></image>
         </view>
       </view>
-      <label class='button'>
-        <button class='sent'>重置</button>
-        <button class='sure' form-type='submit'>确定</button>
-      </label>
-    </view>
+      <!-- <button class='sent'>重置</button> -->
+      <!-- <button class='sure' form-type='submit'>确定</button> -->
+      <button class="submit-button" form-type='submit'>确定</button>
+    </scroll-view>
   </form>
 </view>

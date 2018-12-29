@@ -1,7 +1,14 @@
 {
   "pages": [
-    "pages/index/category/category",
     "pages/index/index",
+    "pages/transaction/transaction",
+    "pages/mine/TransactionRecords/TransactionRecords",
+    "pages/index/message/message",
+    "pages/index/BidRecord/BidRecord",
+    "pages/mine/card/card",
+    "pages/mine/paid/paid",
+    "pages/index/screen/screen",
+    "pages/index/category/category",
     "pages/chat/chat/chat",
     "pages/collection/collection",
     "pages/index/CollectionDetails/CollectionDetails",
@@ -16,14 +23,6 @@
     "pages/address/add/add",
     "pages/Community/Community",
     "pages/login/login",
-    "pages/index/SpecialSale/SpecialSale",
-    "pages/transaction/transaction",
-    "pages/mine/paid/paid",
-    "pages/mine/TransactionRecords/TransactionRecords",
-    "pages/index/message/message",
-    "pages/index/BidRecord/BidRecord",
-    "pages/index/screen/screen",
-    "pages/mine/card/card",
     "pages/logs/logs"
   ],
   "window": {

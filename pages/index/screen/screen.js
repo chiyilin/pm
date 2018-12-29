@@ -2,14 +2,26 @@
 var app = getApp();
 var common = require('../../../utils/common.js');
 var search = function(that) {
+  wx.showNavigationBarLoading();
+  wx.showLoading();
   var param = {
     category_id: that.data.category_id,
     currentTab: that.data.currentTab + 1
   };
+  if (that.data.moreSearch) {
+    var param = Object.assign(param, that.data.moreSearch);
+  }
+  common.Post('category/countProd', param, function(res) {
+    that.setData({
+      tabCount: res
+    })
+  })
   common.Post('category/cateProdInfo', param, function(res) {
     that.setData({
       data: res
     });
+    wx.hideNavigationBarLoading();
+    wx.hideLoading();
   })
 }
 Page({
@@ -22,8 +34,8 @@ Page({
     currentTab: 0,
     filepath: app.globalData.filepath,
     currentSort: 1,
-    currentNotFace: [],
-    currentNotCate: [],
+    currentFace: [],
+    currentCate: [],
   },
 
   /**
@@ -37,8 +49,23 @@ Page({
       common.login();
     }
     that.setData({
-      category_id: options.id
+      category_id: options.id ? options.id : 34
     })
+    console.log(that.data.category_id)
+
+  },
+  search: function(e) {
+    var that = this;
+    that.setData({
+      moreSearch: {
+        currentFace: that.data.currentFace,
+        currentCate: that.data.currentCate,
+        currentSort: that.data.currentSort,
+        searchKey: e.detail.value.search
+      }
+    });
+    search(that)
+    that.hideRule()
   },
   /**
    * 展开筛选
@@ -49,8 +76,14 @@ Page({
       common.Post('category/serachData', {
         category_id: that.data.category_id
       }, function(res) {
+        var currentCate = [];
+        for (var i = 0; i < Object.keys(res.cateInfo).length; i++) {
+          currentCate.push(res.cateInfo[i].category_id)
+        }
         that.setData({
-          serachBasicData: res
+          serachBasicData: res,
+          currentFace: Object.keys(res.prodFace),
+          currentCate: currentCate
         })
       })
     }
@@ -60,6 +93,7 @@ Page({
   },
   //关闭规则提示
   hideRule: function() {
+    console.log(111)
     this.setData({
       isRuleTrue: false
     })
@@ -68,7 +102,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function(e) {
     var that = this;
     search(that);
   },
@@ -121,9 +155,34 @@ Page({
    */
   switchFace: function(e) {
     var that = this;
+    var param = e.currentTarget.dataset.id;
+    var nowCurrent = that.data.currentFace;
+    var index = nowCurrent.indexOf(param);
+    if (index > -1) {
+      nowCurrent.splice(index, 1);
+    } else {
+      nowCurrent.push(param)
+    }
     that.setData({
-      currentFace: e.currentTarget.dataset.id
-    });
+      currentFace: nowCurrent
+    })
+  },
+  /**
+   * 分类选择
+   */
+  switchCate: function(e) {
+    var that = this;
+    var param = e.currentTarget.dataset.id;
+    var nowCurrent = that.data.currentCate;
+    var index = nowCurrent.indexOf(param);
+    if (index > -1) {
+      nowCurrent.splice(index, 1);
+    } else {
+      nowCurrent.push(param)
+    }
+    that.setData({
+      currentCate: nowCurrent
+    })
   },
   CollectionDetails: function(e) {
     wx.navigateTo({
