@@ -1,7 +1,9 @@
 /**app.wxss**/
-page{
-  color: #3F3F3F;
+
+page {
+  color: #3f3f3f;
 }
+
 .container {
   height: 100%;
   display: flex;
@@ -10,20 +12,23 @@ page{
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
-.fr{
+}
+
+.fr {
   float: right;
 }
-.fl{
+
+.fl {
   float: left;
 }
+
 .navigator-hover {
-	color:blue;
+  color: blue;
 }
-.clearfix::after{
+
+.clearfix::after {
   display: block;
   height: 0;
   clear: both;
   content: '';
-  }
-
+}

@@ -11,6 +11,6 @@
     </view>
   </block>
 </scroll-view>
-<view wx:if="{{data.length==0}}" class='none'>
+<view wx:if="{{!data}}" class='none'>
   暂无收藏
 </view>

@@ -13,19 +13,6 @@ Page({
       interval: 3000,
       duration: 1000,
     },
-    msgList: [{
-        url: "url",
-        title: "多地首套房贷利率上浮 热点城市渐迎零折扣时代"
-      },
-      {
-        url: "url",
-        title: "悦如公寓三周年生日趴邀你免费吃喝欢唱"
-      },
-      {
-        url: "url",
-        title: "你想和一群有志青年一起过生日嘛？"
-      }
-    ]
 
   },
 
@@ -57,7 +44,8 @@ Page({
       that.setData({
         banner: res.banner,
         collection: res.collection,
-        shareProd: res.shareProd
+        shareProd: res.shareProd,
+        article: res.article,
       })
     });
   },
@@ -98,7 +86,7 @@ Page({
   },
   more: function() {
     wx.navigateTo({
-      url: "message/message",
+      url: "/pages/article/list/list",
     })
   },
   collection: function() {
@@ -121,4 +109,10 @@ Page({
       url: "/pages/index/CollectionDetails/CollectionDetails?id=" + e.currentTarget.dataset.id,
     })
   },
+  articleDetails: function(e) {
+
+    wx.navigateTo({
+      url: "/pages/article/details/details?id=" + e.currentTarget.dataset.id,
+    })
+  }
 })

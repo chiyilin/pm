@@ -1,6 +1,7 @@
 /* pages/mine/attention/attention.wxss */
 
 .clearfix {
+  padding: 10rpx;
   border-bottom: 1px solid #efefef;
   position: relative;
   color: #4b4b4b;
@@ -36,6 +37,7 @@
 
 .atten {
   width: 40rpx;
+  height: 40rpx;
   position: absolute;
   bottom: 77rpx;
   right: 40rpx;

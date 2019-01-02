@@ -1,0 +1,20 @@
+<!--pages/article/list/list.wxml-->
+<scroll-view scroll-x>
+  <view class="navbar">
+    <text wx:for="{{navbar}}" data-idx="{{index}}" data-id='{{item.cate_id}}' class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item.cate_name}}</text>
+  </view>
+</scroll-view>
+<view>
+  <block wx:for="{{article}}" wx:key="">
+    <view class='list clearfix' bindtap='details' data-id='{{item.article_id}}'>
+      <image class='fl lv' mode='widthFix' src='/imgs/gonggao.jpg'></image>
+      <text class='title fl'>{{item.article_title}}</text>
+      <text class='date'>发布日期：{{item.article_time}}</text>
+      <image class='pict' mode='aspectFill' src='{{filepath}}{{item.article_cover}}'></image>
+      <!-- <text class='content'>{{item.article_details}}</text> -->
+      <!-- <text class='content' wx:if="{{item.details[0].text}}">{{item.details[0].text}}</text>
+<text class='content' wx:if="{{item.details[0].image}}">[图片]</text> -->
+      <!-- <image src="{{filepath}}{{item.dettails['1']}}" class="slide-image" /> -->
+    </view>
+  </block>
+</view>

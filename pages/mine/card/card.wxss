@@ -1,37 +1,43 @@
 /* pages/mine/card/card.wxss */
-view{
+
+view {
   position: relative;
 }
-image{
+
+image {
   width: 685rpx;
   margin-top: 40rpx;
   margin-left: 33rpx;
 }
-.money{
+
+.money {
   font-size: 52rpx;
   color: #fff;
   position: absolute;
   left: 120rpx;
   top: 120rpx;
 }
-.price{
+
+.price {
   font-size: 96rpx;
   color: #fff;
   position: absolute;
   left: 189rpx;
   top: 80rpx;
 }
-.date{
+
+.date {
   position: absolute;
-  bottom:25rpx;
-  left: 150rpx;
+  bottom: 25rpx;
+  left: 50rpx;
   font-size: 26rpx;
   color: #fff;
 }
-.tiaojian{
+
+.tiaojian {
   position: absolute;
-  bottom:25rpx;
-  right:70rpx;
+  bottom: 25rpx;
+  right: 70rpx;
   font-size: 26rpx;
   color: #fff;
 }

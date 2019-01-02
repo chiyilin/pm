@@ -32,7 +32,7 @@ swiper image {
 
 .swiper_container {
   height: 55rpx;
-  width: 80vw;
+  width: 90vw;
 }
 
 .gong {

@@ -23,7 +23,7 @@
     <image src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
     <scroll-view scroll-y class='content clearfix' style='height:1000rpx;'>
       <!-- <text class='sousuo fl'>搜索</text> -->
-      <input confirm-type="done" name="search" placeholder=' 在此输入您要搜索的内容'></input>
+      <input confirm-type="done" name="search" placeholder='  在此输入您要搜索的内容'></input>
       <!-- <button class='queding' form-type='submit'>确定</button> -->
       <view class='bd'>
         <!-- <text class='choose'>筛选：</text> -->

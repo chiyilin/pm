@@ -1,11 +1,14 @@
 {
   "pages": [
+    "pages/mine/card/card",
     "pages/index/index",
+    "pages/article/list/list",
+    "pages/index/message/message",
+    "pages/article/details/details",
+    "pages/index/message/messageDetails/messageDetails",
     "pages/transaction/transaction",
     "pages/mine/TransactionRecords/TransactionRecords",
-    "pages/index/message/message",
     "pages/index/BidRecord/BidRecord",
-    "pages/mine/card/card",
     "pages/mine/paid/paid",
     "pages/index/screen/screen",
     "pages/index/category/category",

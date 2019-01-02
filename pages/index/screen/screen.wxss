@@ -198,7 +198,7 @@ input {
   font-size: 28rpx;
   height: 56rpx;
   width: 99%;
-  border-radius: 14rpx;
+  border-radius: 16rpx;
 }
 
 .title {

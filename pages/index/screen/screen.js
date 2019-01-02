@@ -52,7 +52,6 @@ Page({
       category_id: options.id ? options.id : 34
     })
     console.log(that.data.category_id)
-
   },
   search: function(e) {
     var that = this;

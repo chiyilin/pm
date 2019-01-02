@@ -18,9 +18,9 @@
   <image class='gimg' mode='widthFix' src='/imgs/gonggao.jpg'></image>
   <image class='shu' src='/imgs/shu.jpg'></image>
   <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
-    <block wx:for="{{msgList}}" wx:key="">
-      <swiper-item>
-        <view class="swiper_item">{{item.title}}</view>
+    <block wx:for="{{article}}" wx:key="">
+      <swiper-item data-id="{{item.article_id}}" bindtap="articleDetails">
+        <view class="swiper_item">{{item.article_title}}</view>
       </swiper-item>
     </block>
   </swiper>
@@ -74,7 +74,7 @@
 <view class='clearfix' style='padding-bottom:40rpx;'>
   <block wx:for="{{shareProd}}" wx:key="">
     <view bindtap='CollectionDetails' data-id='{{item.product_id}}' class='fl kuai'>
-      <image class='kuaitu' src='{{filepath}}{{item.product_cover}}'></image>
+      <image mode='aspectFill' class='kuaitu' src='{{filepath}}{{item.product_cover}}'></image>
       <view class='hui clearfix'>
         <text class='price fl'>￥{{item.product_money}}<text wx:if="{{item.product_type==1}}">  起</text></text>
         <text class='fr chu' wx:if="{{item.product_type==1}}">{{item.user_offer_price_count}}次出价</text>

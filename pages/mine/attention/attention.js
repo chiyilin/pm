@@ -2,16 +2,18 @@
 var app = getApp();
 var common = require('../../../utils/common.js');
 var request = function(that, hidd = false) {
-  console.log(that.data.start)
   wx.showNavigationBarLoading();
   common.Post('user/collection', {
     user_id: that.data.userinfo.user_id,
     limit: [that.data.start, 8]
   }, function(res) {
     var data = that.data.data;
-    that.setData({
-      data: data.concat(res)
-    })
+    if (data) {
+      that.setData({
+        data: data.concat(res)
+      })
+    }
+
     if (hidd) {
       wx.stopPullDownRefresh();
     }
@@ -25,7 +27,7 @@ Page({
   data: {
     filepath: app.globalData.filepath,
     start: 1,
-    data: [],
+    data: []
   },
   toupper: function() {
     var that = this;
