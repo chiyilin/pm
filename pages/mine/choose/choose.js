@@ -1,6 +1,7 @@
 // pages/mine/choose/choose.js
 var app = getApp();
 var common = require('../../../utils/common.js');
+var number = require('../../../utils/number.js');
 Page({
 
   /**
@@ -22,9 +23,8 @@ Page({
       common.login();
     }
     that.setData({
-      id: options.id ? options.id : 116,
+      id: options.id ? options.id : 130,
     })
-
   },
   /**
    * 选择收获地址
@@ -71,10 +71,10 @@ Page({
           address: wx.getStorageSync('address') ? wx.getStorageSync('address') : address[0]
         })
       }
-
     });
     common.Post('product/cartInfo', {
-      id: that.data.id
+      id: that.data.id,
+      user_id: userinfo.user_id
     }, function(data) {
       var total_price = 0;
       data.data.forEach(e => {
@@ -82,7 +82,8 @@ Page({
       });
       that.setData({
         data: data.data,
-        total_price: total_price
+        total_price: total_price,
+        countCoupon: data.countCoupon
       })
     });
     if (wx.getStorageSync('address')) {
@@ -90,15 +91,41 @@ Page({
         address: wx.getStorageSync('address')
       })
     }
+    var coupon_id = wx.getStorageSync('coupon_id');
+    if (coupon_id) {
+      common.Post('coupon/details', {
+        id: coupon_id
+      }, function(res) {
+        var total_price = number.accSub(that.data.total_price, res.money)
+        that.setData({
+          couponInfo: res,
+          total_price: total_price
+        });
+      });
+    }
+  },
+  /**
+   * 选择优惠券
+   */
+  chooseCoupon: function() {
+    wx.navigateTo({
+      url: '/pages/mine/card/card?nav_type=2',
+    })
   },
   submit: function() {
+    wx.showLoading();
     wx.showNavigationBarLoading();
     var that = this;
+    var userinfo = common.getUserInfo();
     common.Post('product/nowBuy', {
-      id: that.data.product_id
+      user_id: userinfo.user_id,
+      id: that.data.id,
+      coupon_id: that.data.couponInfo.coupon_id
     }, function(res) {
       var res = JSON.parse(res)
       console.log(res);
+      wx.hideLoading();
+      wx.hideNavigationBarLoading();
       wx.requestPayment({
         timeStamp: res.timeStamp,
         nonceStr: res.nonceStr,

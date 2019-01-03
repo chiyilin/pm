@@ -25,6 +25,13 @@
     <text class='red fl'>22.00</text>
   </view> -->
   </view>
+  <view class='product coupon-box' wx:if="{{countCoupon}}">
+    <text class='title'>优惠券 :</text>
+    <view class='coupon-details'>
+      <text bindtap='chooseCoupon' wx:if="{{couponInfo}}">-{{couponInfo.money}} 元</text>
+      <text bindtap='chooseCoupon' wx:else>{{countCoupon}} 张可用</text>
+    </view>
+  </view>
   <view class='center'>
     <view class='choose'>
       <text class='title'>配送方式 ：</text>
@@ -42,6 +49,6 @@
   <view class="footer {{isRuleTrue?'isRuleHide':'isRuleShow'}}">
     <image mode='widthFix' src='/imgs/333.jpg' class='ruleHide' bindtap='hideRule'></image>
     <text class='tip'>温馨提示:暂存藏品默认有60天免费储存期，过会产生额外的费用,  请注意发货时间。</text>
-    <button class='sub' form-type='submit'>支付￥{{total_price}}</button>
   </view>
+  <button class='sub' form-type='submit'>支付￥{{total_price}}</button>
 </form>

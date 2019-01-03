@@ -6,7 +6,7 @@ var number = require('../../../utils/number.js');
 var request = function(that, isPullDown = false) {
   wx.showNavigationBarLoading();
   common.Post('product/details', {
-    id: that.data.id ? that.data.id : 116,
+    id: that.data.id ? that.data.id : 130,
     user_id: that.data.userinfo.user_id
   }, function(res) {
     WxParse.wxParse('details', 'html', res.data.product_introduce, that, 5);

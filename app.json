@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/mine/card/card",
+    "pages/mine/choose/choose",
     "pages/index/index",
+    "pages/index/CollectionDetails/CollectionDetails",
+    "pages/mine/card/card",
     "pages/article/list/list",
     "pages/index/message/message",
     "pages/article/details/details",
@@ -14,19 +16,16 @@
     "pages/index/category/category",
     "pages/chat/chat/chat",
     "pages/collection/collection",
-    "pages/index/CollectionDetails/CollectionDetails",
     "pages/collection/coll-details/coll-details",
     "pages/mine/attention/attention",
     "pages/mine/mine",
     "pages/entrust/entrust",
-    "pages/mine/choose/choose",
     "pages/address/ChooseAddress/ChooseAddress",
     "pages/address/address",
     "pages/address/edit/edit",
     "pages/address/add/add",
     "pages/Community/Community",
-    "pages/login/login",
-    "pages/logs/logs"
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "dark",

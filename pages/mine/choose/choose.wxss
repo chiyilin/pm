@@ -52,6 +52,7 @@
   margin: 0rpx 30rpx;
   position: relative;
   padding-top: 20rpx;
+  margin-bottom: 20rpx;
 }
 
 .product-item {
@@ -170,4 +171,22 @@
   position: absolute;
   right: 20rpx;
   top: 20rpx;
+}
+
+.coupon-box {
+  border-top: 1px solid #e4e4e4;
+  padding-bottom: 20rpx;
+}
+
+.coupon-box .title {
+  float: left;
+}
+
+.coupon-details {
+  float: right;
+  font-size: 28rpx;
+}
+
+.coupon-details text {
+  color: #ff4642;
 }
