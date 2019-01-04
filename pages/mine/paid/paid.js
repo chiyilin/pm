@@ -5,7 +5,10 @@ Page({
   data: {
     navbar: ['待支付', '待发货', '待收货'],
     currentTab: 0,
-    filepath: app.globalData.filepath
+    filepath: app.globalData.filepath,
+    total_price: 0,
+    checkedAll: false,
+    isCheckAll: false,
   },
   onLoad: function(options) {
     var that = common.that = this;
@@ -15,8 +18,76 @@ Page({
       common.login();
     }
   },
+  nowpay: function(e) {
+    var that = this;
+    if (e.currentTarget.dataset.id) {
+      wx.navigateTo({
+        url: '/pages/cart/cart?id=' + e.currentTarget.dataset.id,
+      });
+    } else {
+      var currentIndex = that.data.currentIndex;
+      var data = that.data.data;
+      var currentId = [];
+      data.forEach((res, index) => {
+        if (currentIndex.indexOf(index) > -1) {
+          currentId.push(res.get_id)
+        }
+      });
+      var currentIdStr = currentId.join(',');
+      wx.navigateTo({
+        url: '/pages/cart/cart?id=' + currentIdStr,
+      });
+    }
+  },
+  /**
+   * 全选/全不选
+   */
+  checkAll: function(e) {
+    var that = this;
+    if (that.data.isCheckAll) {
+      that.setData({
+        checkedAll: false,
+        isCheckAll: false,
+        total_price: 0
+      });
+    } else {
+      that.setData({
+        checkedAll: that.data.checkedAll == false ? true : false,
+      });
+      var currentIndex = [];
+      that.data.data.forEach((res, index) => {
+        currentIndex.push(index)
+      })
+      that.totalCount(currentIndex);
+      that.setData({
+        isCheckAll: true
+      })
+    }
+
+  },
   checkboxChange: function(e) {
-    console.log(e.detail.value)
+    var that = this;
+    var currentIndex = e.detail.value;
+    var newCurrentIndex = [];
+    currentIndex.forEach(e => {
+      newCurrentIndex.push(Number(e))
+    });
+    that.totalCount(newCurrentIndex)
+  },
+  /**
+   * 计算价格
+   */
+  totalCount: function(currentIndex) {
+    var that = this;
+    var data = that.data.data;
+    var total_price = 0;
+    currentIndex.forEach((res, index) => {
+      total_price = number.accAdd(total_price, data[res].total_price)
+    });
+    that.setData({
+      total_price: total_price,
+      currentIndex: currentIndex
+    });
   },
   onShow: function() {
     var that = this;
@@ -24,7 +95,6 @@ Page({
     common.Post('cart/cart', {
       user_id: userinfo.user_id
     }, function(res) {
-      console.log(res)
       that.setData({
         data: res
       })

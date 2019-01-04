@@ -15,8 +15,9 @@ Page({
     if (!common.checkAuthLogin(true)) {
       common.login();
     }
+    console.log(options.id)
     that.setData({
-      id: options.id ? options.id : [6, 7],
+      id: options.id ? options.id.split(',') : [6, 7],
     })
   },
   onShow: function() {
@@ -42,6 +43,12 @@ Page({
       that.setData({
         total_price: total_price,
       });
+      var setData = {
+        data: data.data,
+        countCoupon: data.countCoupon,
+        defaultExpress: data.defaultExpress,
+        defaultExpressLength: data.defaultExpress.length - 1,
+      }
       var coupon_id = wx.getStorageSync('coupon_id');
       if (coupon_id) {
         common.Post('coupon/details', {
@@ -53,9 +60,9 @@ Page({
               that.setData({
                 total_price_express: number.accAdd(total_price, event.money),
                 currentTab: key
-              })
+              });
             }
-          })
+          });
           that.setData({
             couponInfo: res,
             total_price: total_price
@@ -63,18 +70,13 @@ Page({
         });
       } else {
         data.defaultExpress.forEach((event, key) => {
-          if (event.current) {
+          if (event.current == true) {
             setData.total_price_express = number.accAdd(total_price, event.money)
             setData.currentTab = key
           }
         })
       }
-      var setData = {
-        data: data.data,
-        countCoupon: data.countCoupon,
-        defaultExpress: data.defaultExpress,
-        defaultExpressLength: data.defaultExpress.length - 1,
-      }
+
       that.setData(setData)
     });
     if (wx.getStorageSync('address')) {

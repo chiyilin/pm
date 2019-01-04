@@ -41,6 +41,12 @@ Page({
       that.setData({
         total_price: total_price,
       });
+      var setData = {
+        data: data.data,
+        countCoupon: data.countCoupon,
+        defaultExpress: data.defaultExpress,
+        defaultExpressLength: data.defaultExpress.length - 1,
+      }
       var coupon_id = wx.getStorageSync('coupon_id');
       if (coupon_id) {
         common.Post('coupon/details', {
@@ -68,12 +74,7 @@ Page({
           }
         })
       }
-      var setData = {
-        data: data.data,
-        countCoupon: data.countCoupon,
-        defaultExpress: data.defaultExpress,
-        defaultExpressLength: data.defaultExpress.length - 1,
-      }
+
       that.setData(setData)
     });
     if (wx.getStorageSync('address')) {

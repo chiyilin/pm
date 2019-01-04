@@ -2,8 +2,8 @@
   "pages": [
     "pages/mine/paid/paid",
     "pages/cart/cart",
-    "pages/chat/chat/chat",
     "pages/mine/choose/choose",
+    "pages/chat/chat/chat",
     "pages/index/index",
     "pages/index/CollectionDetails/CollectionDetails",
     "pages/mine/card/card",
