@@ -66,6 +66,7 @@ checkbox {
 }
 
 .payimg {
+  border-radius: 10rpx;
   width: 200rpx;
   height: 200rpx;
   margin: 33rpx 0;
@@ -73,9 +74,9 @@ checkbox {
 }
 
 .box {
-  border-bottom: 1px solid #efefef;
   position: relative;
-  padding-bottom: 91rpx;
+  /* border-bottom: 1px solid #efefef;
+  padding-bottom: 91rpx; */
 }
 
 .mess {
@@ -170,26 +171,30 @@ checkbox {
   margin: 33rpx 0;
   margin-right: 13rpx;
 }
-.fh,.wt{
+
+.fh, .wt {
   font-size: 24rpx;
   color: #696969;
   display: block;
   position: absolute;
   right: 36rpx;
   border: 1px solid #818181;
-  padding:5rpx;
+  padding: 5rpx;
   border-radius: 5px;
 }
-.fh{
-  bottom:90rpx;
+
+.fh {
+  bottom: 90rpx;
 }
-.wt{
+
+.wt {
   bottom: 36rpx;
 }
-.wait{
+
+.wait {
   position: absolute;
   right: 50rpx;
   bottom: 30rpx;
-  color:  #ff3737;
+  color: #ff3737;
   font-size: 30rpx;
 }

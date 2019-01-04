@@ -7,15 +7,15 @@ function connect(user, func) {
     header: {
       'content-type': 'application/json'
     },
-    success: function() {
-      console.log('信道连接成功~')
+    success: function(event) {
+      console.log('信道连接成功~', event)
     },
     fail: function() {
       console.log('信道连接失败~')
     }
   })
   wx.onSocketOpen(function(res) {
-    console.log('信道已开通~')
+    console.log('信道已开通~', res)
     //接受服务器消息
     wx.onSocketMessage(func);
   });

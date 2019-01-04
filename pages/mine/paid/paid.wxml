@@ -5,9 +5,8 @@
   <image class='shu pos2' mode='widthFix' src='/imgs/shu.jpg'></image>
 </view>
 <!--全部-->
-
 <view class='box' hidden="{{currentTab!==0}}">
-  <block wx:for="{{6}}">
+  <block wx:for="{{data}}">
     <view style='position: relative;border-bottom:1px solid #efefef' class='clearfix'>
       <checkbox-group bindchange="checkboxChange">
         <label>
@@ -15,13 +14,14 @@
         </label>
       </checkbox-group>
       <view clearfix>
-        <image class="payimg fl" src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
+        <image class="payimg fl" mode='aspectFill' src='{{filepath}}{{item.product.product_cover}}'></image>
         <view class='fl mess'>
-          <text class='name'>中国流通纪念币中国流通纪念币中国流通纪念币念币中国流通纪念币中国流通纪念币</text>
+          <text class='name'>{{item.product.product_name}}</text>
           <text class='orange'>竞得待支付</text>
-          <text class='tip'>￥377</text>
+          <!-- <text class='orange'>一口价待支付</text> -->
+          <text class='tip'>￥{{item.total_price}}</text>
         </view>
-        <text class='note'>请于2018年12月12日 12：00之前完成交易</text>
+        <!-- <text class='note'>请于2018年12月12日 12：00之前完成交易</text> -->
         <text class='btn'>立即支付</text>
       </view>
     </view>
@@ -61,7 +61,7 @@
       </view>
     </view>
   </block>
-   <view class='footer'>
+  <view class='footer'>
     <checkbox-group bindchange="checkboxChange">
       <label>
         <checkbox class='fl' value="{{index}}"></checkbox>
@@ -75,7 +75,7 @@
 <view class=' box' hidden="{{currentTab!==2}}">
   <block wx:for="{{6}}">
     <view style='position: relative;border-bottom:1px solid #efefef' class='clearfix'>
-    <checkbox-group bindchange="checkboxChange">
+      <checkbox-group bindchange="checkboxChange">
         <label>
           <checkbox class='fl' value="{{index}}"></checkbox>
         </label>
@@ -92,7 +92,7 @@
       </view>
     </view>
   </block>
-   <view class='footer'>
+  <view class='footer'>
     <checkbox-group bindchange="checkboxChange">
       <label>
         <checkbox class='fl' value="{{index}}"></checkbox>

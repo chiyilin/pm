@@ -1,3 +1,4 @@
+<!--pages/cart/cart.wxml-->
 <!--pages/mine/choose/choose.wxml-->
 <form bindsubmit='submit'>
   <view class='top clearfix' bindtap='chooseAnotherAddr' wx:if="{{address}}">
@@ -13,10 +14,10 @@
   <view class='product'>
     <text class='title'>藏品 :</text>
     <view class='clearfix product-item' wx:for="{{data}}" wx:key="" bindtap='details' data-id='{{item.product_id}}'>
-      <image class="cover" src='{{filepath}}{{item.product_cover}}'></image>
+      <image class="cover" src='{{filepath}}{{item.product.product_cover}}'></image>
       <label class='product-info'>
-        <view class='name'>{{item.product_name}}</view>
-        <view class='red prices'>￥{{item.product_money}}</view>
+        <view class='name'>{{item.product.product_name}}</view>
+        <view class='red prices'>￥{{item.total_price}}</view>
       </label>
     </view>
     <!-- <view class='pos clearfix'>
@@ -41,12 +42,12 @@
     </view>
     <view class='qian'>
       <text class='money'>邮费 : </text>
-      <text class='red'>￥{{defaultExpress[currentTab].money?defaultExpress[currentTab].money:0}}</text>
+      <text class='red'>￥{{defaultExpress[currentTab].money}}</text>
     </view>
   </view>
   <view class="footer {{isRuleTrue?'isRuleHide':'isRuleShow'}}">
     <image mode='widthFix' src='/imgs/333.jpg' class='ruleHide' bindtap='hideRule'></image>
-    <text class='tip'>温馨提示：暂存藏品默认有60天免费储存期，过会产生额外的费用，请注意发货时间。</text>
+    <text class='tip'>温馨提示:暂存藏品默认有60天免费储存期，过会产生额外的费用,  请注意发货时间。</text>
   </view>
   <button class='sub' form-type='submit'>支付￥{{total_price_express?total_price_express:total_price}}</button>
 </form>

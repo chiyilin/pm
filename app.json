@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/mine/paid/paid",
+    "pages/cart/cart",
+    "pages/chat/chat/chat",
     "pages/mine/choose/choose",
     "pages/index/index",
     "pages/index/CollectionDetails/CollectionDetails",
@@ -11,10 +14,8 @@
     "pages/transaction/transaction",
     "pages/mine/TransactionRecords/TransactionRecords",
     "pages/index/BidRecord/BidRecord",
-    "pages/mine/paid/paid",
     "pages/index/screen/screen",
     "pages/index/category/category",
-    "pages/chat/chat/chat",
     "pages/collection/collection",
     "pages/collection/coll-details/coll-details",
     "pages/mine/attention/attention",

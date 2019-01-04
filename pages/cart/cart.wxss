@@ -1,4 +1,4 @@
-/* pages/mine/choose/choose.wxss */
+/* pages/cart/cart.wxss */
 
 .top {
   font-size: 28rpx;

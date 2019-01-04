@@ -1,9 +1,10 @@
-// pages/mine/choose/choose.js
+// pages/cart/cart.js
 var app = getApp();
-var common = require('../../../utils/common.js');
-var number = require('../../../utils/number.js');
+var common = require('../../utils/common.js');
+var number = require('../../utils/number.js');
 Page({
   data: {
+    currentTab: 0,
     filepath: app.globalData.filepath,
   },
   onLoad: function(options) {
@@ -15,7 +16,7 @@ Page({
       common.login();
     }
     that.setData({
-      id: options.id ? options.id : 130,
+      id: options.id ? options.id : [6, 7],
     })
   },
   onShow: function() {
@@ -30,13 +31,13 @@ Page({
         })
       }
     });
-    common.Post('product/cartInfo', {
+    common.Post('cart/cartInfo', {
       id: that.data.id,
       user_id: userinfo.user_id
     }, function(data) {
       var total_price = 0;
       data.data.forEach(e => {
-        total_price = number.accAdd(total_price, e.product_money)
+        total_price = number.accAdd(total_price, e.total_price)
       });
       that.setData({
         total_price: total_price,
@@ -83,39 +84,6 @@ Page({
     }
   },
   /**
-   * 选择收获地址
-   */
-  chooseAnotherAddr: function() {
-    wx.navigateTo({
-      url: '/pages/address/ChooseAddress/ChooseAddress',
-    });
-  },
-  /**
-   * 新增地址
-   */
-  addAddr: function(e) {
-    wx.navigateTo({
-      url: '/pages/address/add/add',
-    })
-  },
-  /**
-   * 商品详情
-   */
-  details: function(e) {
-    wx.navigateTo({
-      url: '/pages/index/CllectionDetails/CllectionDetails?id=' + e.currentTarget.dataset.id,
-    });
-  },
-
-  /**
-   * 选择优惠券
-   */
-  chooseCoupon: function() {
-    wx.navigateTo({
-      url: '/pages/mine/card/card?nav_type=2',
-    })
-  },
-  /**
    * 点击支付
    */
   submit: function() {
@@ -136,7 +104,7 @@ Page({
     if (that.data.couponInfo) {
       param.coupon_id = that.data.couponInfo.coupon_id
     }
-    common.Post('product/nowBuy', param, function(res) {
+    common.Post('cart/nowBuy', param, function(res) {
       var res = JSON.parse(res)
       console.log(res);
       wx.hideLoading();
@@ -166,6 +134,39 @@ Page({
       })
     })
   },
+  /**
+   * 选择收获地址
+   */
+  chooseAnotherAddr: function() {
+    wx.navigateTo({
+      url: '/pages/address/ChooseAddress/ChooseAddress',
+    });
+  },
+  /**
+   * 新增地址
+   */
+  addAddr: function(e) {
+    wx.navigateTo({
+      url: '/pages/address/add/add',
+    })
+  },
+  /**
+   * 商品详情
+   */
+  details: function(e) {
+    wx.navigateTo({
+      url: '/pages/index/CollectionDetails/CollectionDetails?id=' + e.currentTarget.dataset.id,
+    });
+  },
+  /**
+   * 选择优惠券
+   */
+  chooseCoupon: function() {
+    wx.navigateTo({
+      url: '/pages/mine/card/card?nav_type=2',
+    })
+  },
+
   showRule: function() {
     this.setData({
       isRuleTrue: true

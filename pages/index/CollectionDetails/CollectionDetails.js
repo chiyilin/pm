@@ -208,9 +208,14 @@ Page({
   bindManual: function(e) {
     var that = this;
     that.data.data.product_money = e.detail.value;
-    // 将数值与状态写回 
-    this.setData({
-      data: that.data.data
+    //服务费
+    var rateMoney = number.accMul(that.data.rate, that.data.data.product_money).toFixed(2);
+    //总价
+    var nowMoney = number.accAdd(that.data.data.product_money, rateMoney)
+    that.setData({
+      data: that.data.data,
+      nowMoney: nowMoney,
+      rateMoney: rateMoney
     });
   },
   /**
