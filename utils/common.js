@@ -48,9 +48,9 @@ function checkAuthLogin(type) {
   if (!userinfo.openid) return false;
   var time = Date.parse(new Date());
   //console.log(time / 1000 - userinfo.last_time );
-  if (time / 1000 - userinfo.last_time > 86400) {
-    return false; //大于一天了
-  }
+  // if (time / 1000 - userinfo.last_time > 86400) {
+  //   return false; //大于一天了
+  // }
   if (type == true) {
     module.exports.that.setData({
       userinfo: userinfo

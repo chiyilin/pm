@@ -17,7 +17,8 @@ page {
 
 .tou {
   border-radius: 50%;
-  width: 180rpx;
+  width: 120rpx;
+  height: 120rpx;
   margin-left: 54rpx;
   margin-right: 40rpx;
 }
@@ -25,7 +26,7 @@ page {
 .name {
   font-size: 30rpx;
   display: block;
-  margin-left: 270rpx;
+  margin-left: 200rpx;
   margin-top: -110rpx;
 }
 
@@ -37,7 +38,7 @@ page {
 .edu {
   font-size: 26rpx;
   margin-top: 10rpx;
-  margin-left: 260rpx;
+  margin-left: 190rpx;
 }
 
 .color {

@@ -2,91 +2,41 @@
 var app = getApp();
 var common = require('../../utils/common.js');
 var request = function(that, hidd) {
-  common.Post('user/userinfo', {
-    user_id: that.data.userinfo.user_id
+  var userinfo = common.getUserInfo()
+  common.Post('user/mine', {
+    user_id: userinfo.user_id
   }, function(data) {
     that.setData({
-      userinfo: data
+      userinfo: data.userinfo,
+      myProdInfo: data.myProdInfo
     })
-    wx.setStorageSync('userinfo', JSON.stringify(data))
+    wx.setStorageSync('userinfo', JSON.stringify(data.userinfo))
     if (hidd) {
       wx.stopPullDownRefresh();
     }
   });
 }
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  data: {},
   onLoad: function(options) {
     var that = common.that = this;
     // common.style();
     common.globalData = app.globalData;
     if (!common.checkAuthLogin(true)) {
+      console.log('没登录')
       common.login();
     }
-    that.setData({
-      userinfo: common.getUserInfo()
-    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function() {
+    console.log('onshow')
     var that = this;
     request(that);
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function() {
     var that = this;
+    console.log('onPullDownRefresh')
     request(that, true);
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
   },
   pay: function() {
     wx.navigateTo({
