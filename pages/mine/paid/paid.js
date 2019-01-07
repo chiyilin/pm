@@ -50,7 +50,7 @@ Page({
       isCheckAll: false,
       total_price: 0
     });
-    request(this)
+    request(this);
   },
   nowpay: function(e) {
     var that = this;
