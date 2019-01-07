@@ -106,7 +106,7 @@ Page({
     if (that.data.couponInfo) {
       param.coupon_id = that.data.couponInfo.coupon_id
     }
-    common.Post('cart/nowBuy', param, function(res) {
+    common.Post('cart/nowBuy2', param, function(res) {
       var res = JSON.parse(res)
       console.log(res);
       wx.hideLoading();

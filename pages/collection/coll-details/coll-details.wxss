@@ -102,6 +102,7 @@
 
 .you {
   width: 16rpx;
+  height: 20rpx;
   vertical-align: middle;
 }
 

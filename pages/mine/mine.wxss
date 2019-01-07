@@ -12,6 +12,7 @@ page {
 
 .top image {
   width: 41rpx;
+  height: 51rpx;
   margin-right: 35rpx;
 }
 
@@ -63,8 +64,8 @@ page {
 }
 
 .navView image {
-  width: 79rpx;
-  height: 67rpx;
+  width: 80rpx;
+  height: 60rpx;
   margin-bottom: 20rpx;
 }
 
@@ -97,6 +98,7 @@ page {
 
 .list image {
   width: 62rpx;
+  height: 62rpx;
 }
 
 .LL {

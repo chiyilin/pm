@@ -38,9 +38,9 @@ Page({
     console.log('onPullDownRefresh')
     request(that, true);
   },
-  pay: function() {
+  pay: function(e) {
     wx.navigateTo({
-      url: "paid/paid",
+      url: "/pages/mine/paid/paid?current=" + e.currentTarget.dataset.current,
     })
   },
   attention: function() {

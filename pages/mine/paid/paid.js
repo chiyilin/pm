@@ -1,6 +1,19 @@
 var app = getApp();
 var common = require('../../../utils/common.js');
 var number = require('../../../utils/number.js');
+var request = function(that) {
+  var userinfo = common.getUserInfo();
+  var current = that.data.currentTab;
+  console.log(current)
+  common.Post('cart/cart', {
+    user_id: userinfo.user_id,
+    current: current
+  }, function(res) {
+    that.setData({
+      data: res
+    });
+  });
+}
 Page({
   data: {
     navbar: ['待支付', '待发货', '待收货'],
@@ -16,6 +29,11 @@ Page({
     common.globalData = app.globalData;
     if (!common.checkAuthLogin(true)) {
       common.login();
+    }
+    if (options.current) {
+      that.setData({
+        currentTab: options.current
+      })
     }
   },
   nowpay: function(e) {
@@ -38,6 +56,13 @@ Page({
         url: '/pages/cart/cart?id=' + currentIdStr,
       });
     }
+  },
+  prodDetails: function(e) {
+    var id = e.currentTarget.dataset.id;
+    console.log(id)
+    wx.navigateTo({
+      url: '/pages/index/CollectionDetails/CollectionDetails?id=' + id,
+    });
   },
   /**
    * 全选/全不选
@@ -91,18 +116,12 @@ Page({
   },
   onShow: function() {
     var that = this;
-    var userinfo = common.getUserInfo();
-    common.Post('cart/cart', {
-      user_id: userinfo.user_id
-    }, function(res) {
-      that.setData({
-        data: res
-      })
-    });
+    request(that)
   },
   navbarTap: function(e) {
     this.setData({
       currentTab: e.currentTarget.dataset.idx
     })
+    request(this)
   },
 })
