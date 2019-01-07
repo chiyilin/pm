@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/mine/mine",
     "pages/index/index",
     "pages/mine/paid/paid",
-    "pages/mine/mine",
     "pages/mine/attention/attention",
     "pages/cart/cart",
     "pages/mine/choose/choose",

@@ -4,7 +4,6 @@ var number = require('../../../utils/number.js');
 var request = function(that) {
   var userinfo = common.getUserInfo();
   var current = that.data.currentTab;
-  console.log(current)
   common.Post('cart/cart', {
     user_id: userinfo.user_id,
     current: current
@@ -65,15 +64,18 @@ Page({
     });
   },
   /**
-   * 全选/全不选
+   * 待支付全选/全不选
    */
   checkAll: function(e) {
     var that = this;
+    console.log(that.data.currentTab)
+
     if (that.data.isCheckAll) {
       that.setData({
         checkedAll: false,
         isCheckAll: false,
-        total_price: 0
+        total_price: 0,
+        currentIndex: []
       });
     } else {
       that.setData({
@@ -82,13 +84,12 @@ Page({
       var currentIndex = [];
       that.data.data.forEach((res, index) => {
         currentIndex.push(index)
-      })
+      });
       that.totalCount(currentIndex);
       that.setData({
         isCheckAll: true
       })
     }
-
   },
   checkboxChange: function(e) {
     var that = this;
@@ -114,6 +115,9 @@ Page({
       currentIndex: currentIndex
     });
   },
+  /**
+   * 
+   */
   onShow: function() {
     var that = this;
     request(that)

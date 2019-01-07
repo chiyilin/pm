@@ -39,22 +39,22 @@
 </view>
 <!--待发货-->
 <view class='box' wx:if="{{currentTab==1}}">
-  <block wx:for="{{6}}" wx:key="unique">
+  <block wx:for="{{data}}" wx:key="unique">
     <view style='position: relative;border-bottom:1px solid #efefef' class='clearfix'>
       <checkbox-group bindchange="checkboxChange">
         <label>
-          <checkbox class='fl' value="{{index}}"></checkbox>
+          <checkbox class='fl' checked='{{checkedAll?true:false}}' value="{{index}}"></checkbox>
         </label>
       </checkbox-group>
-      <view clearfix>
-        <image class="payimg fl" src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
+      <view bindtap='prodDetails' data-id='{{item.product_id}}'>
+        <image class="payimg fl" mode='aspectFill' src='{{filepath}}{{item.product_info.product_cover}}'></image>
         <view class='fl mess'>
-          <text class='name'>中国流通纪念币中国流通纪念币中国流通纪念币念币中国流通纪念币中国流通纪念币</text>
-          <text class='orange'>竞得待配送</text>
+          <text class='name'>{{item.product_info.product_name}}</text>
+          <text class='orange'>待发货</text>
           <!-- <text class='orange'>正在委托中</text> -->
-          <text class='tip'>￥377</text>
+          <text class='tip'>￥{{item.pay_money}}</text>
         </view>
-        <text class='note'>拍卖竟得后概不退换</text>
+        <text class='note'>{{item.product_info.product_zysx}}</text>
         <text class='fh'>申请发货</text>
         <text class='wt'>一键委托</text>
         <!-- <text style='color:#ff3737;border-color:#ff3737;' class='wt'>委托中</text> -->
@@ -62,7 +62,7 @@
     </view>
   </block>
   <view class='footer'>
-    <checkbox-group bindchange="checkboxChange">
+    <checkbox-group bindchange="checkAll">
       <label>
         <checkbox class='fl' value="{{index}}"></checkbox>
       </label>
