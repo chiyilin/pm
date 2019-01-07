@@ -31,9 +31,26 @@ Page({
     }
     if (options.current) {
       that.setData({
-        currentTab: options.current
+        currentTab: options.current,
       })
     }
+  },
+  onShow: function() {
+    var that = this;
+    request(that)
+  },
+  /**
+   * 选项卡切换
+   */
+  navbarTap: function(e) {
+    this.setData({
+      currentTab: e.currentTarget.dataset.idx,
+      currentIndex: [],
+      checkedAll: false,
+      isCheckAll: false,
+      total_price: 0
+    });
+    request(this)
   },
   nowpay: function(e) {
     var that = this;
@@ -42,7 +59,7 @@ Page({
         url: '/pages/cart/cart?id=' + e.currentTarget.dataset.id,
       });
     } else {
-      var currentIndex = that.data.currentIndex;
+      var currentIndex = that.data.currentIndex[0];
       var data = that.data.data;
       var currentId = [];
       data.forEach((res, index) => {
@@ -56,20 +73,11 @@ Page({
       });
     }
   },
-  prodDetails: function(e) {
-    var id = e.currentTarget.dataset.id;
-    console.log(id)
-    wx.navigateTo({
-      url: '/pages/index/CollectionDetails/CollectionDetails?id=' + id,
-    });
-  },
   /**
    * 待支付全选/全不选
    */
   checkAll: function(e) {
     var that = this;
-    console.log(that.data.currentTab)
-
     if (that.data.isCheckAll) {
       that.setData({
         checkedAll: false,
@@ -91,6 +99,9 @@ Page({
       })
     }
   },
+  /**
+   * 点击单个选中按钮
+   */
   checkboxChange: function(e) {
     var that = this;
     var currentIndex = e.detail.value;
@@ -110,22 +121,22 @@ Page({
     currentIndex.forEach((res, index) => {
       total_price = number.accAdd(total_price, data[res].total_price)
     });
+    var curr = [];
+    curr[that.data.currentTab] = currentIndex;
+    console.log(curr)
     that.setData({
       total_price: total_price,
-      currentIndex: currentIndex
+      currentIndex: curr
     });
   },
   /**
-   * 
+   * 跳转至产品详情
    */
-  onShow: function() {
-    var that = this;
-    request(that)
-  },
-  navbarTap: function(e) {
-    this.setData({
-      currentTab: e.currentTarget.dataset.idx
-    })
-    request(this)
+  prodDetails: function(e) {
+    var id = e.currentTarget.dataset.id;
+    console.log(id)
+    wx.navigateTo({
+      url: '/pages/index/CollectionDetails/CollectionDetails?id=' + id,
+    });
   },
 })
