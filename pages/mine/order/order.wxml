@@ -1,0 +1,55 @@
+<view class="page-todos">
+  <view class="bg">
+    <label wx:for='{{config.is_pay}}' wx:key="">
+      <text class="xq" wx:if="{{data.is_pay==index}}">{{item.msg}}</text>
+    </label>
+  </view>
+  <view class="second">
+    <text class="bianhao">订单编号：{{data.order_number}}</text>
+    <text class="copy1" bindtap="copy" data-text="{{data.order_number}}">复制</text>
+    <text class="bianhao1" wx:if="{{data.transaction_id}}">支付编号：{{data.transaction_id}}</text>
+  </view>
+  <view class="fore" bindtap="product" data-id="{{data.product_info.product_id}}">
+    <image src="{{filepath}}{{data.product_info.product_cover}}" mode="widthFix" />
+    <text class="title">{{data.product_info.product_name}}</text>
+    <text class="guige">{{data.product_info.cover_introduce}}</text>
+    <!-- <text class="shul">×1</text> -->
+    <text class="qian">￥{{data.pay_money}}</text>
+  </view>
+  <view class="third">
+    <view class='info-box'>
+      <text class="fl">下单时间：</text>
+      <text class="fr">{{data.add_time}}</text>
+    </view>
+    <view class='info-box' wx:if="{{data.pay_time}}">
+      <text class="fl">付款时间：</text>
+      <text class="fr">{{data.pay_time}}</text>
+    </view>
+
+    <view class='info-box' wx:if="{{data.on_hand_time}}">
+      <text class="fl">收货时间：</text>
+      <text class="fr">{{data.on_hand_time}}</text>
+    </view>
+    <view class='info-box'>
+      <text class="fl">商品总额：</text>
+      <text class="fr">￥{{data.result_money}}</text>
+    </view>
+    <view class='info-box'>
+      <text class="fl">服务费：</text>
+      <text class="fr">￥{{data.server_money}}</text>
+    </view>
+    <view class='info-box'>
+      <text class="fl">邮费：</text>
+      <text class="fr">￥{{data.express_money}}</text>
+    </view>
+    <view class="box">
+      <text class="heji">合计 : </text>
+      <text class="qian">￥{{data.pay_money}}</text>
+    </view>
+  </view>
+  <view class="btn">
+    <!-- <button class="btn1" bindtap="close" data-id="{{data.list_id}}">取消</button> -->
+    <button class="btn2" bindtap="bindSure" data-id="{{data.between_id}}" wx:if="{{data.is_pay==3||data.is_pay==4}}">确认收货</button>
+    <button class="btn3 radius" bindtap="expressInfo" data-id="{{data.between_id}}">查看物流</button>
+  </view>
+</view>

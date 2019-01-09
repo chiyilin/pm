@@ -13,6 +13,13 @@ payimg.navbar {
   left: 33%;
 }
 
+.none {
+  color: #c1c1c1;
+  font-size: 28rpx;
+  text-align: center;
+  padding-top: 20rpx;
+}
+
 .pos2 {
   right: 33%;
 }

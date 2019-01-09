@@ -5,7 +5,7 @@
 </view>
 <!--切换-->
 <view class="weui-cells__title" hidden="{{!isShow}}">
-  <block wx:for="{{3}}">
+  <block wx:for="{{3}}" wx:key="">
     <view class='view'>
       <view>
         <image mode='widthFix' src='/imgs/jpcp.jpg'></image>
@@ -24,12 +24,14 @@
   </block>
 </view>
 <view class="weui-cells__title" hidden="{{isShow}}">
-<block wx:for="{{3}}">
-  <image class='tupian' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
-  <view class='sign'>
-      <text class='name'>畜牧业的咖啡机（部分带数字直角边）</text>
-      <image class='yds' mode='widthFix' src='/imgs/yds.jpg'></image>
-      <text class='time'>到手时间 ：2018-12-30</text>
-  </view>
+  <block wx:for="{{onHandData}}" wx:key="">
+    <view bindtap="orderDetails" data-id="{{item.between_id}}">
+      <image class='tupian' mode="aspectFill" src='{{filepath}}{{item.product_info.product_cover}}'></image>
+      <view class='sign'>
+        <text class='name'>{{item.product_info.product_name}}</text>
+        <image class='yds' mode='widthFix' src='/imgs/yds.jpg'></image>
+        <text class='time' wx:if="{{item.on_hand_time}}">到手时间：{{item.on_hand_time_str}}</text>
+      </view>
+    </view>
   </block>
 </view>

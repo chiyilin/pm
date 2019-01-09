@@ -18,7 +18,7 @@ var request = function(that, isPullDown = false) {
       rate: rate,
       rateMoney: money,
       nowMoney: number.accAdd(money, res.data.product_money)
-    })
+    });
     wx.hideNavigationBarLoading();
     if (isPullDown) {
       wx.stopPullDownRefresh();

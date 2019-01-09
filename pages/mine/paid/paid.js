@@ -9,18 +9,21 @@ var request = function(that) {
     current: current
   }, function(res) {
     that.setData({
-      data: res
+      data: res.data,
+      status: res.status,
     });
   });
 }
 Page({
   data: {
     navbar: ['待支付', '待发货', '待收货'],
+    //默认选中的选项卡
     currentTab: 0,
     filepath: app.globalData.filepath,
+    //支付总价
     total_price: 0,
+    currentIndex: [],
     checkedAll: false,
-    isCheckAll: false,
   },
   onLoad: function(options) {
     var that = common.that = this;
@@ -35,6 +38,12 @@ Page({
       })
     }
   },
+  orderDetails: function(e) {
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/mine/order/order?id=' + id,
+    })
+  },
   onShow: function() {
     var that = this;
     request(that)
@@ -47,11 +56,13 @@ Page({
       currentTab: e.currentTarget.dataset.idx,
       currentIndex: [],
       checkedAll: false,
-      isCheckAll: false,
       total_price: 0
     });
     request(this);
   },
+  /**
+   * 跳转至支付详情
+   */
   nowpay: function(e) {
     var that = this;
     if (e.currentTarget.dataset.id) {
@@ -78,26 +89,73 @@ Page({
    */
   checkAll: function(e) {
     var that = this;
-    if (that.data.isCheckAll) {
+    if (that.data.checkedAll) {
       that.setData({
         checkedAll: false,
-        isCheckAll: false,
         total_price: 0,
         currentIndex: []
       });
     } else {
       that.setData({
-        checkedAll: that.data.checkedAll == false ? true : false,
+        checkedAll: that.data.checkedAll = true,
       });
       var currentIndex = [];
       that.data.data.forEach((res, index) => {
         currentIndex.push(index)
       });
       that.totalCount(currentIndex);
-      that.setData({
-        isCheckAll: true
-      })
     }
+  },
+  /**
+   * 单件申请发货
+   */
+  sendOutItem: function(event) {
+    var that = this;
+    var id = event.currentTarget.dataset.id;
+    var current = event.currentTarget.dataset.current
+    that.sendOutRequest(id, current)
+  },
+  /**
+   * 批量申请发货
+   */
+  sendOutAll: function(e) {
+    var that = this;
+    var current = e.currentTarget.dataset.current
+    var currentIndex = that.data.currentIndex[that.data.currentTab];
+    if (!currentIndex || currentIndex.length == 0) {
+      common.tips('请选中后操作！');
+      return null;
+    } else {
+      var data = that.data.data;
+      var currentId = [];
+      data.forEach((item, index) => {
+        if (currentIndex.indexOf(index) > -1) {
+          currentId.push(item.between_id)
+        }
+      });
+      that.sendOutRequest(currentId, current)
+    }
+  },
+  /**
+   * 发货操作公共请求
+   */
+  sendOutRequest: function(currentId, current) {
+    var that = this;
+    var userinfo = common.getUserInfo()
+    common.Post('cart/applySendOut', {
+      between_id: currentId,
+      current: current,
+      user_id: userinfo.user_id,
+    }, function(res) {
+      wx.showToast({
+        title: '申请已提交！',
+        success: function() {
+          setTimeout(function() {
+            that.onShow()
+          }, 1500)
+        }
+      });
+    })
   },
   /**
    * 点击单个选中按钮

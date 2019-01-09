@@ -113,7 +113,7 @@ Page({
    */
   chooseCoupon: function() {
     wx.navigateTo({
-      url: '/pages/mine/card/card?nav_type=2',
+      url: '/pages/mine/card/card?nav_type=2&need_money=' + that.data.total_price,
     })
   },
   /**

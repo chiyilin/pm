@@ -47,7 +47,7 @@ Page({
     }, function(res) {
       that.setData({
         data: res.data
-      })
+      });
       wx.hideLoading();
       wx.hideNavigationBarLoading();
     })

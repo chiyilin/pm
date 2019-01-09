@@ -1,7 +1,10 @@
 {
   "pages": [
-    "pages/mine/mine",
     "pages/index/index",
+    "pages/mine/order/order",
+    "pages/mine/order/express",
+    "pages/mine/TransactionRecords/TransactionRecords",
+    "pages/mine/mine",
     "pages/mine/paid/paid",
     "pages/mine/attention/attention",
     "pages/cart/cart",
@@ -14,7 +17,6 @@
     "pages/article/details/details",
     "pages/index/message/messageDetails/messageDetails",
     "pages/transaction/transaction",
-    "pages/mine/TransactionRecords/TransactionRecords",
     "pages/index/BidRecord/BidRecord",
     "pages/index/screen/screen",
     "pages/index/category/category",
