@@ -48,7 +48,7 @@
           <checkbox class='fl' checked='{{checkedAll?true:false}}' value="{{index}}"></checkbox>
         </label>
 
-        <view bindtap='prodDetails' data-id='{{item.product_id}}'>
+        <view bindtap="orderDetails" data-id='{{item.between_id}}'>
           <image class="payimg fl" mode='aspectFill' src='{{filepath}}{{item.product_info.product_cover}}'></image>
           <view class='fl mess'>
             <text class='name'>{{item.product_info.product_name}}</text>
@@ -78,11 +78,11 @@
 <view class=' box' wx:if="{{currentTab==2}}">
   <checkbox-group bindchange="checkboxChange">
     <block wx:for="{{data}}" wx:key="unique">
-      <view style='position: relative;border-bottom:1px solid #efefef' class='clearfix' bindtap="orderDetails" data-id='{{item.between_id}}'>
+      <view style='position: relative;border-bottom:1px solid #efefef' class='clearfix'>
         <label>
           <checkbox class='fl' checked='{{checkedAll?true:false}}' value="{{index}}"></checkbox>
         </label>
-        <view clearfix>
+        <view class='clearfix' bindtap="orderDetails" data-id='{{item.between_id}}'>
           <image class="payimg fl" mode='aspectFill' src='{{filepath}}{{item.product_info.product_cover}}'></image>
           <view class='fl mess'>
             <text class='name'>{{item.product_info.product_name}}</text>

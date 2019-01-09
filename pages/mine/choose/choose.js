@@ -112,9 +112,10 @@ Page({
    * 选择优惠券
    */
   chooseCoupon: function() {
+    var that = this;
     wx.navigateTo({
       url: '/pages/mine/card/card?nav_type=2&need_money=' + that.data.total_price,
-    })
+    });
   },
   /**
    * 点击支付

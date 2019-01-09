@@ -25,6 +25,11 @@ Page({
         nav_type: 2
       })
     }
+    if (options.need_money) {
+      that.setData({
+        need_money: options.need_money
+      })
+    }
   },
 
   /**
@@ -43,7 +48,8 @@ Page({
     var that = this;
     var userinfo = common.getUserInfo();
     common.Post('coupon/index', {
-      user_id: userinfo.user_id
+      user_id: userinfo.user_id,
+      need_money: that.data.need_money ? that.data.need_money : null
     }, function(res) {
       that.setData({
         data: res.data
