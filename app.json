@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/mine/recharge/recharge",
     "pages/index/index",
     "pages/mine/order/order",
     "pages/mine/order/express",
