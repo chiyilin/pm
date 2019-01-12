@@ -11,6 +11,15 @@ page {
   height: 100%;
 }
 
+.tips {
+  font-size: 26rpx;
+}
+
+.tips text {
+  padding: 20rpx 0rpx;
+  margin-left: 30rpx;
+}
+
 .form-box {
   width: 100%;
   background-color: #fff;

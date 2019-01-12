@@ -7,9 +7,9 @@
 <view class='ziliao'>
   <image class='tou' mode='widthFix' src='{{userinfo.face}}'></image>
   <text class='name'>{{userinfo.nick_name}}</text>
-  <view class='edu'>
+  <view class='edu' bindtap='recharge'>
     <text>【竞拍额度</text>
-    <text class='color'>{{userinfo.lines}}</text>
+    <text class='color'>{{userinfo.user_lines}}</text>
     <text>】</text>
   </view>
 </view>

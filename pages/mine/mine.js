@@ -23,7 +23,6 @@ Page({
     // common.style();
     common.globalData = app.globalData;
     if (!common.checkAuthLogin(true)) {
-      console.log('没登录')
       common.login();
     }
   },
@@ -32,7 +31,11 @@ Page({
     var that = this;
     request(that);
   },
-
+  recharge: function() {
+    wx.navigateTo({
+      url: '/pages/mine/recharge/recharge',
+    })
+  },
   onPullDownRefresh: function() {
     var that = this;
     console.log('onPullDownRefresh')

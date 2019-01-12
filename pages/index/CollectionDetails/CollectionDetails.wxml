@@ -43,46 +43,47 @@
     <template is="wxParse" data="{{wxParseData:details.nodes}}" />
   </view>
 </view>
-<!-- <view class='footer' bindtap='nowBuy' wx:if="{{data.product_type==1}}">
-  <text class='jmed'>竞买额度</text>
-  <text class='chujia'>出价</text>
-</view> -->
-<view class='footer' bindtap='nowBuy' wx:if="{{data.product_type==2}}">
-  <text class='buy'>购买</text>
+<view class='footer' bindtap='nowBuy' wx:if="{{data.product_end==2}}">
+  <text class='jmed'>竞拍已结束</text>
 </view>
-<view class='footer' wx:if="{{data.product_type==1}}">
-  <view class='en'>
-    <text class='ed'>竞买额度</text>
-    <text class='num'>{{userinfo.lines}}</text>
+<block wx:else>
+  <view class='footer' bindtap='nowBuy' wx:if="{{data.product_type==2}}">
+    <text class='buy'>购买</text>
   </view>
-  <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
-  <text bindtap='showtime' class='ds'>定时购买</text>
-  <text bindtap='showRule' class='chujia1'>出价</text>
-</view>
-<view class="clearfix ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
-  <image mode='widthFix' src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
-  <view class="stepper fl">
-    <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
-    <input type="number" bindchange="bindManual" value="{{data.product_money}}" />
-    <text class="normal" bindtap="bindPlus">+</text>
+  <view class='footer' wx:if="{{data.product_type==1}}">
+    <view class='en'>
+      <text class='ed'>竞买额度</text>
+      <text class='num'>{{userinfo.user_lines}}</text>
+    </view>
+    <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
+    <text bindtap='showtime' class='ds'>定时购买</text>
+    <text bindtap='showRule' class='chujia1'>出价</text>
   </view>
-  <view class="stepper bodnone fl">
-    <text class='kuang' bindtap='bidding'>出价</text>
-    <text class='kuang' bindtap='agent'>代理</text>
+  <view class="clearfix ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
+    <image mode='widthFix' src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
+    <view class="stepper fl">
+      <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+      <input type="number" bindchange="bindManual" value="{{data.product_money}}" />
+      <text class="normal" bindtap="bindPlus">+</text>
+    </view>
+    <view class="stepper bodnone fl">
+      <text class='kuang' bindtap='bidding'>出价</text>
+      <text class='kuang' bindtap='agent'>代理</text>
+    </view>
+    <text class='fin'>成交{{nowMoney}}（含服务费{{rate}}%）</text>
+    <text class='note'>注:结标价{{data.product_money}}元；服务费{{rateMoney}}元。 </text>
   </view>
-  <text class='fin'>成交{{nowMoney}}（含服务费{{rate}}%）</text>
-  <text class='note'>注:结标价{{data.product_money}}元；服务费{{rateMoney}}元。 </text>
-</view>
 
-<view class="clearfix dingshi {{isTimeTrue?'isRuleShow':'isRuleHide'}}">
-  <image mode='widthFix' src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
-  <text class='timep'>定时价</text>
-  <input class='inprice'></input>
-  <button class='inchujia' bindtap='settime'>最后30s出价</button>
-  <button class='inchujia'>出价秒杀</button>
-  <view class='innote'>
-    <text class='intip'>说明</text>
-    <text class='art intip'>这是一条说明这是一条说明这是一条说明这是一条说明这是一条说明这是一条说明这是一条说明这是一条说明这是一条说明这是一条说明</text>
-    <text class='insent'>重置</text>
+  <view class="clearfix dingshi {{isTimeTrue?'isRuleShow':'isRuleHide'}}">
+    <image mode='widthFix' src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
+    <text class='timep'>定时价</text>
+    <input class='inprice'></input>
+    <button class='inchujia' bindtap='settime'>最后30s出价</button>
+    <button class='inchujia'>出价秒杀</button>
+    <view class='innote'>
+      <text class='intip'>说明</text>
+      <text class='art intip'>这是一条说明这是一条说明这是一条说明这是一条说明这是一条说明这是一条说明这是一条说明这是一条说明这是一条说明这是一条说明</text>
+      <text class='insent'>重置</text>
+    </view>
   </view>
-</view>
+</block>

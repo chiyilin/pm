@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/mine/mine",
     "pages/mine/recharge/recharge",
     "pages/index/index",
     "pages/mine/order/order",
     "pages/mine/order/express",
     "pages/mine/TransactionRecords/TransactionRecords",
-    "pages/mine/mine",
     "pages/mine/paid/paid",
     "pages/mine/attention/attention",
     "pages/cart/cart",
