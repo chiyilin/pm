@@ -21,7 +21,7 @@
             <!-- <text class='orange'>一口价待支付</text> -->
             <text class='tip'>￥{{item.total_price}}</text>
           </view>
-          <text class='note'>请于2018年12月12日 12：00之前完成交易</text>
+          <text class='note'>请于{{item.end_pay_str}}之前完成交易</text>
           <text class='btn' catchtap='nowpay' data-id='{{item.get_id}}'>立即支付</text>
         </view>
       </view>
@@ -58,7 +58,7 @@
           </view>
           <text class='note'>{{item.product_info.product_zysx}}</text>
           <text class='fh' catchtap='sendOutItem' data-id='{{item.between_id}}' data-current='{{currentTab}}'>申请发货</text>
-          <text class='wt' catchtap='sendOutItem' data-id='{{item.between_id}}' data-current='{{currentTab}}'>一键委托</text>
+          <text class='wt' catchtap='sendOutItem' data-id='{{item.between_id}}' data-current='{{currentTab}}' data-sign='weituo'>一键委托</text>
           <!-- <text style='color:#ff3737;border-color:#ff3737;' class='wt'>委托中</text> -->
         </view>
       </view>
@@ -71,6 +71,7 @@
       </label>
     </checkbox-group>
     <text class='all'>全选</text>
+    <text class='weituo' bindtap='sendOutAll' data-current='{{currentTab}}' data-sign='weituo'>一键委托</text>
     <text class='pay' bindtap='sendOutAll' data-current='{{currentTab}}'>一键发货</text>
   </view>
 </view>

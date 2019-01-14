@@ -1,7 +1,7 @@
 <!--pages/mine/mine.wxml-->
 <view class='top'>
   <image mode='widthFix' src='/imgs/mineimg1.jpg'></image>
-  <image mode='widthFix' src='/imgs/mineimg2.jpg'></image>
+  <image mode='widthFix' src='/imgs/mineimg2.jpg' bindtap='address'></image>
 </view>
 <!--头像-->
 <view class='ziliao'>

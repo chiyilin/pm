@@ -172,6 +172,18 @@ checkbox {
   font-size: 34rpx;
 }
 
+.weituo {
+  position: absolute;
+  right: 220rpx;
+  bottom: 0;
+  line-height: 90rpx;
+  background-color: #575757;
+  color: #fff;
+  width: 220rpx;
+  text-align: center;
+  font-size: 34rpx;
+}
+
 .payimg1 {
   width: 200rpx;
   height: 200rpx;

@@ -113,14 +113,16 @@ Page({
     var that = this;
     var id = event.currentTarget.dataset.id;
     var current = event.currentTarget.dataset.current
-    that.sendOutRequest(id, current)
+    var sign = event.currentTarget.dataset.sign ? event.currentTarget.dataset.sign : null;
+    that.sendOutRequest(id, current, sign)
   },
   /**
-   * 批量申请发货/确认收货、一键委托
+   * 批量申请发货/确认收货/一键委托
    */
   sendOutAll: function(e) {
     var that = this;
-    var current = e.currentTarget.dataset.current
+    var current = e.currentTarget.dataset.current;
+    var sign = e.currentTarget.dataset.sign ? e.currentTarget.dataset.sign : null;
     var currentIndex = that.data.currentIndex[that.data.currentTab];
     if (!currentIndex || currentIndex.length == 0) {
       common.tips('请选中后操作！');
@@ -133,16 +135,31 @@ Page({
           currentId.push(item.between_id)
         }
       });
-      that.sendOutRequest(currentId, current)
+      that.sendOutRequest(currentId, current, sign)
     }
   },
   /**
    * 发货操作公共请求
    */
-  sendOutRequest: function(currentId, current) {
+  sendOutRequest: function(currentId, current, sign) {
+    var tips = {};
+    tips.title = '确认';
+    if (current == 1 && !sign) {
+      tips.content = '确认要申请发货吗？';
+    } else if (current == 1 && !sign) {
+      tips.content = '确认要委托选中商品？';
+    } else if (current == 2) {
+      tips.content = '确认收货？';
+    }
+    wx.showModal({
+      title: tips.title,
+      content: tips.content
+    });
+    return null;
     var that = this;
-    var userinfo = common.getUserInfo()
-    common.Post('cart/applySendOut', {
+    var userinfo = common.getUserInfo();
+    var requestAddr = sign == 'weituo' ? 'cart/applyEntrust' : 'cart/applySendOut';
+    common.Post(requestAddr, {
       between_id: currentId,
       current: current,
       user_id: userinfo.user_id,
@@ -152,10 +169,10 @@ Page({
         success: function() {
           setTimeout(function() {
             that.onShow()
-          }, 1500)
+          }, 1500);
         }
       });
-    })
+    });
   },
   /**
    * 点击单个选中按钮

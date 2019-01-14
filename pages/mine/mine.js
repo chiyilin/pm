@@ -26,6 +26,11 @@ Page({
       common.login();
     }
   },
+  address: function() {
+    wx.navigateTo({
+      url: '/pages/address/address',
+    });
+  },
   onShow: function() {
     console.log('onshow')
     var that = this;
