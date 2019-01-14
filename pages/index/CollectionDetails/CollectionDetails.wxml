@@ -8,12 +8,12 @@
   </swiper>
   <view class='clearfix hui'>
     <text class='fl left'>{{data.product_zysx}}</text>
-    <text class='fr right' wx:if="{{data.product_type==1}}">距截止：{{data.product_end_time}}</text>
+    <text class='fr right' wx:if="{{data.product_type==1}}">距截止：{{countDownDay}}天{{countDownHour}}时{{countDownMinute}}分{{countDownSecond}}秒</text>
   </view>
 </view>
 <view class='center'>
   <text class='name'>{{data.product_name}}</text>
-  <text class='time' wx:if="{{data.product_type==1}}">活动时间：{{data.product_start_time}}-{{data.product_end_time}}</text>
+  <text class='time' wx:if="{{data.product_type==1}}">活动时间：{{data.product_start_time_str}}-{{data.product_end_time_str}}</text>
   <text class='jing'>竟得价：</text>
   <text class='color'>￥{{data.product_money}}</text>
   <view class='price'>

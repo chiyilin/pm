@@ -116,7 +116,7 @@ Page({
     that.sendOutRequest(id, current)
   },
   /**
-   * 批量申请发货
+   * 批量申请发货/确认收货、一键委托
    */
   sendOutAll: function(e) {
     var that = this;
