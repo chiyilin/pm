@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class='top'>
-  <input class='input' placeholder='输入您要搜索的藏品'></input>
+  <input class='input' placeholder='输入您要搜索的藏品' bindconfirm='search'></input>
   <image class='sousuo' mode='widthFix' src='/imgs/sousuo.jpg'></image>
   <image bindtap='more' class='mess' mode='widthFix' src='/imgs/message.jpg'></image>
   <text bindtap='more' class='num'>13</text>

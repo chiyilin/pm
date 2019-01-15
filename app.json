@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/transaction/transaction",
     "pages/index/index",
     "pages/mine/paid/paid",
     "pages/mine/mine",
@@ -17,7 +18,6 @@
     "pages/index/message/message",
     "pages/article/details/details",
     "pages/index/message/messageDetails/messageDetails",
-    "pages/transaction/transaction",
     "pages/index/BidRecord/BidRecord",
     "pages/index/screen/screen",
     "pages/index/category/category",

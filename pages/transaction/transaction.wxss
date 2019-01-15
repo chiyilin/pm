@@ -1,9 +1,11 @@
 /* pages/transaction/transaction.wxss */
-.navbar{
+
+.navbar {
   border-bottom: 1px solid #efefef;
 }
-.item{
-  width:20%;
+
+.item {
+  width: 20%;
   height: 80rpx;
   display: inline-block;
   color: #727171;
@@ -13,31 +15,37 @@
   text-align: center;
   border-bottom: #fff solid 6rpx;
 }
-.navbar .item.active{ 
- color: #797979; 
-border-bottom: #818181 solid 6rpx;
+
+.navbar .item.active {
+  color: #797979;
+  border-bottom: #818181 solid 6rpx;
 }
-.list{
+
+.list {
   padding: 32rpx 42rpx;
   position: relative;
-  color: #4B4B4B;
+  color: #4b4b4b;
   border-bottom: #efefef 1px solid;
 }
-.tu{
+
+.tu {
   width: 200rpx;
   height: 200rpx;
   margin-right: 30rpx;
 }
-.name{
+
+.name {
   font-size: 26rpx;
   display: block;
 }
-.time{
+
+.time {
   font-size: 26rpx;
   border-radius: 5px;
-  padding:0rpx 5rpx; 
+  padding: 0rpx 5rpx;
 }
-.tip{
+
+.tip {
   display: block;
   position: absolute;
   bottom: 34rpx;
@@ -45,8 +53,10 @@ border-bottom: #818181 solid 6rpx;
   font-size: 34rpx;
   color: red;
 }
-.atten{
+
+.atten {
   width: 40rpx;
+  height: 40rpx;
   position: absolute;
   bottom: 77rpx;
   right: 40rpx;

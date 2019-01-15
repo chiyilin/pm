@@ -10,7 +10,7 @@
       </view>
     </view>
     <view class='tips'>
-      <text class='fl'>当前充值比例：1：{{userInfo.user_level==1?data.lines_default_proportion:data.lines_bad_proportion}}</text>
+      <text class='fl'>当前充值比例：1:{{userInfo.user_level==1?data.lines_default_proportion:data.lines_bad_proportion}}</text>
       <text class='fr' wx:if="{{resultLines}}">充值到账竞拍额度:{{resultLines}}</text>
     </view>
     <button type="warn" class="save-btn" formType="submit">立即支付</button>

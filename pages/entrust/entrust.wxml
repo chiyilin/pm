@@ -5,7 +5,7 @@
 </view>
 <!--切换-->
 <view class="weui-cells__title">
-  <image class='banner' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132' mode='aspectFill'></image>
+  <!-- <image class='banner' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132' mode='aspectFill'></image> -->
   <form bindsubmit='submit' report-submit='{{true}}'>
     <view class='clearfix list'>
       <text class='fl name'>姓名：</text>

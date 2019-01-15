@@ -6,23 +6,25 @@ var search = function(that) {
   wx.showLoading();
   var param = {
     category_id: that.data.category_id,
-    currentTab: that.data.currentTab + 1
+    currentTab: that.data.currentTab + 1,
+    searchKey: that.data.moreSearch.searchKey
   };
+  console.log(param);
   if (that.data.moreSearch) {
     var param = Object.assign(param, that.data.moreSearch);
   }
   common.Post('category/countProd', param, function(res) {
     that.setData({
       tabCount: res
-    })
-  })
+    });
+  });
   common.Post('category/cateProdInfo', param, function(res) {
     that.setData({
       data: res
     });
     wx.hideNavigationBarLoading();
     wx.hideLoading();
-  })
+  });
 }
 Page({
 
@@ -49,9 +51,12 @@ Page({
       common.login();
     }
     that.setData({
-      category_id: options.id ? options.id : 34
+      category_id: options.id,
+      moreSearch: {
+        searchKey: options.searchKey
+      },
+      // category_id: options.id ? options.id : 34
     })
-    console.log(that.data.category_id)
   },
   search: function(e) {
     var that = this;
@@ -76,8 +81,10 @@ Page({
         category_id: that.data.category_id
       }, function(res) {
         var currentCate = [];
-        for (var i = 0; i < Object.keys(res.cateInfo).length; i++) {
-          currentCate.push(res.cateInfo[i].category_id)
+        if (res.cateInfo) {
+          for (var i = 0; i < Object.keys(res.cateInfo).length; i++) {
+            currentCate.push(res.cateInfo[i].category_id)
+          }
         }
         that.setData({
           serachBasicData: res,

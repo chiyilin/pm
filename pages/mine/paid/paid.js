@@ -142,6 +142,29 @@ Page({
    * 发货操作公共请求
    */
   sendOutRequest: function(currentId, current, sign) {
+
+    var that = this;
+    that.showModalTips(current, sign, function() {
+      var userinfo = common.getUserInfo();
+      var requestAddr = sign == 'weituo' ? 'cart/applyEntrust' : 'cart/applySendOut';
+      common.Post(requestAddr, {
+        between_id: currentId,
+        current: current,
+        user_id: userinfo.user_id,
+      }, function(res) {
+        wx.showToast({
+          title: '申请已提交！',
+          success: function() {
+            setTimeout(function() {
+              that.onShow()
+            }, 1500);
+          }
+        });
+      });
+    })
+
+  },
+  showModalTips: function(current, sign, callBack) {
     var tips = {};
     tips.title = '确认';
     if (current == 1 && !sign) {
@@ -150,29 +173,21 @@ Page({
       tips.content = '确认要委托选中商品？';
     } else if (current == 2) {
       tips.content = '确认收货？';
+    } else {
+      return true;
     }
-    wx.showModal({
-      title: tips.title,
-      content: tips.content
-    });
-    return null;
-    var that = this;
-    var userinfo = common.getUserInfo();
-    var requestAddr = sign == 'weituo' ? 'cart/applyEntrust' : 'cart/applySendOut';
-    common.Post(requestAddr, {
-      between_id: currentId,
-      current: current,
-      user_id: userinfo.user_id,
-    }, function(res) {
-      wx.showToast({
-        title: '申请已提交！',
-        success: function() {
-          setTimeout(function() {
-            that.onShow()
-          }, 1500);
-        }
+    if (tips.content) {
+      wx.showModal({
+        title: tips.title,
+        content: tips.content,
+        success: function(resModal) {
+          if (resModal.confirm == true) {
+            callBack();
+          }
+        },
       });
-    });
+    }
+
   },
   /**
    * 点击单个选中按钮

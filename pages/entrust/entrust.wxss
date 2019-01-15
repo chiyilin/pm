@@ -52,7 +52,7 @@ input {
 }
 
 .list {
-  margin-bottom: 13rpx;
+  margin: 13rpx 0rpx;
 }
 
 textarea {
@@ -63,40 +63,45 @@ textarea {
   padding: 15rpx;
   color: #686868;
 }
-.tupian image{
-  width:190rpx;
-  height:190rpx;
-  margin:0rpx 8rpx;
+
+.tupian image {
+  width: 190rpx;
+  height: 190rpx;
+  margin: 0rpx 8rpx;
   /* margin-right: 19rpx; */
 }
-.tupian{
-  padding:0rpx 60rpx;
+
+.tupian {
+  padding: 0rpx 60rpx;
 }
-.tupian view{
-  width:190rpx;
-  height:200rpx;
+
+.tupian view {
+  width: 190rpx;
+  height: 200rpx;
   display: inline-block;
 }
 
-.tupian .close{
+.tupian .close {
   width: 40rpx;
   height: 40rpx;
   display: block;
   position: absolute;
-  top:-172rpx;
-  right:-18rpx;
+  top: -172rpx;
+  right: -18rpx;
   border-radius: 50% 50%;
   z-index: 999;
 }
-label{
+
+label {
   position: relative;
 }
-button{
+
+button {
   width: 468rpx;
   height: 72rpx;
   line-height: 72rpx;
   font-size: 30rpx;
-  background-color: #F63D3D;
+  background-color: #f63d3d;
   color: #fff;
   margin-bottom: 120rpx;
   margin-top: 80rpx;

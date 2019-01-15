@@ -4,28 +4,28 @@
 </view>
 <!--竞买-->
 <view hidden="{{currentTab!==0}}">
-  <view class='clearfix list'>
-    <image class='tu fl' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
-    <text class='name'>畜牧业的咖啡机（部分带数字直角边）</text>
-    <text class='time'>08:05:02</text>
-    <text class='tip'>￥377</text>
+  <view class='clearfix list' wx:for="{{data}}">
+    <image class='tu fl' src='{{filepath}}{{item.product.product_cover}}'></image>
+    <text class='name'>{{item.product.product_name}}</text>
+    <text class='time'>{{item.product.product_zysx}}</text>
+    <text class='tip'>￥{{item.offer_money}}</text>
   </view>
 </view>
 <!--关注-->
 <view hidden="{{currentTab!==1}}">
-  <view class='clearfix list'>
-    <image class='tu fl' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
-    <text class='name'>畜牧业的咖啡机（部分带数字直角边）</text>
-    <text class='tip'>￥377</text>
+  <view class='clearfix list' wx:for="{{data}}" wx:key="">
+    <image class='tu fl' src='{{filepath}}{{item.product.product_cover}}'></image>
+    <text class='name'>{{item.product.product_name}}</text>
+    <text class='tip'>￥{{item.product.product_money}}</text>
     <image class="atten" mode='widthFix' src='/imgs/atten.jpg'></image>
     <!-- <image class="atten" mode='widthFix' src='/imgs/noatten.jpg'></image> -->
   </view>
 </view>
 <!--委托-->
 <view hidden="{{currentTab!==2}}">
-  <view class='clearfix list'>
-    <image class='tu fl' src='https://wx.qlogo.cn/mmopen/vi_32/phM3akAic0qVh4ibUObJVQmic1icJsle1Pwtu7hBnXeZu1HVyia2sFLzhLMKueXmHAWa4qndx6uCUGoLQr7ofYMDs3w/132'></image>
-    <text class='name'>畜牧业的咖啡机（部分带数字直角边）</text>
-    <text class='tip'>￥377</text>
+  <view class='clearfix list' wx:for="{{data}}" wx:key="">
+    <image class='tu fl' src='{{filepath}}{{item.product.product_cover}}'></image>
+    <text class='name'>{{item.product.product_name}}</text>
+    <text class='tip'>￥{{item.result_money}}</text>
   </view>
 </view>
