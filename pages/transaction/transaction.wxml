@@ -4,7 +4,7 @@
 </view>
 <!--竞买-->
 <view hidden="{{currentTab!==0}}">
-  <view class='clearfix list' wx:for="{{data}}">
+  <view class='clearfix list' wx:for="{{data}}" wx:key="">
     <image class='tu fl' src='{{filepath}}{{item.product.product_cover}}'></image>
     <text class='name'>{{item.product.product_name}}</text>
     <text class='time'>{{item.product.product_zysx}}</text>
