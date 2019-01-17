@@ -50,6 +50,7 @@ Page({
         collection: res.collection,
         shareProd: res.shareProd,
         article: res.article,
+        navData: res.navData,
       })
     });
   },
@@ -117,6 +118,23 @@ Page({
 
     wx.navigateTo({
       url: "/pages/article/details/details?id=" + e.currentTarget.dataset.id,
+    })
+  },
+  /**
+   * 自定义跳转
+   */
+  navDefine: function(e) {
+    var url = e.currentTarget.dataset.url;
+    if (!url) {
+      return null;
+    }
+    wx.navigateTo({
+      url: url,
+      fail: function(res) {
+        wx.switchTab({
+          url: url,
+        })
+      }
     })
   }
 })

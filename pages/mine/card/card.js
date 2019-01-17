@@ -63,8 +63,14 @@ Page({
     var id = e.currentTarget.dataset.id;
     wx.setStorageSync('coupon_id', id);
     if (that.data.nav_type == 1) {
-      wx.switchTab({
-        url: '/pages/index/category/category',
+      var url = '/pages/index/category/category';
+      wx.navigateTo({
+        url: url,
+        fail: function(res) {
+          wx.switchTab({
+            url: url,
+          });
+        }
       });
     } else {
       wx.navigateBack({

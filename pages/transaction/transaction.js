@@ -29,7 +29,15 @@ Page({
     var that = this;
     commonSelect(that);
   },
-
+  /**
+   * 商品详情
+   */
+  prodDetails: function(e) {
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/index/CollectionDetails/CollectionDetails?id=' + id,
+    })
+  },
 
 
   /**

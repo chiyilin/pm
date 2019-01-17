@@ -70,4 +70,10 @@
       <text>关于我们</text>
     </view>
   </view>
+  <!-- <view class='list'>
+    <view class='LL' wx:for="{{navData}}" wx:key="" bindtap='navDefine' data-url='{{item.path}}{{item.ext_str}}'>
+      <image mode='widthFix' src='{{filepath}}{{item.cover_src}}'></image>
+      <text>{{item.nav_title}}</text>
+    </view>
+  </view> -->
 </view>

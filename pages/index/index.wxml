@@ -7,7 +7,7 @@
 </view>
 <swiper class="lunbo" indicator-dots="{{true}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
   <block wx:for="{{banner}}" wx:key="">
-    <swiper-item>
+    <swiper-item bindtap="navDefine" data-url="{{item.path}}{{item.ext_str}}">
       <image src="{{filepath}}{{item.url}}" class="slide-image" mode='aspectFill' />
     </swiper-item>
   </block>
@@ -28,26 +28,11 @@
 </view>
 <!--nav-->
 <view class='nav'>
-  <view class='navView' bindtap='cate'>
-    <image mode='widthFix' src='/imgs/qianbi.jpg'></image>
-    <text>钱币</text>
+  <view class='navView' wx:for="{{navData}}" wx:key="" bindtap="navDefine" data-url="{{item.path}}{{item.ext_str}}">
+    <image mode='widthFix' src='{{filepath}}{{item.cover_src}}'></image>
+    <text>{{item.nav_title}}</text>
   </view>
-  <view class='navView' bindtap='cate'>
-    <image mode='widthFix' src='/imgs/youpin.jpg'></image>
-    <text>邮品</text>
-  </view>
-  <view class='navView'>
-    <image mode='widthFix' src='/imgs/yikoujia.jpg'></image>
-    <text>一口价</text>
-  </view>
-  <view class='navView'>
-    <image mode='widthFix' src='/imgs/jipai.jpg'></image>
-    <text>即拍</text>
-  </view>
-  <view class='navView'>
-    <image mode='widthFix' src='/imgs/zaxiang.jpg'></image>
-    <text>杂项</text>
-  </view>
+
 </view>
 <!--热卖专场-->
 <view class='hot'>

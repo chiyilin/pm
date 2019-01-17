@@ -8,7 +8,8 @@ var request = function(that, hidd) {
   }, function(data) {
     that.setData({
       userinfo: data.userinfo,
-      myProdInfo: data.myProdInfo
+      myProdInfo: data.myProdInfo,
+      navData: data.navData
     })
     wx.setStorageSync('userinfo', JSON.stringify(data.userinfo))
     if (hidd) {
@@ -17,7 +18,9 @@ var request = function(that, hidd) {
   });
 }
 Page({
-  data: {},
+  data: {
+    filepath: app.globalData.filepath
+  },
   onLoad: function(options) {
     var that = common.that = this;
     // common.style();
@@ -49,6 +52,18 @@ Page({
   pay: function(e) {
     wx.navigateTo({
       url: "/pages/mine/paid/paid?current=" + e.currentTarget.dataset.current,
+    })
+  },
+  navDefine: function(e) {
+    var url = e.currentTarget.dataset.url;
+    // var url = '/pages/index/index';
+    wx.navigateTo({
+      url: '/pages/index/index',
+      fail: function(res) {
+        wx.switchTab({
+          url: url,
+        });
+      }
     })
   },
   attention: function() {

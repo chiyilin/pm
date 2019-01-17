@@ -19,6 +19,9 @@ var request = function(that, isPullDown = false) {
       rateMoney: money,
       nowMoney: number.accAdd(money, res.data.product_money)
     });
+    if (res.data.product_end_time) {
+      that.onReadys(res.data)
+    }
     wx.hideNavigationBarLoading();
     if (isPullDown) {
       wx.stopPullDownRefresh();
@@ -35,6 +38,7 @@ Page({
     countDownSecond: 0,
   },
   onLoad: function(options) {
+    console.log('onLoad')
     var that = common.that = this;
     // common.style();
     common.globalData = app.globalData;
@@ -43,10 +47,10 @@ Page({
     }
     that.data.id = options.id
   },
-  onReady: function() {
+  onReadys: function(data) {
+    console.log('onReady')
     var that = this;
-    console.log(that.data.data)
-    var totalSecond = that.data.data.product_end_time - Date.parse(new Date()) / 1000;
+    var totalSecond = data.product_end_time - Date.parse(new Date()) / 1000;
     var interval = setInterval(function() {
       // 秒数
       var second = totalSecond;
@@ -120,6 +124,7 @@ Page({
   },
   //定时出价
   showtime: function() {
+
     this.setData({
       isTimeTrue: true,
     })
@@ -202,6 +207,7 @@ Page({
     });
   },
   onShow: function() {
+    console.log('onShow')
     var that = this;
     request(that);
   },
