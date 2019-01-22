@@ -70,6 +70,9 @@ Page({
             address_phone: res.telNumber,
           }
         })
+      },
+      fail: function(res) {
+        console.log(res)
       }
     })
   },

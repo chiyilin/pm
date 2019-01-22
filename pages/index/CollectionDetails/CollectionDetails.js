@@ -147,7 +147,13 @@ Page({
       wx.showToast({
         title: '出价成功！',
         success: function() {
-
+          setTimeout(function() {
+            that.setData({
+              isRuleTrue: false,
+              isTimeTrue: false,
+            })
+            that.onShow();
+          }, 1500)
         }
       })
     })
@@ -163,7 +169,16 @@ Page({
       offer_money: that.data.data.product_money,
     }, function(res) {
       wx.showToast({
-        title: '代理出价成功！'
+        title: '代理出价成功！',
+        success: function() {
+          setTimeout(function() {
+            that.setData({
+              isRuleTrue: false,
+              isTimeTrue: false,
+            })
+            that.onShow();
+          }, 1500)
+        }
       })
     })
   },

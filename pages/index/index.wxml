@@ -44,7 +44,7 @@
           <image class="cp" src='{{filepath}}{{item.collection_cover}}' mode='aspectFill'></image>
           <view class='team-text'>
             <text class='name'>{{item.collection_name}}</text>
-            <text class='pai'>特别场次哦</text>
+            <text class='pai'>{{item.cover_desc}}</text>
             <text class='zc'>进入</text>
           </view>
         </view>

@@ -56,6 +56,9 @@ Page({
   },
   navDefine: function(e) {
     var url = e.currentTarget.dataset.url;
+    if (!url) {
+      return null;
+    }
     // var url = '/pages/index/index';
     wx.navigateTo({
       url: '/pages/index/index',
@@ -64,21 +67,6 @@ Page({
           url: url,
         });
       }
-    })
-  },
-  attention: function() {
-    wx.navigateTo({
-      url: "attention/attention",
-    })
-  },
-  card: function() {
-    wx.navigateTo({
-      url: "card/card",
-    })
-  },
-  note: function() {
-    wx.navigateTo({
-      url: "TransactionRecords/TransactionRecords",
     })
   },
 })

@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/chat/chat/chat",
+    "pages/mine/mine",
     "pages/Community/Community",
     "pages/entrust/entrust",
     "pages/collection/coll-details/coll-details",
@@ -20,8 +22,6 @@
     "pages/mine/recharge/recharge",
     "pages/mine/paid/paid",
     "pages/transaction/transaction",
-    "pages/chat/chat/chat",
-    "pages/mine/mine",
     "pages/mine/card/card",
     "pages/index/message/message",
     "pages/index/message/messageDetails/messageDetails",

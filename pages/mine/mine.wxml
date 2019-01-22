@@ -35,45 +35,9 @@
 </view>
 <view class='lanmu'>
   <view class='list'>
-    <view class='LL'>
-      <image bindtap='attention' mode='widthFix' src='/imgs/wdgz.jpg'></image>
-      <text bindtap='attention'>我的关注</text>
-    </view>
-    <view class='LL'>
-      <image bindtap='card' mode='widthFix' src='/imgs/yhkq.jpg'></image>
-      <text bindtap='card'>优惠卡券</text>
-    </view>
-    <view class='LL'>
-      <image bindtap='note' mode='widthFix' src='/imgs/jyjl.jpg'></image>
-      <text bindtap='note'>交易记录</text>
-    </view>
-    <view class='LL'>
-      <image mode='widthFix' src='/imgs/rzmx.jpg'></image>
-      <text>入住即拍</text>
-    </view>
-  </view>
-  <view class='list'>
-    <view class='LL'>
-      <image mode='widthFix' src='/imgs/syjc.jpg'></image>
-      <text>使用教程</text>
-    </view>
-    <view class='LL'>
-      <image mode='widthFix' src='/imgs/cpbz.jpg'></image>
-      <text>藏品保障</text>
-    </view>
-    <view class='LL'>
-      <image mode='widthFix' src='/imgs/bzzx.jpg'></image>
-      <text>帮助中心</text>
-    </view>
-    <view class='LL'>
-      <image mode='widthFix' src='/imgs/gywm.jpg'></image>
-      <text>关于我们</text>
-    </view>
-  </view>
-  <!-- <view class='list'>
     <view class='LL' wx:for="{{navData}}" wx:key="" bindtap='navDefine' data-url='{{item.path}}{{item.ext_str}}'>
       <image mode='widthFix' src='{{filepath}}{{item.cover_src}}'></image>
       <text>{{item.nav_title}}</text>
     </view>
-  </view> -->
+  </view>
 </view>
