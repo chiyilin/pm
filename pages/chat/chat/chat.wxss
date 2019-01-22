@@ -69,10 +69,10 @@ page {
 }
 
 .new_img {
-  width: 60rpx;
-  height: 60rpx;
+  width: 80rpx;
+  height: 80rpx;
   border-radius: 50%;
-  vertical-align: middle;
+  vertical-align: top;
   margin-right: 10rpx;
 }
 
@@ -85,6 +85,10 @@ page {
   padding: 5rpx 20rpx;
   margin: 0 10rpx;
   margin-left: 50rpx;
+}
+
+.white {
+  background-color: #fff;
 }
 
 .my_right .new_txt {

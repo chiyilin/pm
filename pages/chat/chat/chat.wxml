@@ -43,7 +43,7 @@
           </view>
           <view class='you_left'>
             <block wx:if="{{item.type=='text'}}">
-              <view class='new_txt'>{{item.content}}</view>
+              <view class='new_txt white'>{{item.content}}</view>
             </block>
             <block wx:if="{{item.type=='image'}}">
               <image class="selectImg" src="{{item.images}}" data-src="{{item.images}}" lazy-load="true" bindtap="previewImg"></image>

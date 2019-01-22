@@ -64,7 +64,7 @@ Page({
       }, 500)
       var sendData = {
         content: this.data.message,
-        date: utils.formatTime(new Date()),
+        date: Date.parse(new Date()) / 100,
         type: 'text',
         user_id: this.data.userinfo.user_id,
         nick_name: this.data.userinfo.nick_name,
