@@ -34,6 +34,9 @@ Page({
       that.setData({
         newslist: list
       })
+    });
+    wx.onSocketClose(function() {
+      common.tips('服务端已关闭！')
     })
   },
   // 页面卸载
@@ -64,7 +67,7 @@ Page({
       }, 500)
       var sendData = {
         content: this.data.message,
-        date: Date.parse(new Date()) / 100,
+        date: Date.parse(new Date()) / 1000,
         type: 'text',
         user_id: this.data.userinfo.user_id,
         nick_name: this.data.userinfo.nick_name,

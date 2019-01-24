@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/chat/chat/chat",
+    "pages/index/index",
     "pages/mine/mine",
     "pages/Community/Community",
     "pages/entrust/entrust",
